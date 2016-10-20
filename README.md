@@ -1,4 +1,4 @@
-# Software System Design Assigments
+# Software System Design Assignments
 
 The developers are:
   * Juan Antonio Rodicio López.
