@@ -1,5 +1,6 @@
-# Practicas Diseño de Sistemas Software
-Los integrantes somos:
+# Software System Design Assigments
+
+The developers are:
   * Juan Antonio Rodicio López.
   * Manuel Rodríguez-Sánchez Guerra.
   * Luis Gonzaga Rozo Bueno.
