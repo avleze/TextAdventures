@@ -13,7 +13,6 @@ public class Map {
         this.rooms = rooms;
         this.width = width;
         this.height = height;
-        
     }
     
     Room[][] getRooms()
@@ -31,9 +30,9 @@ public class Map {
         return height;
     }
     
-    void setRooms(Room[][] roomsToSet)
+    void setRooms(Room[][] rooms)
     {
-        this.rooms = roomsToSet;
+        this.rooms = rooms;
     }
     
 }
