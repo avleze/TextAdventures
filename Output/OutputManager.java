@@ -25,10 +25,12 @@ public class OutputManager {
     }
 
     public void show(){
-
+        currentOutputHandler.showGameInformation(this.currentRoom);
+        currentOutputHandler.showPlayerInformation(this.playerCharacter);
+        currentOutputHandler.showActions(this.currentRoom.getActions());
     }
 
     public void showWelcomeScreen(){
-
+        currentOutputHandler.showWelcomeScreen();
     }
 }
