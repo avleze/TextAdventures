@@ -20,7 +20,7 @@ public class DecisionEngine {
         
         boolean gameOver = false;
         
-        while(!gameOver && playerCharacter.isAlive()){
+        while(!gameOver){
         
         Room room = map.getRoom(playerCharacter.getXPosition(), 
                                     playerCharacter.getYPosition);
@@ -29,8 +29,17 @@ public class DecisionEngine {
         
         room.getAction(input.getInput()).run();
         
-        if(!playerCharacter.isAlive() /* || Player reach the treasure room*/)
-            gameOver = false;
+            if(!playerCharacter.isAlive()){
+
+                gameOver = true;
+                input.showGameOverScreen(playerCharacter);
+
+            } else if(/* Player reach the treasure room*/){
+
+                gameOver = true;
+                input.showWinnerScreen(playerCharacter);
+            
+            }
         
         }
         
