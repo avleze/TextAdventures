@@ -6,8 +6,11 @@ import java.util.Set;
  * @author Antonio Vélez Estévez
  */
 public interface OutputHandler {
-    void showPlayerInformation(PlayerCharacter playerCharacter);
-    void showGameInformation(Room room);
-    void showWelcomeScreen();
-    void showActions(Set<Action> actions);
+    void show(PlayerCharacter playerCharacter, Room room, Set<Action> actions);
+
+    void showWelcomeScreen(PlayerCharacter playerCharacter);
+
+    void showGameOverScreen(PlayerCharacter playerCharacter);
+
+    void showWinnerScreen(PlayerCharacter playerCharacter);
 }

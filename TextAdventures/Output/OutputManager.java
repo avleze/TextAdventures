@@ -24,13 +24,21 @@ public class OutputManager {
         this.currentRoom = currentRoom;
     }
 
-    public void show(){
-        currentOutputHandler.showGameInformation(this.currentRoom);
-        currentOutputHandler.showPlayerInformation(this.playerCharacter);
-        currentOutputHandler.showActions(this.currentRoom.getActions());
+    public void show() {
+        currentOutputHandler.showGameInformation(this.currentRoom,
+                this.playerCharacter,
+                this.currentRoom.getActions());
     }
 
-    public void showWelcomeScreen(){
+    public void showWelcomeScreen() {
         currentOutputHandler.showWelcomeScreen();
+    }
+
+    public void showGameOverScreen() {
+        currentOutputHandler.showGameOverScreen();
+    }
+
+    public void showWinnerScreen() {
+        currentOutputHandler.showWinnerScreen();
     }
 }

@@ -1,7 +1,7 @@
-
+package TextAdventures;
 
 /**
- * Map class
+ * TextAdventures.Map class
  *
  * @author Juan Antonio Rodicio López
  */

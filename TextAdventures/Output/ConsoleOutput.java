@@ -9,22 +9,22 @@ import java.util.Set;
 public class ConsoleOutput implements OutputHandler{
 
     @Override
-    public void showPlayerInformation(PlayerCharacter playerCharacter) {
-        // in progress..
+    public void show(PlayerCharacter playerCharacter, Room room, Set<Action> actions) {
+
     }
 
     @Override
-    public void showGameInformation(Room room) {
-        // in progress..
+    public void showWelcomeScreen(PlayerCharacter playerCharacter) {
+
     }
 
     @Override
-    public void showWelcomeScreen() {
-        // in progress..
+    public void showGameOverScreen(PlayerCharacter playerCharacter) {
+
     }
 
     @Override
-    public void showActions(Set<Action> actions) {
-        // in progress..
+    public void showWinnerScreen(PlayerCharacter playerCharacter) {
+
     }
 }
