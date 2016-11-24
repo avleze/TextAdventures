@@ -1,4 +1,4 @@
-package Output;
+package TextAdventures.Output;
 
 import java.util.Set;
 

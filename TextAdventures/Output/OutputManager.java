@@ -1,4 +1,4 @@
-package Output;
+package TextAdventures.Output;
 
 /**
  * OutputManager

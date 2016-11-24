@@ -1,4 +1,4 @@
-package Input;
+package TextAdventures.Input;
 /**
  * Input.InputManager
  * @author Antonio Vélez Estévez

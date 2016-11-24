@@ -1,4 +1,4 @@
-package Input;
+package TextAdventures.Input;
 
 import java.util.Scanner;
 
