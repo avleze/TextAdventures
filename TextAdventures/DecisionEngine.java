@@ -1,5 +1,4 @@
-import TextAdventures.Output.OutputManager;
-import TextAdventures.Input.InputManager;
+package TextAdventures
 
 /**
  * DecisionEngine Class
