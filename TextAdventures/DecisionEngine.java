@@ -1,4 +1,4 @@
-package TextAdventures
+package TextAdventures;
 
 /**
  * DecisionEngine Class
