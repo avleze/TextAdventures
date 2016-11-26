@@ -20,6 +20,10 @@ public class Map {
     Room[][] getRooms() {
         return rooms;
     }
+    
+    Room getRoom(int CoordX, int CoordY){
+        return rooms[CoordX][CoordY];
+    }
 
     int getWidth() {
         return width;
