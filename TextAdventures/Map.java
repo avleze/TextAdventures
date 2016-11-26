@@ -21,8 +21,8 @@ public class Map {
         return rooms;
     }
     
-    Room getRoom(int CoordX, int CoordY){
-        return rooms[CoordX][CoordY];
+    Room getRoom(int x, int y){
+        return rooms[x][y];
     }
 
     int getWidth() {
