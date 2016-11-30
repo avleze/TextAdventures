@@ -1,5 +1,8 @@
 package TextAdventures;
 
+import TextAdventures.Output.OutputManager;
+import TextAdventures.Input.InputManager;
+
 /**
  * DecisionEngine Class
  * @author Juan Antonio Rodicio López
@@ -10,10 +13,11 @@ public class DecisionEngine {
     Map map;
     OutputManager output;
     InputManager input;
+    MapLoader maploader;
     
-    DecisionEngine(PlayerCharacter playerCharacter, Map map){
+    DecisionEngine(PlayerCharacter playerCharacter){
         this.playerCharacter = playerCharacter;
-        this.map = map;
+        this.map = maploader.loadFromFile("mapa.xml", playerCharacter);
     }
     
     void run(){
@@ -23,24 +27,24 @@ public class DecisionEngine {
         while(!gameOver){
         
         Room room = map.getRoom(playerCharacter.getXPosition(), 
-                                    playerCharacter.getYPosition);
+                                    playerCharacter.getYPosition());
         
         output.show(playerCharacter,room,room.getActions());
         
         room.getAction(input.getInput()).run();
         
-            if(!playerCharacter.isAlive()){
+        if(!playerCharacter.isAlive()){
 
-                gameOver = true;
-                input.showGameOverScreen(playerCharacter);
+            gameOver = true;
+            output.showGameOverScreen();
 
-            } else if(/* Player reach the treasure room*/){
+        } else if(/* Player reach the treasure room*/){
 
-                gameOver = true;
-                input.showWinnerScreen(playerCharacter);
+            gameOver = true;
+            output.showWinnerScreen();
             
-            }
-        
+        }
+
         }
         
     }
