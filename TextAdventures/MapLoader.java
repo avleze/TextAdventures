@@ -27,7 +27,6 @@ public class MapLoader {
         this.player = player;
     }*/
     Map loadFromFile(String file, PlayerCharacter player) {
-        System.out.println("Entro en loadFromFile");
         Map map;
         int width = 0;
         int height = 0;
@@ -47,8 +46,6 @@ public class MapLoader {
 
             NodeList nList = doc.getDocumentElement().getElementsByTagName("room");
 
-            System.out.println("Voy a mirar los que tengan tag room: " + nList.getLength());
-
             for (int i = 0; i < nList.getLength(); ++i) {
 
                 Node nRoom = nList.item(i);
@@ -63,24 +60,23 @@ public class MapLoader {
                     Set<Action> actions = new HashSet<>();
                     Enemy enemy = null;
 
-                    System.out.println("Tengo " + nListChilds.getLength() + "hijos");
                     for (int j = 0; j < nListChilds.getLength(); j++) {
                         Node nRoomChild = nListChilds.item(j);
 
                         if (nRoomChild.getNodeType() == Node.ELEMENT_NODE) {
+                            
                             NamedNodeMap atributtes;
-                            System.out.println("Escojo el hijo: " + nRoomChild.getNodeName());
+                            
                             switch (nRoomChild.getNodeName()) {
+                                
                                 case "message":
                                     atributtes = nRoomChild.getAttributes();
                                     String caption = atributtes.item(0).getNodeValue();
                                     String messages = atributtes.item(1).getNodeValue();
-                                    System.out.println("Entro en mensajes");
                                     message = new Message(caption, messages);
                                     break;
 
                                 case "actions":
-                                    System.out.println("Entro en acciones");
                                     NodeList actionsNodes = nRoomChild.getChildNodes();
 
                                     Set<BattleAction> battleacts = new HashSet<>();
@@ -90,14 +86,15 @@ public class MapLoader {
                                         Node actionChild = actionsNodes.item(m);
                                         if (actionChild.getNodeType() == Node.ELEMENT_NODE) {
                                             atributtes = actionChild.getAttributes();
-
                                             String description = atributtes.item(0).getNodeValue();
-                                            System.out.println(actionChild.getNodeName() + " == BattleAction");
+                                            
                                             if (actionChild.getNodeName().equals("BattleAction")) {
 
                                                 BattleAction action = new BattleAction(description, player);
                                                 battleacts.add(action);
+                                                
                                             } else {
+                                                
                                                 MovementAction action = new MovementAction(description, player);
                                                 movacts.add(action);
                                             }
@@ -114,7 +111,6 @@ public class MapLoader {
                                     break;
 
                                 case "enemy":
-                                    System.out.println("Entro en enemy");
                                     atributtes = nRoomChild.getAttributes();
                                     String name = atributtes.item(3).getNodeValue();
                                     int id = Integer.parseInt(atributtes.item(2).getNodeValue());
@@ -136,7 +132,6 @@ public class MapLoader {
                                             }
 
                                         }
-                                        System.out.println(name);
                                         if (name.equals("Monster")) {
                                             enemy = new Monster(name, id, healthPoints, inventory, baseDamage);
                                         }
