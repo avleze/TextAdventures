@@ -1,4 +1,4 @@
-
+package TextAdventures.es.uca.item;
 
 public class ArmorItem extends Item {
 

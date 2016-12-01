@@ -1,5 +1,6 @@
 import java.util.*;
 import es.uca.item.*;
+package TextAdventures.es.uca.player;
 
 public class PlayerCharacter extends Player{
 

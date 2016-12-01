@@ -1,5 +1,5 @@
 import java.util.Set;
-import es.uca.item.*;
+package TextAdventures.es.uca.player;
 
 public abstract class Enemy extends Player{
 

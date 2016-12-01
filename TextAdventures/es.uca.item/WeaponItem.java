@@ -1,3 +1,4 @@
+package TextAdventures.es.uca.item;
 
 public class WeaponItem extends Item{
 

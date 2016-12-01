@@ -1,6 +1,7 @@
 
 import java.util.*;
 import es.uca.item.*;
+package TextAdventures.es.uca.player;
 
 public abstract class Player {
 
