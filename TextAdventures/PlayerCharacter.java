@@ -14,7 +14,7 @@ public class PlayerCharacter extends Player{
 
 	public bool usePotion() {
 
-			if(item Potion = inventory.stream().filter((i) -> i instanceof RecoveryItem).iterator().next() == null)
+			if(item Potion = this.inventory.stream().filter((i) -> i instanceof RecoveryItem).iterator().next() == null)
 				return false
 			else {
 				this.setHealthPoints(this.getHealthPoints() + Potion.use());
@@ -26,10 +26,15 @@ public class PlayerCharacter extends Player{
 	public bool attack(Player Enemy) {
 
 		if(this.hasWeapon()) {
-			Item PlayerWeapon = inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-			Enemy.setHealthPoints(Enemy.getHealthPoints() - PlayerWeapon.use()*DAMAGE_TABLE[PlayerWeapon.type()][Enemy.type()];
+			Item PlayerWeapon = this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+			int Armor = 0;
+			if( Item EnemyArmor = Enemy.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next() != null) {
+				Armor = EnemyArmor.getArmor();
+			}
+
+			Enemy.setHealthPoints( (Enemy.getHealthPoints() + Armor) - PlayerWeapon.use()*DAMAGE_TABLE[PlayerWeapon.type()][Enemy.type()]);
 		} else {
-			Enemy.setHealthPoints(Enemy.getHealthPoints() - this.baseDamage);
+			Enemy.setHealthPoints( (Enemy.getHealthPoints() + Armor) - this.baseDamage);
 		}
 
 		return Enemy.isAlive();
