@@ -1,5 +1,10 @@
 package TextAdventures.es.uca.item;
 
+/**
+ * es.uca.item.WeaponItem
+ * @author Manuel Rodríguez-Sánchez Guerra
+ */
+
 public class WeaponItem extends Item{
 
 	static final int TYPE_WATER = 0;

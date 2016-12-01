@@ -2,6 +2,11 @@ import java.util.*;
 import es.uca.item.*;
 package TextAdventures.es.uca.player;
 
+/**
+ * es.uca.player.PlayerCharacter
+ * @author Manuel Rodríguez-Sánchez Guerra
+ */
+
 public class PlayerCharacter extends Player{
 
 	private int xPosition;

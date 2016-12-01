@@ -1,6 +1,11 @@
 import java.util.Set;
 package TextAdventures.es.uca.player;
 
+/**
+ * es.uca.player.Enemy
+ * @author Manuel Rodríguez-Sánchez Guerra
+ */
+
 public abstract class Enemy extends Player{
 
 	static final int TYPE_WATER = 0;

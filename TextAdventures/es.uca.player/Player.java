@@ -3,6 +3,11 @@ import java.util.*;
 import es.uca.item.*;
 package TextAdventures.es.uca.player;
 
+/**
+ * es.uca.player.Player
+ * @author Manuel Rodríguez-Sánchez Guerra
+ */
+
 public abstract class Player {
 
 	protected String name;

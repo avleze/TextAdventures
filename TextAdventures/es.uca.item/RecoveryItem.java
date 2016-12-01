@@ -1,5 +1,10 @@
 package TextAdventures.es.uca.item;
 
+/**
+ * es.uca.item.RecoveryItem
+ * @author Manuel Rodríguez-Sánchez Guerra
+ */
+
 public class RecoveryItem extends Item{
 
 	private int pointstoHealth;
