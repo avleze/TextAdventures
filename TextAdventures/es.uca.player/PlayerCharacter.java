@@ -1,4 +1,5 @@
 import java.util.*;
+import es.uca.item.*;
 
 public class PlayerCharacter extends Player{
 

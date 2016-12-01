@@ -1,5 +1,6 @@
 
 import java.util.*;
+import es.uca.item.*;
 
 public abstract class Player {
 
@@ -53,7 +54,6 @@ public abstract class Player {
 	public boolean hasWeapon() {
 
 		return inventory.stream().anyMatch((i) -> i instanceof WeaponItem);
-
 	}
 
 	public boolean attack(Player otherCharacter);

@@ -1,4 +1,5 @@
 import java.util.Set;
+import es.uca.item.*;
 
 public abstract class Enemy extends Player{
 
@@ -16,6 +17,7 @@ public abstract class Enemy extends Player{
 		if(Type > TYPE_TEPIC || Type < TYPE_WATER)
 			throw TypeNotFoundException;
 		super(name, id, HealthPoints, Inventory, baseDamage);
+		this.Type = Type;
 	}
 
 	@Override
@@ -27,11 +29,11 @@ public abstract class Enemy extends Player{
 		}
 
 		if(this.hasWeapon()) {
-			Item EnemyWeapon = this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next());
+			Item EnemyWeapon = inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next());
 			Item PlayerWeapon = currentPlayer.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
 			Enemy.setHealthPoints( (currentPlayer.getHealthPoints() + Armor) - EnemyWeapon.use()*DAMAGE_TABLE[EnemyWeapon.type()][PlayerWeapon.type()] )
 		} else {
-			Enemy.setHealthPoints( (currentPlayer.getHealthPoints() + Armor) - this.baseDamage);
+			Enemy.setHealthPoints( (currentPlayer.getHealthPoints() + Armor - this.baseDamage);
 		}
 
 		return currentPlayer.isAlive();
