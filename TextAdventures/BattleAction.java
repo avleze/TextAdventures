@@ -3,7 +3,7 @@ package TextAdventures;
 /**
  * This class represents a battle action.
  * @author Luis Gonzaga Rozo Bueno
- * @version 1.1
+ * @version 1.1.1
  */
 public class BattleAction extends Action {
 	private Player enemy;
@@ -22,8 +22,6 @@ public class BattleAction extends Action {
 	@Override
 	/**
 	 * Executes the action
-	 * @param player This is the player who wants to move within the map
-	 * @param enemy
 	 */
 	void run() {
 		
