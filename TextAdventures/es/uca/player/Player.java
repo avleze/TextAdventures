@@ -16,7 +16,7 @@ public abstract class Player {
 	protected Set<Item> inventory;
 	protected int baseDamage;
 
-	static final int DAMAGE_TABLE[4][4] = {
+	static final double DAMAGE_TABLE[][] = {
 			{1, 2, 0.5, 1, 0.5},
 			{0.5, 1, 2, 1, 0.5},
 			{2, 0.5, 1, 2, 0.5},
@@ -62,5 +62,5 @@ public abstract class Player {
 		return inventory.stream().anyMatch((i) -> i instanceof WeaponItem);
 	}
 
-	public boolean attack(Player otherCharacter);
+	public abstract boolean attack(Player otherCharacter);
 }
