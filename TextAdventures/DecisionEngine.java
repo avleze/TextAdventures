@@ -13,11 +13,11 @@ public class DecisionEngine {
     Map map;
     OutputManager output;
     InputManager input;
-    MapLoader maploader;
+    MapLoader mapLoader;
     
     DecisionEngine(PlayerCharacter playerCharacter){
         this.playerCharacter = playerCharacter;
-        this.map = maploader.loadFromFile("mapa.xml", playerCharacter);
+        this.map = mapLoader.loadFromFile("mapa.xml", playerCharacter);
     }
     
     void run(){
