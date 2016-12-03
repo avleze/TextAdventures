@@ -1,6 +1,8 @@
-package TextAdventures.Input;
+package es.uca.TextAdventures.Input;
+
 /**
  * Input.InputManager
+ *
  * @author Antonio Vélez Estévez
  */
 public class InputManager {

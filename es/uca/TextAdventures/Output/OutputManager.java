@@ -1,4 +1,8 @@
-package TextAdventures.Output;
+package es.uca.TextAdventures.Output;
+
+import es.uca.TextAdventures.PlayerCharacter;
+import es.uca.TextAdventures.Room;
+import es.uca.TextAdventures.Action;
 
 /**
  * OutputManager

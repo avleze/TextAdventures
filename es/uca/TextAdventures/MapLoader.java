@@ -1,18 +1,15 @@
-package TextAdventures;
+package es.uca.TextAdventures;
 
-import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.*;
+import org.xml.sax.SAXException;
+
 import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.w3c.dom.Node;
-import org.w3c.dom.NamedNodeMap;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
-import javax.xml.parsers.ParserConfigurationException;
-import org.w3c.dom.DOMException;
-import org.xml.sax.SAXException;
 
 /**
  * MapLoader class
@@ -22,8 +19,8 @@ import org.xml.sax.SAXException;
 public class MapLoader {
 
     //Otra opción
-    /*PlayerCharacter player;
-    public MapLoader(PlayerCharacter player){
+    /*TextAdventures.PlayerCharacter player;
+    public MapLoader(TextAdventures.PlayerCharacter player){
         this.player = player;
     }*/
     Map loadFromFile(String file, PlayerCharacter player) {
@@ -64,11 +61,11 @@ public class MapLoader {
                         Node nRoomChild = nListChilds.item(j);
 
                         if (nRoomChild.getNodeType() == Node.ELEMENT_NODE) {
-                            
+
                             NamedNodeMap atributtes;
-                            
+
                             switch (nRoomChild.getNodeName()) {
-                                
+
                                 case "message":
                                     atributtes = nRoomChild.getAttributes();
                                     String caption = atributtes.item(0).getNodeValue();
@@ -87,14 +84,14 @@ public class MapLoader {
                                         if (actionChild.getNodeType() == Node.ELEMENT_NODE) {
                                             atributtes = actionChild.getAttributes();
                                             String description = atributtes.item(0).getNodeValue();
-                                            
+
                                             if (actionChild.getNodeName().equals("BattleAction")) {
 
                                                 BattleAction action = new BattleAction(description, player);
                                                 battleacts.add(action);
-                                                
+
                                             } else {
-                                                
+
                                                 MovementAction action = new MovementAction(description, player);
                                                 movacts.add(action);
                                             }

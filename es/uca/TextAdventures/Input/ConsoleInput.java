@@ -1,9 +1,10 @@
-package TextAdventures.Input;
+package es.uca.TextAdventures.Input;
 
 import java.util.Scanner;
 
 /**
  * Input.ConsoleInput
+ *
  * @author Antonio Vélez Estévez
  */
 public class ConsoleInput implements InputHandler {

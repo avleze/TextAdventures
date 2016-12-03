@@ -1,4 +1,4 @@
-package TextAdventures;
+package es.uca.TextAdventures;
 
 /**
  * TextAdventures.Map class
@@ -20,8 +20,8 @@ public class Map {
     Room[][] getRooms() {
         return rooms;
     }
-    
-    Room getRoom(int x, int y){
+
+    Room getRoom(int x, int y) {
         return rooms[x][y];
     }
 

@@ -1,8 +1,14 @@
-package TextAdventures.Output;
+package es.uca.TextAdventures.Output;
+
 import java.util.Set;
+
+import es.uca.TextAdventures.PlayerCharacter;
+import es.uca.TextAdventures.Room;
+import es.uca.TextAdventures.Action;
 
 /**
  * OutputHandler
+ *
  * @author Antonio Vélez Estévez
  */
 public interface OutputHandler {
