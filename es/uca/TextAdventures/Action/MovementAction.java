@@ -1,4 +1,6 @@
-package es.uca.TextAdventures;
+package es.uca.TextAdventures.Action;
+
+import es.uca.TextAdventures.Player.PlayerCharacter;
 
 /**
  * This class represents a movement action.

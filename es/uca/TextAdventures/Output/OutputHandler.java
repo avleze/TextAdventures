@@ -2,9 +2,9 @@ package es.uca.TextAdventures.Output;
 
 import java.util.Set;
 
-import es.uca.TextAdventures.PlayerCharacter;
+import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
-import es.uca.TextAdventures.Action;
+import es.uca.TextAdventures.Action.Action;
 
 /**
  * OutputHandler

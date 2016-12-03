@@ -1,4 +1,4 @@
-package es.uca.TextAdventures;
+package es.uca.TextAdventures.Item;
 
 public class ArmorItem extends Item {
 

@@ -1,5 +1,14 @@
 package es.uca.TextAdventures;
 
+import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Action.BattleAction;
+import es.uca.TextAdventures.Action.MovementAction;
+import es.uca.TextAdventures.Item.Item;
+import es.uca.TextAdventures.Item.RecoveryItem;
+import es.uca.TextAdventures.Item.WeaponItem;
+import es.uca.TextAdventures.Player.Enemy;
+import es.uca.TextAdventures.Player.Monster;
+import es.uca.TextAdventures.Player.PlayerCharacter;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 

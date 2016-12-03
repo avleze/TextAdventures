@@ -1,5 +1,8 @@
 package es.uca.TextAdventures;
 
+import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Player.Enemy;
+
 import java.util.Set;
 
 /**

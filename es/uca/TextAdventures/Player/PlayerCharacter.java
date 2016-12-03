@@ -1,11 +1,13 @@
-package es.uca.TextAdventures;
+package es.uca.TextAdventures.Player;
 
-import es.uca.item.*;
+import es.uca.TextAdventures.Item.ArmorItem;
+import es.uca.TextAdventures.Item.Item;
+import es.uca.TextAdventures.Item.RecoveryItem;
+import es.uca.TextAdventures.Item.WeaponItem;
 
 import java.util.Iterator;
 import java.util.Set;
 
-package TextAdventures.es.uca.player;
 
 /**
  * es.uca.player.TextAdventures.PlayerCharacter

@@ -1,10 +1,10 @@
-package es.uca.TextAdventures;
+package es.uca.TextAdventures.Player;
 
+import es.uca.TextAdventures.Item.Item;
 import es.uca.item.*;
 
 import java.util.Set;
 
-package TextAdventures.es.uca.player;
 
 /**
  * ies.uca.player.TextAdventures.Monster
