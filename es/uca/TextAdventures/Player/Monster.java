@@ -1,7 +1,6 @@
 package es.uca.TextAdventures.Player;
 
 import es.uca.TextAdventures.Item.Item;
-import es.uca.item.*;
 
 import java.util.Set;
 
@@ -14,8 +13,8 @@ import java.util.Set;
 
 public class Monster extends Enemy {
 
-    public Monster(String name, int id, int HealthPoints, Set<Item> Inventory, int baseDamage, int Type) {
-        super(name, id, HealthPoints, Inventory, baseDamage, Type);
+    public Monster(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage, int type) {
+        super(name, id, healthPoints, inventory, baseDamage, type);
     }
 
 

@@ -12,7 +12,8 @@ public class RecoveryItem extends Item {
 
     private int pointstoHealth;
 
-    public RecoveryItem(int pointstoHealth) {
+    public RecoveryItem(int pointstoHealth, int id) {
+        super(id);
         this.pointstoHealth = pointstoHealth;
     }
 

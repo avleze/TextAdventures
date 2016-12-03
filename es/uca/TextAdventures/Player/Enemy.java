@@ -2,6 +2,7 @@ package es.uca.TextAdventures.Player;
 
 import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Item.WeaponItem;
+import es.uca.TextAdventures.Item.ArmorItem;
 
 import java.util.Set;
 
@@ -20,25 +21,25 @@ public abstract class Enemy extends Player {
     static final int TYPE_EARTH = 3;
     static final int TYPE_TEPIC = 4;
 
-    private int Type;
+    private int type;
 
     class TypeNotFoundException extends Exception {
     }
 
-    public Enemy(String name, int id, int HealthPoints, Set<Item> Inventory, int baseDamage, int Type) {
-        if (Type > TYPE_TEPIC || Type < TYPE_WATER)
+    public Enemy(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage, int type) {
+        super(name, id, healthPoints, inventory, baseDamage);
+        if (type > TYPE_TEPIC || type < TYPE_WATER)
             throw TypeNotFoundException;
-        super(name, id, HealthPoints, Inventory, baseDamage);
-        this.Type = Type;
+        this.type = type;
     }
 
     @Override
-    public bool attack(Player currentPlayer) {
+    public boolean attack(Player currentPlayer) {
 
         int Armor = 0;
-        if (Item PlayerArmor = currentPlayer.inventory.stream().filter((i) -> i instanceof WeaponItem.iterator ().next() ) !=
-        null){
-            Armor = PlayerArmor.getArmor();
+        Item playerArmor = currentPlayer.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next())
+        if (playerArmor != null ) {
+            Armor = playerArmor.use();
         }
 
         if (this.hasWeapon()) {
@@ -50,6 +51,10 @@ public abstract class Enemy extends Player {
         }
 
         return currentPlayer.isAlive();
+    }
+
+    public int getType() {
+        return this.type;
     }
 
 }

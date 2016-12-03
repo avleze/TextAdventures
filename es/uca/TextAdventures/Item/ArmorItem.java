@@ -2,10 +2,15 @@ package es.uca.TextAdventures.Item;
 
 public class ArmorItem extends Item {
 
-    private int DefensePoints;
+    private int defensePoints;
 
-    public int getArmor() {
-        return DefensePoints;
+    public ArmorItem (int defensePoints, int id) {
+        super(id);
+        this.defensePoints = defensePoints;
+    }
+
+    public int use() {
+        return defensePoints;
     }
 
 

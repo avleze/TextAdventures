@@ -2,7 +2,6 @@ package es.uca.TextAdventures.Player;
 
 import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Item.WeaponItem;
-import es.uca.item.*;
 
 import java.util.Set;
 
@@ -28,11 +27,11 @@ public abstract class Player {
             {2, 2, 2, 2, 1}
     };
 
-    public Player(String name, int id, int HealthPoints, Set<Item> Inventory, int baseDamage) {
+    public Player(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage) {
         this.name = name;
         this.id = id;
-        this.healthPoints = HealthPoints;
-        this.inventory = Inventory;
+        this.healthPoints = healthPoints;
+        this.inventory = inventory;
         this.baseDamage = baseDamage;
     }
 
@@ -40,6 +39,8 @@ public abstract class Player {
     public int getHealthPoints() {
         return healthPoints;
     }
+
+    public int getBaseDamage() { return baseDamage; }
 
     public int getId() {
         return id;

@@ -1,7 +1,5 @@
 package es.uca.TextAdventures.Item;
 
-import es.uca.TextAdventures.Item.Item;
-
 /**
  * es.uca.item.WeaponItem
  *
@@ -16,27 +14,27 @@ public class WeaponItem extends Item {
     static final int TYPE_EARTH = 3;
     static final int TYPE_TEPIC = 4;
 
-    private int Damage;
-    private int Type;
+    private int damage;
+    private int type;
 
     class TypeNotFoundException extends Exception {
     }
 
-    public WeaponItem(int Damage, int Type) {
-        if (Type > TYPE_TEPIC || Type < TYPE_WATER)
+    public WeaponItem(int damage, int type, int id) {
+        super(id);
+        if (type > TYPE_TEPIC || type < TYPE_WATER)
             throw TypeNotFoundException;
-
-        this.Damage = Damage;
-        this.type = Type;
+        this.damage = damage;
+        this.type = type;
     }
 
     public int getType() {
-        return Type;
+        return type;
     }
 
     @Override
     public int use() {
-        return Damage;
+        return damage;
 
     }
 }

@@ -27,35 +27,35 @@ public class PlayerCharacter extends Player {
         this.yPosition = yInitPosition;
     }
 
-    public bool usePotion() {
+    public boolean usePotion() {
         Iterator<Item> itPotion = this.inventory.stream().filter((i) -> i instanceof RecoveryItem).iterator();
-        Item Potion = itPotion.next();
+        Item potion = itPotion.next();
 
-        if (Potion == null)
-            return false
+        if (potion == null)
+            return false;
         else {
-            this.setHealthPoints(this.getHealthPoints() + Potion.use());
-            return true
+            this.setHealthPoints(this.getHealthPoints() + potion.use());
+            return true;
         }
     }
 
     @Override
-    public bool attack(Player Enemy) {
-        int Armor = 0;
+    public boolean attack(Player enemy) {
+        int armor = 0;
         if (this.hasWeapon()) {
-            WeaponItem PlayerWeapon = this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-            ArmorItem EnemyArmor = Enemy.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
+            WeaponItem playerWeapon = (WeaponItem) this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+            ArmorItem enemyArmor = (ArmorItem) enemy.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
 
-            if (EnemyArmor != null) {
-                Armor = EnemyArmor.getArmor();
+            if (enemyArmor != null) {
+                armor = enemyArmor.use();
             }
 
-            Enemy.setHealthPoints((Enemy.getHealthPoints() + Armor) - PlayerWeapon.use() * DAMAGE_TABLE[PlayerWeapon.getType()][Enemy.getType()]);
+            enemy.setHealthPoints((enemy.getHealthPoints() + armor) - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][ (Enemy)enemy.getType()]);
         } else {
-            Enemy.setHealthPoints((Enemy.getHealthPoints() + Armor) - this.baseDamage);
+            enemy.setHealthPoints((enemy.getHealthPoints() + armor) - this.baseDamage);
         }
 
-        return Enemy.isAlive();
+        return enemy.isAlive();
     }
 
     public int getXPosition() {
