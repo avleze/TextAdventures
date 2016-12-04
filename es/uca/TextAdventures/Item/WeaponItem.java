@@ -22,8 +22,14 @@ public class WeaponItem extends Item {
 
     public WeaponItem(int damage, int type, int id) {
         super(id);
-        if (type > TYPE_TEPIC || type < TYPE_WATER)
-            throw TypeNotFoundException;
+        try{
+        if (type > TYPE_TEPIC || type < TYPE_WATER){
+            TypeNotFoundException exceptionType = new TypeNotFoundException();
+            throw exceptionType;
+        }
+        }catch(TypeNotFoundException e){
+            /*Do something*/
+        }
         this.damage = damage;
         this.type = type;
     }
