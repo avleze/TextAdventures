@@ -19,7 +19,7 @@ public class Attack extends BattleAction {
 
     @Override
     /**
-     * Executes the action
+     * Executes action
      */
     void run() {
 
