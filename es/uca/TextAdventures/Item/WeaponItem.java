@@ -8,11 +8,11 @@ package es.uca.TextAdventures.Item;
 
 public class WeaponItem extends Item {
 
-    static final int TYPE_WATER = 0;
-    static final int TYPE_FIRE = 1;
-    static final int TYPE_WIND = 2;
-    static final int TYPE_EARTH = 3;
-    static final int TYPE_TEPIC = 4;
+    private static final int TYPE_WATER = 0;
+    private static final int TYPE_FIRE = 1;
+    private static final int TYPE_WIND = 2;
+    private static final int TYPE_EARTH = 3;
+    private static final int TYPE_TEPIC = 4;
 
     private int damage;
     private int type;

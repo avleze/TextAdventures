@@ -15,21 +15,23 @@ import java.util.Set;
 
 public abstract class Enemy extends Player {
 
-    static final int TYPE_WATER = 0;
-    static final int TYPE_FIRE = 1;
-    static final int TYPE_WIND = 2;
-    static final int TYPE_EARTH = 3;
-    static final int TYPE_TEPIC = 4;
+    private static final int TYPE_WATER = 0;
+    private static final int TYPE_FIRE = 1;
+    private static final int TYPE_WIND = 2;
+    private static final int TYPE_EARTH = 3;
+    private static final int TYPE_TEPIC = 4;
 
     private int type;
 
     class TypeNotFoundException extends Exception {
     }
 
-    public Enemy(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage, int type) {
+    public Enemy(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage, int type) throws TypeNotFoundException{
         super(name, id, healthPoints, inventory, baseDamage);
-        if (type > TYPE_TEPIC || type < TYPE_WATER)
-            throw TypeNotFoundException;
+        if (type > TYPE_TEPIC || type < TYPE_WATER) {
+            TypeNotFoundException exceptionType = new TypeNotFoundException();
+            throw exceptionType;
+        }
         this.type = type;
     }
 
@@ -43,9 +45,9 @@ public abstract class Enemy extends Player {
         }
 
         if (this.hasWeapon()) {
-            Item EnemyWeapon = inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-            Item PlayerWeapon = currentPlayer.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-            setHealthPoints((currentPlayer.getHealthPoints() + Armor) - EnemyWeapon.use() * DAMAGE_TABLE[EnemyWeapon.type()][PlayerWeapon.type()]);
+            WeaponItem EnemyWeapon = (WeaponItem)inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+            WeaponItem PlayerWeapon = (WeaponItem)currentPlayer.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+            setHealthPoints((currentPlayer.getHealthPoints() + Armor) - EnemyWeapon.use() * DAMAGE_TABLE[EnemyWeapon.getType()][PlayerWeapon.getType()]);
         } else {
             setHealthPoints(currentPlayer.getHealthPoints() + Armor - this.baseDamage);
         }
