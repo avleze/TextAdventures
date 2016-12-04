@@ -1,7 +1,7 @@
 package es.uca.TextAdventures;
 
-import TextAdventures.Input.InputManager;
-import TextAdventures.Output.OutputManager;
+import es.uca.TextAdventures.Input.InputManager;
+import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
 /**
