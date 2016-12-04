@@ -28,8 +28,8 @@ public class OutputManager {
     }
 
     public void show() {
-        currentOutputHandler.showGameInformation(this.currentRoom,
-                this.playerCharacter,
+        currentOutputHandler.showGameInformation(this.playerCharacter,
+                this.currentRoom,
                 this.currentRoom.getActions());
     }
 

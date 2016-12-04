@@ -12,7 +12,7 @@ import es.uca.TextAdventures.Action.Action;
  * @author Antonio Vélez Estévez
  */
 public interface OutputHandler {
-    void show(PlayerCharacter playerCharacter, Room room, Set<Action> actions);
+    void showGameInformation(PlayerCharacter playerCharacter, Room room, Set<Action> actions);
 
     void showWelcomeScreen(PlayerCharacter playerCharacter);
 
