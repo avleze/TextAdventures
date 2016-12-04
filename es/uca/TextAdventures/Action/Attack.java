@@ -21,7 +21,7 @@ public class Attack extends BattleAction {
     /**
      * Executes action
      */
-    void run() {
+    public void run() {
 
     }
 

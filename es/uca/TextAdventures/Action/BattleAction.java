@@ -15,5 +15,5 @@ public abstract class BattleAction extends Action {
         super(d,pc);
     }
 
-    abstract void run();
+    public abstract void run();
 }

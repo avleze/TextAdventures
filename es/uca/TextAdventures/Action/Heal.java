@@ -11,7 +11,7 @@ public class Heal extends BattleAction {
         super(d,pc);
     }
 
-    void run() {
+    public void run() {
 
     }
 }

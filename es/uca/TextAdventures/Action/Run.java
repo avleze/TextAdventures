@@ -10,7 +10,7 @@ public class Run extends BattleAction {
         super(d,pc);
     }
 
-    void run() {
+    public void run() {
 
     }
 }
