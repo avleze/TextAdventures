@@ -9,27 +9,11 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  * @author Luis Gonzaga Rozo Bueno
  * @version 1.1.1
  */
-public class BattleAction extends Action {
-    private Player enemy;
+public abstract class BattleAction extends Action {
 
-    /**
-     * Constructor
-     *
-     * @param description This initializes the parameter of the super-class.
-     * @param player      Initializes the super-class parameter.
-     * @param enemy       Initializes the instance variable which represents the Enemy.
-     */
-    public BattleAction(String description, PlayerCharacter player, Player enemy) {
-        super(description, player);
-        this.enemy = enemy;
+    public BattleAction(String d,PlayerCharacter pc) {
+        super(d,pc);
     }
 
-    @Override
-    /**
-     * Executes the action
-     */
-    void run() {
-
-    }
-
+    abstract void run();
 }
