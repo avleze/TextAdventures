@@ -20,15 +20,11 @@ public class WeaponItem extends Item {
     class TypeNotFoundException extends Exception {
     }
 
-    public WeaponItem(int damage, int type, int id) {
+    public WeaponItem(int damage, int type, int id) throws TypeNotFoundException {
         super(id);
-        try{
         if (type > TYPE_TEPIC || type < TYPE_WATER){
             TypeNotFoundException exceptionType = new TypeNotFoundException();
             throw exceptionType;
-        }
-        }catch(TypeNotFoundException e){
-            /*Do something*/
         }
         this.damage = damage;
         this.type = type;
