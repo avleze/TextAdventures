@@ -119,8 +119,9 @@ public class MapLoader {
         int baseDamage = Integer.parseInt(enemyAtributtes.item(1).getNodeValue());
         int typeEnemy = Integer.parseInt(enemyAtributtes.item(0).getNodeValue());
         Set<Item> inventory = readInventory(enemy);
-
-        return new Enemy(name, id, healthPoints, inventory, baseDamage, typeEnemy);
+        
+        //At the moment Monster, but we will include more Enemies
+        return new Monster(name,id,healthPoints, inventory, baseDamage, typeEnemy);
     }
 
     private Room readRoom(Document doc, Node room, int row, int col) throws WeaponItem.TypeNotFoundException {
