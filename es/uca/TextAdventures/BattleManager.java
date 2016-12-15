@@ -22,9 +22,9 @@ public class BattleManager{
     public void run (OutputManager out, InputManager in, Set<Action> PlActions, PlayerCharacter player, Enemy enemy){ //PlayerCharacter Player, Enemy enemy) {
         out.showMessage("Battle is starting, prepare yourself!");
         while(player.isAlive() || !enemy.isAlive()){
-            out.showMessage("Enemy attacks!")
+            out.showMessage("Enemy attacks!");
             enemyBeh.getAction().run();
-            out.showMessage("You attack the enemy! It's so effective")
+            out.showMessage("You attack the enemy! It's so effective");
             ((Action)PlActions.toArray()[in.getInput()]).run();
         }
         out.showMessage("Battle has ended");
