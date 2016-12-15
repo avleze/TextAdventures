@@ -2,6 +2,7 @@ package es.uca.TextAdventures.Output;
 
 import java.util.Set;
 
+import es.uca.TextAdventures.Action.BattleAction;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
 import es.uca.TextAdventures.Action.Action;
@@ -19,4 +20,8 @@ public interface OutputHandler {
     void showGameOverScreen(PlayerCharacter playerCharacter);
 
     void showWinnerScreen(PlayerCharacter playerCharacter);
+
+    void showMessage(String message);
+
+    void showBattleActions(Set<BattleAction> battleActions);
 }

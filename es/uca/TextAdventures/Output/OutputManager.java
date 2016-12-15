@@ -1,7 +1,10 @@
 package es.uca.TextAdventures.Output;
 
+import es.uca.TextAdventures.Action.BattleAction;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
+
+import java.util.Set;
 
 /**
  * OutputManager
@@ -34,14 +37,22 @@ public class OutputManager {
     }
 
     public void showWelcomeScreen() {
-        currentOutputHandler.showWelcomeScreen();
+        currentOutputHandler.showWelcomeScreen(playerCharacter);
     }
 
     public void showGameOverScreen() {
-        currentOutputHandler.showGameOverScreen();
+        currentOutputHandler.showGameOverScreen(playerCharacter);
     }
 
     public void showWinnerScreen() {
-        currentOutputHandler.showWinnerScreen();
+        currentOutputHandler.showWinnerScreen(playerCharacter);
+    }
+
+    public void showMessage(String message) {
+        currentOutputHandler.showMessage(message);
+    }
+
+    public void showBattleActions(Set<BattleAction> battleActions) {
+        currentOutputHandler.showBattleActions(battleActions);
     }
 }
