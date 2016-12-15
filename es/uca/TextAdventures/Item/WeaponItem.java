@@ -17,7 +17,7 @@ public class WeaponItem extends Item {
     private int damage;
     private int type;
 
-    class TypeNotFoundException extends Exception {
+    public class TypeNotFoundException extends Exception {
     }
 
     public WeaponItem(int damage, int type, int id) throws TypeNotFoundException {

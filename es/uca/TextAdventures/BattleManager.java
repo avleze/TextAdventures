@@ -13,18 +13,21 @@ import java.util.*;
  */
 public class BattleManager{
 
-    EnemyBehaviour enemy;
+    EnemyBehaviour enemyBeh;
 
     public BattleManager(EnemyBehaviour EnActions) {
-        this.enemy = enemy;
+        this.enemyBeh = enemyBeh;
     }
 
     public void run (OutputManager out, InputManager in, Set<Action> PlActions, PlayerCharacter player, Enemy enemy){ //PlayerCharacter Player, Enemy enemy) {
+        out.showMessage("Battle is starting, prepare yourself!");
         while(player.isAlive() || !enemy.isAlive()){
-            //llamada al output manager
-            enemy.getAction().run();
-            PlActions.toArray().[in.getInput()].run();
+            out.showMessage("Enemy attacks!")
+            enemyBeh.getAction().run();
+            out.showMessage("You attack the enemy! It's so effective")
+            ((Action)PlActions.toArray()[in.getInput()]).run();
         }
+        out.showMessage("Battle has ended");
     }
 
 
