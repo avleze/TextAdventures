@@ -21,5 +21,5 @@ public abstract class Action {
         return description;
     }
 
-    abstract void run();
+    public abstract void run();
 }

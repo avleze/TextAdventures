@@ -1,14 +1,8 @@
 package es.uca.TextAdventures;
 
-import es.uca.TextAdventures.Action.Action;
-import es.uca.TextAdventures.Action.BattleAction;
-import es.uca.TextAdventures.Action.MovementAction;
-import es.uca.TextAdventures.Item.Item;
-import es.uca.TextAdventures.Item.RecoveryItem;
-import es.uca.TextAdventures.Item.WeaponItem;
-import es.uca.TextAdventures.Player.Enemy;
-import es.uca.TextAdventures.Player.Monster;
-import es.uca.TextAdventures.Player.PlayerCharacter;
+import es.uca.TextAdventures.Action.*;
+import es.uca.TextAdventures.Item.*;
+import es.uca.TextAdventures.Player.*;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -28,11 +22,148 @@ import java.util.Set;
 public class MapLoader {
 
     //Otra opción
-    /*TextAdventures.PlayerCharacter player;
-    public MapLoader(TextAdventures.PlayerCharacter player){
+    PlayerCharacter player;
+
+    public MapLoader(PlayerCharacter player) {
         this.player = player;
-    }*/
-    Map loadFromFile(String file, PlayerCharacter player) {
+    }
+
+    private Message readMessage(NamedNodeMap msgAtributtes) {
+
+        String caption = msgAtributtes.item(0).getNodeValue();
+        String messages = msgAtributtes.item(1).getNodeValue();
+        return new Message(caption, messages);
+
+    }
+
+    private Action buildAction(Node action) {
+
+        NamedNodeMap actionAtributtes = action.getAttributes();
+
+        if (action.getNodeName().equals("BattleAction")) {
+            String description = actionAtributtes.item(0).getNodeValue();
+            return new BattleAction(description, player);
+        } else {
+            String description = actionAtributtes.item(1).getNodeValue();
+            MovementAction.movementType movementType
+                    = MovementAction.movementType.valueOf(actionAtributtes.item(0).getNodeValue());
+            return new MovementAction(description, player, movementType);
+        }
+
+    }
+
+    private Set<Action> readActions(NodeList actionsNodes) {
+
+        Set<Action> actions = new HashSet<>();
+
+        for (int i = 0; i < actionsNodes.getLength(); ++i) {
+            Node action = actionsNodes.item(i);
+
+            if (action.getNodeType() == Node.ELEMENT_NODE) {
+
+                actions.add(buildAction(action));
+            }
+        }
+        return actions;
+    }
+
+    private Item buildItem(Node item) throws WeaponItem.TypeNotFoundException {
+
+        NamedNodeMap itemAtributtes = item.getAttributes();
+
+        if (item.getNodeName().equals("RecoveryItem")) {
+
+            int idRecoveryItem = Integer.parseInt(itemAtributtes.item(1).getNodeValue());
+            int pointsToHealth = Integer.parseInt(itemAtributtes.item(0).getNodeValue());
+            return new RecoveryItem(pointsToHealth, idRecoveryItem);
+
+        } else if (item.getNodeName().equals("WeaponItem")) {
+
+            int idWeapon = Integer.parseInt(itemAtributtes.item(2).getNodeValue());
+            int typeWeapon = Integer.parseInt(itemAtributtes.item(1).getNodeValue());
+            int damageWeapon = Integer.parseInt(itemAtributtes.item(0).getNodeValue());
+            return new WeaponItem(damageWeapon, typeWeapon, idWeapon);
+
+        } else {
+            int idArmor = Integer.parseInt(itemAtributtes.item(1).getNodeValue());
+            int defensePoints = Integer.parseInt(itemAtributtes.item(0).getNodeValue());
+
+            return new ArmorItem(idArmor, defensePoints);
+        }
+    }
+
+    private Set<Item> readInventory(Node enemy) throws WeaponItem.TypeNotFoundException {
+
+        Set<Item> inventory = new HashSet<>();
+        NodeList itemsNodes = enemy.getChildNodes();
+
+        for (int i = 0; i < itemsNodes.getLength(); ++i) {
+            Node item = itemsNodes.item(i);
+
+            if (item.getNodeType() == Node.ELEMENT_NODE) {
+                inventory.add(buildItem(item));
+            }
+        }
+
+        return inventory;
+
+    }
+
+    private Enemy readEnemy(Node enemy) throws WeaponItem.TypeNotFoundException {
+
+        NamedNodeMap enemyAtributtes = enemy.getAttributes();
+
+        String name = enemyAtributtes.item(4).getNodeValue();
+        int id = Integer.parseInt(enemyAtributtes.item(3).getNodeValue());
+        int healthPoints = Integer.parseInt(enemyAtributtes.item(2).getNodeValue());
+        int baseDamage = Integer.parseInt(enemyAtributtes.item(1).getNodeValue());
+        int typeEnemy = Integer.parseInt(enemyAtributtes.item(0).getNodeValue());
+        Set<Item> inventory = readInventory(enemy);
+        
+        //At the moment Monster, but we will include more Enemies
+        return new Monster(name,id,healthPoints, inventory, baseDamage, typeEnemy);
+    }
+
+    private Room readRoom(Document doc, Node room, int row, int col) throws WeaponItem.TypeNotFoundException {
+
+        NodeList roomChilds = room.getChildNodes();
+        NamedNodeMap attributesForRoom = room.getAttributes();
+        row = Integer.parseInt(attributesForRoom.item(1).getNodeValue());
+        col = Integer.parseInt(attributesForRoom.item(0).getNodeValue());
+
+        Message message = null;
+        Set<Action> actions = new HashSet<>();
+        Enemy enemy = null;
+
+        for (int i = 0; i < roomChilds.getLength(); ++i) {
+
+            Node roomChild = roomChilds.item(i);
+
+            if (roomChild.getNodeType() == Node.ELEMENT_NODE) {
+                switch (roomChild.getNodeName()) {
+                    case "message":
+                        NamedNodeMap msgAtributtes = roomChild.getAttributes();
+                        message = readMessage(msgAtributtes);
+                        break;
+
+                    case "actions":
+                        NodeList actionsNodes = roomChild.getChildNodes();
+                        actions = readActions(actionsNodes);
+                        break;
+
+                    case "enemy":
+                        enemy = readEnemy(roomChild);
+                        break;
+
+                }
+            }
+        }
+
+        return new Room(message, actions, enemy);
+
+    }
+
+    Map loadFromFile(String file) throws WeaponItem.TypeNotFoundException {
         Map map;
         int width = 0;
         int height = 0;
@@ -50,106 +181,17 @@ public class MapLoader {
             height = Integer.parseInt(doc.getDocumentElement().getAttribute("height"));
             rooms = new Room[width][height];
 
-            NodeList nList = doc.getDocumentElement().getElementsByTagName("room");
+            NodeList nRooms = doc.getDocumentElement().getElementsByTagName("room");
 
-            for (int i = 0; i < nList.getLength(); ++i) {
+            for (int i = 0; i < nRooms.getLength(); ++i) {
 
-                Node nRoom = nList.item(i);
-                if (nRoom.getNodeType() == Node.ELEMENT_NODE) {
+                Node room = nRooms.item(i);
 
-                    NodeList nListChilds = nRoom.getChildNodes();
-                    NamedNodeMap attributesForRoom = nRoom.getAttributes();
-                    int row = Integer.parseInt(attributesForRoom.item(1).getNodeValue());
-                    int col = Integer.parseInt(attributesForRoom.item(0).getNodeValue());
-
-                    Message message = null;
-                    Set<Action> actions = new HashSet<>();
-                    Enemy enemy = null;
-
-                    for (int j = 0; j < nListChilds.getLength(); j++) {
-                        Node nRoomChild = nListChilds.item(j);
-
-                        if (nRoomChild.getNodeType() == Node.ELEMENT_NODE) {
-
-                            NamedNodeMap atributtes;
-
-                            switch (nRoomChild.getNodeName()) {
-
-                                case "message":
-                                    atributtes = nRoomChild.getAttributes();
-                                    String caption = atributtes.item(0).getNodeValue();
-                                    String messages = atributtes.item(1).getNodeValue();
-                                    message = new Message(caption, messages);
-                                    break;
-
-                                case "actions":
-                                    NodeList actionsNodes = nRoomChild.getChildNodes();
-
-                                    Set<BattleAction> battleacts = new HashSet<>();
-                                    Set<MovementAction> movacts = new HashSet<>();
-
-                                    for (int m = 0; m < actionsNodes.getLength(); ++m) {
-                                        Node actionChild = actionsNodes.item(m);
-                                        if (actionChild.getNodeType() == Node.ELEMENT_NODE) {
-                                            atributtes = actionChild.getAttributes();
-                                            String description = atributtes.item(0).getNodeValue();
-
-                                            if (actionChild.getNodeName().equals("BattleAction")) {
-
-                                                BattleAction action = new BattleAction(description, player);
-                                                battleacts.add(action);
-
-                                            } else {
-
-                                                MovementAction action = new MovementAction(description, player);
-                                                movacts.add(action);
-                                            }
-                                        }
-                                    }
-
-                                    for (BattleAction it : battleacts) {
-                                        actions.add((Action) it);
-                                    }
-
-                                    for (MovementAction it : movacts) {
-                                        actions.add((Action) it);
-                                    }
-                                    break;
-
-                                case "enemy":
-                                    atributtes = nRoomChild.getAttributes();
-                                    String name = atributtes.item(3).getNodeValue();
-                                    int id = Integer.parseInt(atributtes.item(2).getNodeValue());
-                                    int healthPoints = Integer.parseInt(atributtes.item(1).getNodeValue());
-                                    int baseDamage = Integer.parseInt(atributtes.item(0).getNodeValue());
-
-                                    NodeList itemsNodes = nRoomChild.getChildNodes();
-                                    Set<Item> inventory = new HashSet<>();
-
-                                    for (int k = 0; k < itemsNodes.getLength(); ++k) {
-                                        Node inventoryChilds = itemsNodes.item(k);
-                                        if (inventoryChilds.getNodeType() == Node.ELEMENT_NODE) {
-                                            if (inventoryChilds.getNodeName().equals("pointsToHealth")) {
-                                                RecoveryItem item = new RecoveryItem(Integer.parseInt(atributtes.item(0).getNodeValue()));
-                                                inventory.add(item);
-                                            } else {
-                                                WeaponItem item = new WeaponItem(Integer.parseInt(atributtes.item(0).getNodeValue()));
-                                                inventory.add(item);
-                                            }
-
-                                        }
-                                        if (name.equals("Monster")) {
-                                            enemy = new Monster(name, id, healthPoints, inventory, baseDamage);
-                                        }
-                                    }
-                                    break;
-                            }
-
-                        }
-
-                        Room room = new Room(message, actions, enemy);
-                        rooms[row][col] = room;
-                    }
+                if (room.getNodeType() == Node.ELEMENT_NODE) {
+                    int row = 0;
+                    int col = 0;
+                    Room roomReaded = readRoom(doc, room, row, col);
+                    rooms[row][col] = roomReaded;
                 }
 
             }
@@ -158,7 +200,6 @@ public class MapLoader {
             e.printStackTrace();
         }
 
-        map = new Map(rooms, width, height);
-        return map;
+        return new Map(rooms, width, height);
     }
 }

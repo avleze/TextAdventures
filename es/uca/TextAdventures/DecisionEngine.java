@@ -1,6 +1,7 @@
 package es.uca.TextAdventures;
 
 import es.uca.TextAdventures.Input.InputManager;
+import es.uca.TextAdventures.Item.WeaponItem;
 import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
@@ -17,9 +18,9 @@ public class DecisionEngine {
     InputManager input;
     MapLoader mapLoader;
 
-    DecisionEngine(PlayerCharacter playerCharacter) {
+    DecisionEngine(PlayerCharacter playerCharacter) throws WeaponItem.TypeNotFoundException{
         this.playerCharacter = playerCharacter;
-        this.map = mapLoader.loadFromFile("mapa.xml", playerCharacter);
+        this.map = mapLoader.loadFromFile("mapa.xml");
     }
 
     void run() {

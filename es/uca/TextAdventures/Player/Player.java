@@ -1,6 +1,8 @@
 package es.uca.TextAdventures.Player;
 
-import es.uca.TextAdventures.Item.*;
+import es.uca.TextAdventures.Item.Item;
+import es.uca.TextAdventures.Item.WeaponItem;
+
 import java.util.Set;
 
 /**
@@ -13,7 +15,7 @@ public abstract class Player {
 
     protected String name;
     protected int id;
-    protected int healthPoints;
+    protected double healthPoints;
     protected Set<Item> inventory;
     protected int baseDamage;
 
@@ -34,7 +36,7 @@ public abstract class Player {
     }
 
 
-    public int getHealthPoints() {
+    public double getHealthPoints() {
         return healthPoints;
     }
 
@@ -52,7 +54,7 @@ public abstract class Player {
         return name;
     }
 
-    public void setHealthPoints(int healthPoints) {
+    public void setHealthPoints(double healthPoints) {
         this.healthPoints = healthPoints;
     }
 
@@ -61,7 +63,8 @@ public abstract class Player {
     }
 
     public boolean hasWeapon() {
-        return inventory.stream().anyMatch((i) -> i instanceof WeaponItem);
+
+        return (inventory.stream().anyMatch((i) -> i instanceof WeaponItem);
     }
 
     public abstract boolean attack(Player otherCharacter);

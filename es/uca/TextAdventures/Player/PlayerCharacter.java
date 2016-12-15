@@ -50,7 +50,7 @@ public class PlayerCharacter extends Player {
                 armor = enemyArmor.use();
             }
 
-            enemy.setHealthPoints((enemy.getHealthPoints() + armor) - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][ (Enemy)enemy.getType()]);
+            enemy.setHealthPoints((enemy.getHealthPoints() + armor) - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][ enemy.getType() ]);
         } else {
             enemy.setHealthPoints((enemy.getHealthPoints() + armor) - this.baseDamage);
         }
