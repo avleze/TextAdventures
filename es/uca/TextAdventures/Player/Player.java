@@ -64,7 +64,7 @@ public abstract class Player {
 
     public boolean hasWeapon() {
 
-        return (inventory.stream().anyMatch((i) -> i instanceof WeaponItem);
+        return (inventory.stream().anyMatch((i) -> i instanceof WeaponItem));
     }
 
     public abstract boolean attack(Player otherCharacter);
