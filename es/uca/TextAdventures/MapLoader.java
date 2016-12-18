@@ -21,7 +21,6 @@ import java.util.Set;
  */
 public class MapLoader {
 
-    //Otra opción
     PlayerCharacter player;
 
     public MapLoader(PlayerCharacter player) {
@@ -40,9 +39,9 @@ public class MapLoader {
 
         NamedNodeMap actionAtributtes = action.getAttributes();
 
-        if (action.getNodeName().equals("BattleAction")) {
+        if (action.getNodeName().equals("StartBattleAction")) {
             String description = actionAtributtes.item(0).getNodeValue();
-            return new BattleAction(description, player);
+            return new StartBattleAction(description, player);
         } else {
             String description = actionAtributtes.item(1).getNodeValue();
             MovementAction.movementType movementType

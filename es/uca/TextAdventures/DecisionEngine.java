@@ -1,8 +1,9 @@
 package es.uca.TextAdventures;
 
+import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Item.WeaponItem;
-import es.uca.TextAdventures.Output.OutputManager;
+import es.uca.TextAdventures.Output.*;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
 /**
@@ -14,6 +15,7 @@ public class DecisionEngine {
 
     PlayerCharacter playerCharacter;
     Map map;
+    ConsoleOutput console = new ConsoleOutput(800,480);
     OutputManager output;
     InputManager input;
     MapLoader mapLoader;
@@ -31,11 +33,16 @@ public class DecisionEngine {
 
             Room room = map.getRoom(playerCharacter.getXPosition(),
                     playerCharacter.getYPosition());
+            output = new OutputManager(console, room, playerCharacter);
 
-            output.show(playerCharacter, room, room.getActions());
-
-            room.getAction(input.getInput()).run();
-
+            output.show();
+            Action selectedAction = room.getAction(input.getInput());
+            
+            if(selectedAction instanceof StartBattleAction)
+                (StartBattleAction)selectedAction.run(output,input,/*PlayerActions,*/playerCharacter,room.getEnemy());
+            else
+                selectedAction.run();
+            
             if (!playerCharacter.isAlive()) {
 
                 gameOver = true;
