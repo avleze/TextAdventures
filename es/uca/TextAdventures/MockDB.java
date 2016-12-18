@@ -1,7 +1,7 @@
 package es.uca.TextAdventures
 
-import TextAdventures.Player.PlayerCharacter;
-import TextAdventures.Item.*;
+import es.uca.TextAdventures.Player.PlayerCharacter;
+import es.uca.TextAdventures.Item.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.transform.Transformer;
@@ -58,7 +58,7 @@ public class MockDB {
             createAttr(doc, playerElement, "id", Integer.toString(player.getId()));
 
             createAttr(doc, playerElement, "healthPoints",
-                    Integer.toString(player.getHealthPoints()));
+                    Double.toString(player.getHealthPoints()));
 
             Element playerInventory = doc.createElement("Inventory");
             playerElement.appendChild(playerInventory);
@@ -127,7 +127,7 @@ public class MockDB {
             /*StreamResult consoleResult
                     = new StreamResult(System.out);
             transformer.transform(source, consoleResult);*/
-        } catch (Exception e) {
+        } catch (ParserConfigurationException | TransformerException | DOMException e) {
             e.printStackTrace();
         }
     }
@@ -215,7 +215,7 @@ public class MockDB {
                 savedPlayer = getSavedPlayer(player);
             }
 
-        } catch (Exception e) {
+        } catch (IOException | ParserConfigurationException | SAXException e) {
             e.printStackTrace();
             System.out.println("No existe ninguna partida guardada");
         }
