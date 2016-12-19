@@ -8,6 +8,7 @@ import java.util.Set;
 /**
  * Created by manuel on 19/12/16.
  */
+
 public abstract class Creator {
 
     public abstract EnemyBehaviour factoryMethod(Set<BattleAction> Actions);
