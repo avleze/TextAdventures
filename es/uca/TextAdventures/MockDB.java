@@ -1,4 +1,4 @@
-package es.uca.TextAdventures
+package es.uca.TextAdventures;
 
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Item.*;
