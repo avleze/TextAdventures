@@ -9,23 +9,23 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
 import java.util.*;
 
 /**
- * Created by manuelrdsg on 4/12/16.
+ * @author Manuel Rodríguez-Sánchez Guerra.
  */
 public class BattleManager{
 
-    EnemyBehaviour enemyBeh;
+    EnemyBehaviour enemyBehaviour;
 
-    public BattleManager(EnemyBehaviour EnActions) {
-        this.enemyBeh = enemyBeh;
+    public BattleManager(EnemyBehaviour enemyBehaviour) {
+        this.enemyBehaviour = enemyBehaviour;
     }
 
-    public void run (OutputManager out, InputManager in, Set<Action> PlActions, PlayerCharacter player, Enemy enemy){ //PlayerCharacter Player, Enemy enemy) {
+    public void run(OutputManager out, InputManager in, Set<Action> playerActions, PlayerCharacter player, Enemy enemy) { //PlayerCharacter Player, Enemy enemy) {
         out.showMessage("Battle is starting, prepare yourself!");
-        while(player.isAlive() || !enemy.isAlive()){
+        while (player.isAlive() && enemy.isAlive() && player.isOnBattle()) {
             out.showMessage("Enemy attacks!");
-            enemyBeh.getAction().run();
+            enemyBehaviour.getAction().run(null);
             out.showMessage("You attack the enemy! It's so effective");
-            ((Action)PlActions.toArray()[in.getInput()]).run();
+            ((Action) playerActions.toArray()[in.getInput()]).run(null);
         }
         out.showMessage("Battle has ended");
     }

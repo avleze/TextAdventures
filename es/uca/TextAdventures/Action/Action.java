@@ -9,17 +9,17 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  * @version 1.1
  */
 public abstract class Action {
-    private String description;
-    private PlayerCharacter player;
+    protected String description;
+    protected PlayerCharacter playerCharacter;
 
-    public Action(String description, PlayerCharacter player) {
+    public Action(String description, PlayerCharacter playerCharacter) {
         this.description = description;
-        this.player = player;
+        this.playerCharacter = playerCharacter;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public abstract void run();
+    public abstract void run(ActionParameter actionParameters);
 }

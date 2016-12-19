@@ -1,6 +1,5 @@
 package es.uca.TextAdventures.Action;
 
-import es.uca.TextAdventures.Player.Player;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
 /**
@@ -11,9 +10,9 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  */
 public abstract class BattleAction extends Action {
 
-    public BattleAction(String d,PlayerCharacter pc) {
-        super(d,pc);
+    public BattleAction(String description, PlayerCharacter playerCharacter) {
+        super(description, playerCharacter);
     }
 
-    public abstract void run();
+    public abstract void run(ActionParameter actionParameters);
 }

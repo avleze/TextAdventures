@@ -45,7 +45,7 @@ public class ConsoleOutput implements OutputHandler {
         int inputWidth = consoleWidth;
 
 
-        String headText = String.format("Current player: %s\t Health: %d", playerCharacter.getName(),
+        String headText = String.format("Current playerCharacter: %s\t Health: %d", playerCharacter.getName(),
                 playerCharacter.getHealthPoints());
         String separatorBar = "--------------------------------------------------------------------------------";
 

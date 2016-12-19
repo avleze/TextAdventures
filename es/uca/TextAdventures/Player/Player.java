@@ -6,7 +6,7 @@ import es.uca.TextAdventures.Item.WeaponItem;
 import java.util.Set;
 
 /**
- * es.uca.player.TextAdventures.Player
+ * es.uca.playerCharacter.TextAdventures.Player
  *
  * @author Manuel Rodríguez-Sánchez Guerra
  */

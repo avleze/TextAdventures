@@ -8,7 +8,7 @@ import java.util.Set;
 
 
 /**
- * es.uca.player.TextAdventures.Enemy
+ * es.uca.playerCharacter.TextAdventures.Enemy
  *
  * @author Manuel Rodríguez-Sánchez Guerra
  */

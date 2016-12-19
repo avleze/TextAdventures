@@ -3,15 +3,16 @@ package es.uca.TextAdventures.Action;
 import es.uca.TextAdventures.Player.*;
 
 /**
- * Created by luisrozo on 4/12/16.
+ * @author Luis Rozo Bueno
+ * @author Antonio Vélez Estévez
  */
 public class Heal extends BattleAction {
 
-    public Heal(String d,PlayerCharacter pc) {
-        super(d,pc);
+    public Heal(String description, PlayerCharacter playerCharacter) {
+        super(description, playerCharacter);
     }
 
-    public void run() {
-
+    public void run(ActionParameter actionParameters) {
+        this.playerCharacter.usePotion();
     }
 }

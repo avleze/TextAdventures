@@ -7,7 +7,7 @@ import java.util.Set;
 
 
 /**
- * ies.uca.player.TextAdventures.Monster
+ * ies.uca.playerCharacter.TextAdventures.Monster
  *
  * @author Manuel Rodríguez-Sánchez Guerra
  */

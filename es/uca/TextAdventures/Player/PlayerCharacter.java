@@ -10,7 +10,7 @@ import java.util.Set;
 
 
 /**
- * es.uca.player.TextAdventures.PlayerCharacter
+ * es.uca.playerCharacter.TextAdventures.PlayerCharacter
  *
  * @author Manuel Rodríguez-Sánchez Guerra
  */
@@ -19,12 +19,13 @@ public class PlayerCharacter extends Player {
 
     private int xPosition;
     private int yPosition;
-
+    private boolean onBattle;
 
     public PlayerCharacter(String name, int id, int HealthPoints, Set<Item> Inventory, int baseDamage, int xInitPosition, int yInitPosition) {
         super(name, id, HealthPoints, Inventory, baseDamage);
         this.xPosition = xInitPosition;
         this.yPosition = yInitPosition;
+        this.onBattle = false;
     }
 
     public boolean usePotion() {
@@ -71,6 +72,18 @@ public class PlayerCharacter extends Player {
 
     public void setYPosition(int yPosition) {
         this.yPosition = yPosition;
+    }
+
+    public boolean isOnBattle() {
+        return onBattle;
+    }
+
+    public void enableBattle() {
+        this.onBattle = true;
+    }
+
+    public void disableBattle() {
+        this.onBattle = false;
     }
 
 }

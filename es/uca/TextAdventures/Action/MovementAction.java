@@ -9,7 +9,7 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  * @version 1.1
  */
 public class MovementAction extends Action {
-    private enum movementType {
+    public enum movementType {
         UP, DOWN, LEFT, RIGHT
     }
 
@@ -27,7 +27,7 @@ public class MovementAction extends Action {
     /**
      * Executes the action
      */
-    public void run() {
+    public void run(ActionParameter actionParameters) {
 
     }
 }
