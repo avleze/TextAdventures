@@ -4,11 +4,9 @@ import es.uca.TextAdventures.Action.*;
 import es.uca.TextAdventures.Input.ConsoleInput;
 import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Item.WeaponItem;
-import es.uca.TextAdventures.Output.ConsoleOutput;
-import es.uca.TextAdventures.Output.OutputManager;
+import es.uca.TextAdventures.Output.*;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,18 +27,16 @@ public class DecisionEngine {
     ActionParameter actionParameters;
     Set<BattleAction> playerActions;
 
-
     DecisionEngine(PlayerCharacter playerCharacter) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
         this.playerCharacter = playerCharacter;
         this.mapLoader = new MapLoader(this.playerCharacter);
 
         this.consoleIn = new ConsoleInput();
 
-        this.playerActions = new HashSet<>();
         this.input = new InputManager(consoleIn);
 
         this.map = mapLoader.loadFromFile("map.xml");
-        this.consoleOut = new ConsoleOutput(80, 100);
+        this.consoleOut = new ConsoleOutput(90, 100);
 
     }
 
@@ -51,10 +47,16 @@ public class DecisionEngine {
         output = new OutputManager(consoleOut, null, playerCharacter);
 
         while (!gameOver) {
-
+            
+            if(playerCharacter.getXPosition() == 1 && playerCharacter.getYPosition() == 1){
+                gameOver = true;
+                output.showWinnerScreen();
+            }
+            
             Room room = map.getRoom(playerCharacter.getXPosition(),
                     playerCharacter.getYPosition());
-
+            
+            playerActions = new HashSet<>();
             playerActions.add(new Heal("Curarse.", playerCharacter));
             playerActions.add(new RunAway("Huir.", playerCharacter));
             playerActions.add(new Attack("Atacar.", playerCharacter, room.getEnemy()));
@@ -66,20 +68,12 @@ public class DecisionEngine {
             output.show();
             Action selectedAction = room.getAction(input.getInput() - 1);
 
-            if (selectedAction instanceof StartBattleAction)
-                ((StartBattleAction) selectedAction).run(actionParameters);
-            else
-                selectedAction.run(null);
+            selectedAction.run(actionParameters);
 
             if (!playerCharacter.isAlive()) {
 
                 gameOver = true;
                 output.showGameOverScreen();
-
-            } else if (playerCharacter.getXPosition() == 1 && playerCharacter.getYPosition() == 1) {
-
-                gameOver = true;
-                output.showWinnerScreen();
 
             }
 
