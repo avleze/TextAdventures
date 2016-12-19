@@ -11,7 +11,7 @@ import java.util.Set;
  */
 public class RandomCreator extends Creator {
     @Override
-    public EnemyBehaviour factoryMethod(Set<BattleAction> Actions) {
+    public EnemyBehaviour makeEnemyBehaviour(Set<BattleAction> Actions) {
         return new RandomEnemyBehaviour(Actions);
     }
 }
