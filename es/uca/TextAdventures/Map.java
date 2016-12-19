@@ -7,9 +7,9 @@ package es.uca.TextAdventures;
  */
 public class Map {
 
+    private Room[][] rooms;
     private final int width;
     private final int height;
-    private Room[][] rooms;
 
     Map(Room[][] rooms, int width, int height) {
         this.rooms = rooms;
@@ -19,10 +19,6 @@ public class Map {
 
     Room[][] getRooms() {
         return rooms;
-    }
-
-    void setRooms(Room[][] rooms) {
-        this.rooms = rooms;
     }
 
     Room getRoom(int x, int y) {
@@ -35,6 +31,10 @@ public class Map {
 
     int getHeight() {
         return height;
+    }
+
+    void setRooms(Room[][] rooms) {
+        this.rooms = rooms;
     }
 
 }

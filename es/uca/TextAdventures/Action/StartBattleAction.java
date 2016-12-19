@@ -2,6 +2,8 @@ package es.uca.TextAdventures.Action;
 
 import es.uca.TextAdventures.BattleManager;
 import es.uca.TextAdventures.EnemyBehaviour.AgressiveEnemyBehaviour;
+import es.uca.TextAdventures.EnemyBehaviour.RandomEnemyBehaviour;
+import es.uca.TextAdventures.Factory.RandomBehaviourCreator;
 import es.uca.TextAdventures.Player.Player;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
@@ -25,7 +27,9 @@ public class StartBattleAction extends Action {
         playerActions.add(new RunAway("Huir.", playerCharacter));
         playerActions.add(new Attack("Atacar.", playerCharacter, enemy));
 
-        this.battleManager = new BattleManager(new AgressiveEnemyBehaviour(playerActions));
+        RandomBehaviourCreator randomBehaviour = new RandomBehaviourCreator();
+        
+        this.battleManager = new BattleManager(randomBehaviour.getBehaviour(playerActions));
     }
 
     @Override

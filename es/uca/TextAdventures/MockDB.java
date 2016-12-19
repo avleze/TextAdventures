@@ -1,26 +1,28 @@
 package es.uca.TextAdventures;
 
-import es.uca.TextAdventures.Item.ArmorItem;
-import es.uca.TextAdventures.Item.Item;
-import es.uca.TextAdventures.Item.RecoveryItem;
-import es.uca.TextAdventures.Item.WeaponItem;
 import es.uca.TextAdventures.Player.PlayerCharacter;
-import org.w3c.dom.*;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
+import es.uca.TextAdventures.Item.*;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.DocumentBuilder;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.Attr;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import org.w3c.dom.DOMException;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 /**
  * Mock de la base de datos.
@@ -31,7 +33,7 @@ public class MockDB {
 
     //Method to add an Attr to Element
     private void createAttr(Document doc, Element elementToAddAttr,
-                            String attribute, String valueForAttr) {
+            String attribute, String valueForAttr) {
 
         Attr attributeToAdd = doc.createAttribute(attribute);
         attributeToAdd.setValue(valueForAttr);
@@ -83,26 +85,26 @@ public class MockDB {
                     createAttr(doc, weapon, "damage", Integer.toString(weaponItem.use()));
                     createAttr(doc, weapon, "type", Integer.toString(weaponItem.getType()));
                     createAttr(doc, weapon, "id", Integer.toString(weaponItem.getId()));
-
+                    
                     playerInventory.appendChild(weapon);
 
-                } else if (item.getClass().getSimpleName().equals("RecoveryItem")) {
+                } else if(item.getClass().getSimpleName().equals("RecoveryItem")){
                     recoveryItem = (RecoveryItem) item;
                     Element potion = doc.createElement("RecoveryItem");
 
                     createAttr(doc, potion, "pointsToHealth",
                             Integer.toString(recoveryItem.use()));
-                    createAttr(doc, potion, "id", Integer.toString(recoveryItem.getId()));
-
+                    createAttr(doc, potion, "id",Integer.toString(recoveryItem.getId()));
+                    
                     playerInventory.appendChild(potion);
-                } else {
+                }else{
                     armorItem = (ArmorItem) item;
                     Element armor = doc.createElement("ArmorItem");
-
-                    createAttr(doc, armor, "defensePoints",
-                            Integer.toString(armorItem.use()));
-                    createAttr(doc, armor, "id",
-                            Integer.toString(armorItem.getId()));
+                    
+                    createAttr(doc,armor,"defensePoints",
+                                Integer.toString(armorItem.use()));
+                    createAttr(doc,armor,"id",
+                                Integer.toString(armorItem.getId()));
                     playerInventory.appendChild(armor);
                 }
 
@@ -135,10 +137,10 @@ public class MockDB {
         }
     }
 
-    private PlayerCharacter getSavedPlayer(Node player) {
+    private PlayerCharacter getSavedPlayer(Node player){
         NamedNodeMap playerAttributes = player.getAttributes();
 
-
+        
         int playerBaseDamage = Integer.parseInt(playerAttributes.item(0).getNodeValue());
         double playerHealthPoints = Double.parseDouble(playerAttributes.item(1).getNodeValue());
         int playerId = Integer.parseInt(playerAttributes.item(2).getNodeValue());
@@ -161,29 +163,28 @@ public class MockDB {
                 NamedNodeMap itemAttributes = item.getAttributes();
 
                 if (itemAttributes.item(0).getNodeName().equals("damage")) {
-
+                    
                     int damageSaved = Integer.parseInt(itemAttributes.item(2).getNodeValue());
                     int type = Integer.parseInt(itemAttributes.item(1).getNodeValue());
                     int id = Integer.parseInt(itemAttributes.item(0).getNodeValue());
-
-                    try {
-                        weaponItem = new WeaponItem(id, type, damageSaved);
-                    } catch (WeaponItem.TypeNotFoundException e) {
-                    }
-
+                    
+                    try{
+                    weaponItem = new WeaponItem(id,type,damageSaved);
+                    }catch(WeaponItem.TypeNotFoundException e){}
+                    
                     playerInventory.add(weaponItem);
-                    System.out.println(itemAttributes.item(1).getNodeName());
-                } else if (itemAttributes.item(1).getNodeName().equals("pointsToHealth")) {
+              System.out.println(itemAttributes.item(1).getNodeName());
+                } else if(itemAttributes.item(1).getNodeName().equals("pointsToHealth")){
                     int pointsToHealth = Integer.parseInt(itemAttributes.item(1).getNodeValue());
                     int id = Integer.parseInt(itemAttributes.item(0).getNodeValue());
-
+                    
                     recoveryItem = new RecoveryItem(pointsToHealth, id);
                     playerInventory.add(recoveryItem);
-                } else {
+                }else{
                     int defensePoints = Integer.parseInt(itemAttributes.item(1).getNodeValue());
                     int id = Integer.parseInt(itemAttributes.item(0).getNodeValue());
-
-                    armorItem = new ArmorItem(defensePoints, id);
+                    
+                    armorItem = new ArmorItem(defensePoints,id);
                     playerInventory.add(armorItem);
                 }
             }
