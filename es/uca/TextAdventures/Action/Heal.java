@@ -1,6 +1,6 @@
 package es.uca.TextAdventures.Action;
 
-import es.uca.TextAdventures.Player.PlayerCharacter;
+import es.uca.TextAdventures.Player.*;
 
 /**
  * @author Luis Rozo Bueno

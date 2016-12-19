@@ -8,11 +8,11 @@ package es.uca.TextAdventures.Item;
 
 public abstract class Item {
 
-    protected int id;
-
     public Item(int id) {
         this.id = id;
     }
+
+    protected int id;
 
     public int getId() {
         return id;

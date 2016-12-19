@@ -3,7 +3,6 @@ package es.uca.TextAdventures.EnemyBehaviour;
 import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Action.Attack;
 import es.uca.TextAdventures.Action.BattleAction;
-
 import java.util.Set;
 
 /**

@@ -11,11 +11,10 @@ import java.util.Set;
 public abstract class EnemyBehaviour {
 
     protected Set<BattleAction> actions;
+    public abstract Action getAction();
 
-    public EnemyBehaviour(Set<BattleAction> actions) {
+    public EnemyBehaviour (Set<BattleAction> actions) {
         this.actions = actions;
     }
-
-    public abstract Action getAction();
 
 }

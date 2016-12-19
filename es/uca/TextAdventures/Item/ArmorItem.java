@@ -4,7 +4,7 @@ public class ArmorItem extends Item {
 
     private int defensePoints;
 
-    public ArmorItem(int defensePoints, int id) {
+    public ArmorItem (int defensePoints, int id) {
         super(id);
         this.defensePoints = defensePoints;
     }

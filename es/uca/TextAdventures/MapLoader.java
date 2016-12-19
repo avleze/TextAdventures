@@ -1,15 +1,8 @@
 package es.uca.TextAdventures;
 
-import es.uca.TextAdventures.Action.Action;
-import es.uca.TextAdventures.Action.MovementAction;
-import es.uca.TextAdventures.Action.StartBattleAction;
-import es.uca.TextAdventures.Item.ArmorItem;
-import es.uca.TextAdventures.Item.Item;
-import es.uca.TextAdventures.Item.RecoveryItem;
-import es.uca.TextAdventures.Item.WeaponItem;
-import es.uca.TextAdventures.Player.Enemy;
-import es.uca.TextAdventures.Player.Monster;
-import es.uca.TextAdventures.Player.PlayerCharacter;
+import es.uca.TextAdventures.Action.*;
+import es.uca.TextAdventures.Item.*;
+import es.uca.TextAdventures.Player.*;
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
@@ -51,8 +44,8 @@ public class MapLoader {
             return new StartBattleAction(description, player, enemy);
         } else {
             String description = actionAtributtes.item(0).getNodeValue();
-            MovementAction.movementType movementType
-                    = MovementAction.movementType.valueOf(actionAtributtes.item(1).getNodeValue());
+            MovementAction.MovementType movementType
+                    = MovementAction.MovementType.valueOf(actionAtributtes.item(1).getNodeValue());
             return new MovementAction(description, player, movementType);
         }
 
@@ -107,16 +100,16 @@ public class MapLoader {
             Node inventoryNode = inventoryNodes.item(i);
 
             if (inventoryNode.getNodeType() == Node.ELEMENT_NODE) {
-
+                
                 NodeList items = inventoryNode.getChildNodes();
-
-                for (int j = 0; j < items.getLength(); j++) {
+                
+                for(int j = 0; j < items.getLength(); j++){
                     Node item = items.item(j);
-
-                    if (item.getNodeType() == Node.ELEMENT_NODE)
+                    
+                    if(item.getNodeType() == Node.ELEMENT_NODE)
                         inventory.add(buildItem(item));
                 }
-
+                
             }
         }
 
@@ -174,7 +167,7 @@ public class MapLoader {
             }
         }
 
-        Room ret = new Room(message, actions, enemy);
+        Room ret =  new Room(message, actions, enemy);
         rooms[row][col] = ret;
         return ret;
 

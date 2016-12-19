@@ -17,9 +17,12 @@ public class WeaponItem extends Item {
     private int damage;
     private int type;
 
+    public class TypeNotFoundException extends Exception {
+    }
+
     public WeaponItem(int damage, int type, int id) throws TypeNotFoundException {
         super(id);
-        if (type > TYPE_TEPIC || type < TYPE_WATER) {
+        if (type > TYPE_TEPIC || type < TYPE_WATER){
             TypeNotFoundException exceptionType = new TypeNotFoundException();
             throw exceptionType;
         }
@@ -35,8 +38,5 @@ public class WeaponItem extends Item {
     public int use() {
         return damage;
 
-    }
-
-    public class TypeNotFoundException extends Exception {
     }
 }

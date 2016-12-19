@@ -50,7 +50,7 @@ public class PlayerCharacter extends Player {
             if (enemyArmor != null) {
                 armor = enemyArmor.use();
             }
-            enemy.setHealthPoints((enemy.getHealthPoints() + armor) - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) enemy).getType()]);
+            enemy.setHealthPoints((enemy.getHealthPoints() + armor) - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][ ((Enemy)enemy).getType() ]);
         } else {
             enemy.setHealthPoints((enemy.getHealthPoints() + armor) - this.baseDamage);
         }
@@ -62,12 +62,12 @@ public class PlayerCharacter extends Player {
         return xPosition;
     }
 
-    public void setXPosition(int xPosition) {
-        this.xPosition = xPosition;
-    }
-
     public int getYPosition() {
         return yPosition;
+    }
+
+    public void setXPosition(int xPosition) {
+        this.xPosition = xPosition;
     }
 
     public void setYPosition(int yPosition) {
