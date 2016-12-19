@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mapa width="2" height="2">
+  <room row="0" col="0">
+    <message caption="Estás en la sala principal" message="Hacia donde quieres ir:"></message>
+    <actions>
+      <StartBattleAction description="Atacar"></StartBattleAction>
+      <MovementAction description="Moverse a la derecha" type="RIGHT"></MovementAction>
+      <MovementAction description="Moverse abajo" type="DOWN"></MovementAction>
+    </actions>
+    <enemy name="Monster" id="0" healthPoints="50" baseDamage="5" type="0">
+      <inventory>
+        <RecoveryItem id="1" pointsToHealth="25"></RecoveryItem>
+        <WeaponItem id="2" type="1" Damage="10"></WeaponItem>
+        <ArmorItem id="3" defensePoints="50"></ArmorItem>
+      </inventory>
+    </enemy>
+  </room>
+  
+  <room row="0" col="1">
+    <message caption="Has llegado a la casa fantasma" message="Cuidado con los caspers:"></message>
+    <actions>
+      <StartBattleAction description="Atacar"></StartBattleAction>
+      <MovementAction description="Moverse a la izquierda" type="LEFT"></MovementAction>
+      <MovementAction description="Moverse abajo" type="DOWN"></MovementAction>
+    </actions>
+    <enemy name="Monster" id="1" healthPoints="20" baseDamage="10" type="1">
+      <inventory>
+        <WeaponItem id="3" type="2" Damage="6"></WeaponItem>
+        <ArmorItem id="5" defensePoints="30"></ArmorItem>
+      </inventory>
+    </enemy>
+  </room>
+  
+    <room row="1" col="0">
+    <message caption="Te has adentrado en los reconditos del sotano" message="No tienes mucho que hacer aqui, tan solo luchar o irte:"></message>
+    <actions>
+      <StartBattleAction description="Atacar"></StartBattleAction>
+      <MovementAction description="Moverse a la derecha" type="RIGHT"></MovementAction>
+      <MovementAction description="Moverse arriba" type="UP"></MovementAction>
+    </actions>
+    <enemy name="Monster" id="2" healthPoints="90" baseDamage="2" type="2">
+      <inventory>
+        <WeaponItem id="4" type="4" Damage="3"></WeaponItem>
+        <ArmorItem id="6" defensePoints="80"></ArmorItem>
+      </inventory>
+    </enemy>
+  </room>
+  
+      <room row="1" col="1">
+    <message caption="Enhorabuena, has llegado a la sala del tesoro, pero te has encontrado con un boss de la ostia" message="Lo siento amigo, es imposible salir de aquí:"></message>
+    <actions>
+      <StartBattleAction description="Atacar"></StartBattleAction>
+    </actions>
+    <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
+      <inventory>
+        <RecoveryItem id="2" pointsToHealth="50"></RecoveryItem>
+        <WeaponItem id="5" type="4" Damage="5"></WeaponItem>
+        <ArmorItem id="7" defensePoints="100"></ArmorItem>
+      </inventory>
+    </enemy>
+  </room>
+</mapa>
