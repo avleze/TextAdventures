@@ -23,5 +23,5 @@ public interface OutputHandler {
 
     void showMessage(String message);
 
-    void showBattleActions(Set<BattleAction> battleActions);
+    void showActions(Set<Action> actions);
 }

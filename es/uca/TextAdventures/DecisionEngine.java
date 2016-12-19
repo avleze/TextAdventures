@@ -25,7 +25,7 @@ public class DecisionEngine {
     ConsoleInput consoleIn;
     MapLoader mapLoader;
     ActionParameter actionParameters;
-    Set<BattleAction> playerActions;
+    Set<Action> playerActions;
 
     DecisionEngine(PlayerCharacter playerCharacter) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
         this.playerCharacter = playerCharacter;
@@ -36,7 +36,7 @@ public class DecisionEngine {
         this.input = new InputManager(consoleIn);
 
         this.map = mapLoader.loadFromFile("map.xml");
-        this.consoleOut = new ConsoleOutput(90, 100);
+        this.consoleOut = new ConsoleOutput();
 
     }
 
