@@ -10,5 +10,5 @@ import java.util.Set;
  */
 public abstract class Creator {
 
-    public abstract EnemyBehaviour factoryMethod(Set<BattleAction> Actions);
+    public abstract EnemyBehaviour makeEnemyBehaviour(Set<BattleAction> Actions);
 }
