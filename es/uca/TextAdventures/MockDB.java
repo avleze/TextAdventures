@@ -13,11 +13,16 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import org.w3c.dom.DOMException;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.xml.sax.SAXException;
 
 /**
  * Mock de la base de datos.
@@ -135,8 +140,9 @@ public class MockDB {
     private PlayerCharacter getSavedPlayer(Node player){
         NamedNodeMap playerAttributes = player.getAttributes();
 
+        
         int playerBaseDamage = Integer.parseInt(playerAttributes.item(0).getNodeValue());
-        int playerHealthPoints = Integer.parseInt(playerAttributes.item(1).getNodeValue());
+        double playerHealthPoints = Double.parseDouble(playerAttributes.item(1).getNodeValue());
         int playerId = Integer.parseInt(playerAttributes.item(2).getNodeValue());
         String playerName = playerAttributes.item(3).getNodeValue();
         int playerXPosition = Integer.parseInt(playerAttributes.item(4).getNodeValue());
@@ -156,7 +162,7 @@ public class MockDB {
             if (item.getNodeType() == Node.ELEMENT_NODE) {
                 NamedNodeMap itemAttributes = item.getAttributes();
 
-                if (itemAttributes.item(2).getNodeName().equals("damage")) {
+                if (itemAttributes.item(0).getNodeName().equals("damage")) {
                     
                     int damageSaved = Integer.parseInt(itemAttributes.item(2).getNodeValue());
                     int type = Integer.parseInt(itemAttributes.item(1).getNodeValue());
@@ -167,6 +173,7 @@ public class MockDB {
                     }catch(WeaponItem.TypeNotFoundException e){}
                     
                     playerInventory.add(weaponItem);
+              System.out.println(itemAttributes.item(1).getNodeName());
                 } else if(itemAttributes.item(1).getNodeName().equals("pointsToHealth")){
                     int pointsToHealth = Integer.parseInt(itemAttributes.item(1).getNodeValue());
                     int id = Integer.parseInt(itemAttributes.item(0).getNodeValue());

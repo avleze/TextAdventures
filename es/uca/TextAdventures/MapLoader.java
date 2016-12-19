@@ -35,23 +35,23 @@ public class MapLoader {
 
     }
 
-    private Action buildAction(Node action) {
+    private Action buildAction(Node action, Enemy enemy) {
 
         NamedNodeMap actionAtributtes = action.getAttributes();
 
         if (action.getNodeName().equals("StartBattleAction")) {
             String description = actionAtributtes.item(0).getNodeValue();
-            return new StartBattleAction(description, player);
+            return new StartBattleAction(description, player, enemy);
         } else {
-            String description = actionAtributtes.item(1).getNodeValue();
+            String description = actionAtributtes.item(0).getNodeValue();
             MovementAction.movementType movementType
-                    = MovementAction.movementType.valueOf(actionAtributtes.item(0).getNodeValue());
+                    = MovementAction.movementType.valueOf(actionAtributtes.item(1).getNodeValue());
             return new MovementAction(description, player, movementType);
         }
 
     }
 
-    private Set<Action> readActions(NodeList actionsNodes) {
+    private Set<Action> readActions(NodeList actionsNodes, Enemy enemy) {
 
         Set<Action> actions = new HashSet<>();
 
@@ -60,7 +60,7 @@ public class MapLoader {
 
             if (action.getNodeType() == Node.ELEMENT_NODE) {
 
-                actions.add(buildAction(action));
+                actions.add(buildAction(action, enemy));
             }
         }
         return actions;
@@ -78,8 +78,8 @@ public class MapLoader {
 
         } else if (item.getNodeName().equals("WeaponItem")) {
 
-            int idWeapon = Integer.parseInt(itemAtributtes.item(2).getNodeValue());
-            int typeWeapon = Integer.parseInt(itemAtributtes.item(1).getNodeValue());
+            int idWeapon = Integer.parseInt(itemAtributtes.item(1).getNodeValue());
+            int typeWeapon = Integer.parseInt(itemAtributtes.item(2).getNodeValue());
             int damageWeapon = Integer.parseInt(itemAtributtes.item(0).getNodeValue());
             return new WeaponItem(damageWeapon, typeWeapon, idWeapon);
 
@@ -94,13 +94,22 @@ public class MapLoader {
     private Set<Item> readInventory(Node enemy) throws WeaponItem.TypeNotFoundException {
 
         Set<Item> inventory = new HashSet<>();
-        NodeList itemsNodes = enemy.getChildNodes();
+        NodeList inventoryNodes = enemy.getChildNodes();
 
-        for (int i = 0; i < itemsNodes.getLength(); ++i) {
-            Node item = itemsNodes.item(i);
+        for (int i = 0; i < inventoryNodes.getLength(); ++i) {
+            Node inventoryNode = inventoryNodes.item(i);
 
-            if (item.getNodeType() == Node.ELEMENT_NODE) {
-                inventory.add(buildItem(item));
+            if (inventoryNode.getNodeType() == Node.ELEMENT_NODE) {
+                
+                NodeList items = inventoryNode.getChildNodes();
+                
+                for(int j = 0; j < items.getLength(); j++){
+                    Node item = items.item(j);
+                    
+                    if(item.getNodeType() == Node.ELEMENT_NODE)
+                        inventory.add(buildItem(item));
+                }
+                
             }
         }
 
@@ -108,27 +117,27 @@ public class MapLoader {
 
     }
 
-    private Enemy readEnemy(Node enemy) throws WeaponItem.TypeNotFoundException {
+    private Enemy readEnemy(Node enemy) throws Enemy.TypeNotFoundException, WeaponItem.TypeNotFoundException {
 
         NamedNodeMap enemyAtributtes = enemy.getAttributes();
 
-        String name = enemyAtributtes.item(4).getNodeValue();
-        int id = Integer.parseInt(enemyAtributtes.item(3).getNodeValue());
-        int healthPoints = Integer.parseInt(enemyAtributtes.item(2).getNodeValue());
-        int baseDamage = Integer.parseInt(enemyAtributtes.item(1).getNodeValue());
-        int typeEnemy = Integer.parseInt(enemyAtributtes.item(0).getNodeValue());
+        String name = enemyAtributtes.item(3).getNodeValue();
+        int id = Integer.parseInt(enemyAtributtes.item(2).getNodeValue());
+        double healthPoints = Double.parseDouble(enemyAtributtes.item(1).getNodeValue());
+        int baseDamage = Integer.parseInt(enemyAtributtes.item(0).getNodeValue());
+        int typeEnemy = Integer.parseInt(enemyAtributtes.item(4).getNodeValue());
         Set<Item> inventory = readInventory(enemy);
-        
+
         //At the moment Monster, but we will include more Enemies
-        return new Monster(name,id,healthPoints, inventory, baseDamage, typeEnemy);
+        return new Monster(name, id, healthPoints, inventory, baseDamage, typeEnemy);
     }
 
-    private Room readRoom(Document doc, Node room, int row, int col) throws WeaponItem.TypeNotFoundException {
+    private Room readRoom(Document doc, Node room, Room[][] rooms) throws Enemy.TypeNotFoundException, WeaponItem.TypeNotFoundException {
 
         NodeList roomChilds = room.getChildNodes();
         NamedNodeMap attributesForRoom = room.getAttributes();
-        row = Integer.parseInt(attributesForRoom.item(1).getNodeValue());
-        col = Integer.parseInt(attributesForRoom.item(0).getNodeValue());
+        int row = Integer.parseInt(attributesForRoom.item(1).getNodeValue());
+        int col = Integer.parseInt(attributesForRoom.item(0).getNodeValue());
 
         Message message = null;
         Set<Action> actions = new HashSet<>();
@@ -147,7 +156,7 @@ public class MapLoader {
 
                     case "actions":
                         NodeList actionsNodes = roomChild.getChildNodes();
-                        actions = readActions(actionsNodes);
+                        actions = readActions(actionsNodes, enemy);
                         break;
 
                     case "enemy":
@@ -158,11 +167,13 @@ public class MapLoader {
             }
         }
 
-        return new Room(message, actions, enemy);
+        Room ret =  new Room(message, actions, enemy);
+        rooms[row][col] = ret;
+        return ret;
 
     }
 
-    Map loadFromFile(String file) throws WeaponItem.TypeNotFoundException {
+    Map loadFromFile(String file) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
         Map map;
         int width = 0;
         int height = 0;
@@ -183,14 +194,10 @@ public class MapLoader {
             NodeList nRooms = doc.getDocumentElement().getElementsByTagName("room");
 
             for (int i = 0; i < nRooms.getLength(); ++i) {
-
                 Node room = nRooms.item(i);
 
                 if (room.getNodeType() == Node.ELEMENT_NODE) {
-                    int row = 0;
-                    int col = 0;
-                    Room roomReaded = readRoom(doc, room, row, col);
-                    rooms[row][col] = roomReaded;
+                    Room roomReaded = readRoom(doc, room, rooms);
                 }
 
             }

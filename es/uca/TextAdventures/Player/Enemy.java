@@ -23,10 +23,10 @@ public abstract class Enemy extends Player {
 
     private int type;
 
-    class TypeNotFoundException extends Exception {
+    public class TypeNotFoundException extends Exception {
     }
 
-    public Enemy(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage, int type) throws TypeNotFoundException{
+    public Enemy(String name, int id, double healthPoints, Set<Item> inventory, int baseDamage, int type) throws TypeNotFoundException{
         super(name, id, healthPoints, inventory, baseDamage);
         if (type > TYPE_TEPIC || type < TYPE_WATER) {
             TypeNotFoundException exceptionType = new TypeNotFoundException();

@@ -1,6 +1,7 @@
 package es.uca.TextAdventures.EnemyBehaviour;
 
 import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Action.BattleAction;
 
 import java.util.Set;
 
@@ -9,10 +10,10 @@ import java.util.Set;
  */
 public abstract class EnemyBehaviour {
 
-    protected Set<Action> actions;
+    protected Set<BattleAction> actions;
     public abstract Action getAction();
 
-    public EnemyBehaviour (Set<Action> actions) {
+    public EnemyBehaviour (Set<BattleAction> actions) {
         this.actions = actions;
     }
 

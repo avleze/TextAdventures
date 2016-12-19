@@ -20,7 +20,7 @@ public class ConsoleOutput implements OutputHandler {
     private int lastRow;
     private int lastColumn;
 
-    ConsoleOutput(int consoleWidth, int consoleHeight) {
+    public ConsoleOutput(int consoleWidth, int consoleHeight) {
         this.consoleWidth = consoleWidth;
         this.consoleHeight = consoleHeight;
         this.output = new char[consoleWidth][consoleHeight];
@@ -29,7 +29,7 @@ public class ConsoleOutput implements OutputHandler {
     private void clear() {
         for (int i = 0; i < consoleHeight; ++i)
             for (int j = 0; j < consoleWidth; ++j)
-                output[i][j] = ' ';
+                output[j][i] = ' ';
     }
 
     @Override
@@ -45,7 +45,7 @@ public class ConsoleOutput implements OutputHandler {
         int inputWidth = consoleWidth;
 
 
-        String headText = String.format("Current playerCharacter: %s\t Health: %d", playerCharacter.getName(),
+        String headText = String.format("Current playerCharacter: %s\t Health: %f", playerCharacter.getName(),
                 playerCharacter.getHealthPoints());
         String separatorBar = "--------------------------------------------------------------------------------";
 
@@ -61,6 +61,8 @@ public class ConsoleOutput implements OutputHandler {
         for (Action i : actions)
             this.print(String.format("%d. %s", counter++, i.getDescription()), 10, lastRow + 1, consoleWidth, consoleHeight);
         this.print("Selecciona una opcion:", 0, lastRow + 3, consoleWidth, consoleHeight);
+    
+        this.printMatrix();
     }
 
     @Override
@@ -95,12 +97,16 @@ public class ConsoleOutput implements OutputHandler {
     @Override
     public void showBattleActions(Set<BattleAction> battleActions) {
         clear();
-
+        int counter = 1;
+        for(BattleAction i : battleActions)
+            this.print(String.format("%d. %s", counter++, i.getDescription()), 10, lastRow + 1, consoleWidth, consoleHeight);
+        this.print("Selecciona una opcion:", 0, lastRow + 3, consoleWidth, consoleHeight);
+        this.printMatrix();
     }
 
     private void printMatrix() {
-        for (int i = 0; i < consoleHeight; ++i) {
-            for (int j = 0; j < consoleWidth; ++j)
+        for (int i = 0; i < consoleWidth; ++i) {
+            for (int j = 0; j < consoleHeight; ++j)
                 System.out.print(output[i][j]);
             System.out.println("");
         }

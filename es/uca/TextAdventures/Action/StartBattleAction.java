@@ -20,7 +20,7 @@ public class StartBattleAction extends Action {
                              Player enemy) {
         super(description, playerCharacter);
         this.enemy = enemy;
-        Set<Action> playerActions = new HashSet<Action>();
+        Set<BattleAction> playerActions = new HashSet<BattleAction>();
         playerActions.add(new Heal("Curarse.", playerCharacter));
         playerActions.add(new RunAway("Huir.", playerCharacter));
         playerActions.add(new Attack("Atacar.", playerCharacter, enemy));

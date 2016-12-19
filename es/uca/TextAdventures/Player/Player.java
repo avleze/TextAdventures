@@ -27,7 +27,7 @@ public abstract class Player {
             {2, 2, 2, 2, 1}
     };
 
-    public Player(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage) {
+    public Player(String name, int id, double healthPoints, Set<Item> inventory, int baseDamage) {
         this.name = name;
         this.id = id;
         this.healthPoints = healthPoints;

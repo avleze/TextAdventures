@@ -2,6 +2,7 @@ package es.uca.TextAdventures.EnemyBehaviour;
 
 import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Action.Attack;
+import es.uca.TextAdventures.Action.BattleAction;
 import java.util.Set;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Set;
  */
 public class AgressiveEnemyBehaviour extends EnemyBehaviour {
 
-    public AgressiveEnemyBehaviour(Set<Action> actions) {
+    public AgressiveEnemyBehaviour(Set<BattleAction> actions) {
         super(actions);
     }
 

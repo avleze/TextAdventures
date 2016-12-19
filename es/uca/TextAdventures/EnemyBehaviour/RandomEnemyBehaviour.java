@@ -2,6 +2,7 @@ package es.uca.TextAdventures.EnemyBehaviour;
 
 import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Action.Attack;
+import es.uca.TextAdventures.Action.BattleAction;
 import es.uca.TextAdventures.Action.Heal;
 
 import java.util.Random;
@@ -12,7 +13,7 @@ import java.util.Set;
  */
 public class RandomEnemyBehaviour extends EnemyBehaviour{
 
-    public RandomEnemyBehaviour(Set<Action> actions) {
+    public RandomEnemyBehaviour(Set<BattleAction> actions) {
         super(actions);
     }
 

@@ -21,7 +21,7 @@ public class PlayerCharacter extends Player {
     private int yPosition;
     private boolean onBattle;
 
-    public PlayerCharacter(String name, int id, int HealthPoints, Set<Item> Inventory, int baseDamage, int xInitPosition, int yInitPosition) {
+    public PlayerCharacter(String name, int id, double HealthPoints, Set<Item> Inventory, int baseDamage, int xInitPosition, int yInitPosition) {
         super(name, id, HealthPoints, Inventory, baseDamage);
         this.xPosition = xInitPosition;
         this.yPosition = yInitPosition;

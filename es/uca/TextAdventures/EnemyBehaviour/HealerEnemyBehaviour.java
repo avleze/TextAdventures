@@ -1,6 +1,7 @@
 package es.uca.TextAdventures.EnemyBehaviour;
 
 import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Action.BattleAction;
 import es.uca.TextAdventures.Action.Heal;
 import java.util.Set;
 
@@ -9,7 +10,7 @@ import java.util.Set;
  */
 public class HealerEnemyBehaviour extends EnemyBehaviour {
 
-    public HealerEnemyBehaviour(Set<Action> actions) {
+    public HealerEnemyBehaviour(Set<BattleAction> actions) {
         super(actions);
     }
 

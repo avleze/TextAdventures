@@ -13,12 +13,12 @@ import java.util.Set;
 public class ActionParameter {
     private OutputManager output;
     private InputManager input;
-    private Set<Action> playerActions;
+    private Set<BattleAction> playerActions;
     private PlayerCharacter playerCharacter;
     private Enemy enemy;
 
 
-    public ActionParameter(OutputManager output, InputManager input, Set<Action> playerActions, PlayerCharacter playerCharacter, Enemy enemy) {
+    public ActionParameter(OutputManager output, InputManager input, Set<BattleAction> playerActions, PlayerCharacter playerCharacter, Enemy enemy) {
         this.output = output;
         this.input = input;
         this.playerActions = playerActions;
@@ -34,7 +34,7 @@ public class ActionParameter {
         return input;
     }
 
-    public Set<Action> getPlayerActions() {
+    public Set<BattleAction> getPlayerActions() {
         return playerActions;
     }
 
