@@ -19,19 +19,19 @@ public class RandomBehaviourCreator {
         switch (randomnumber) {
             case 1: {
                 Creator factory = new AgressiveCreator();
-                Behaviour = factory.factoryMethod(Actions);
+                Behaviour = factory.makeEnemyBehaviour(Actions);
                 break;
             }
 
             case 2: {
                 Creator factory = new HealerCreator();
-                Behaviour = factory.factoryMethod(Actions);
+                Behaviour = factory.makeEnemyBehaviour(Actions);
                 break;
             }
 
             case 3: {
                 Creator factory = new RandomCreator();
-                Behaviour = factory.factoryMethod(Actions);
+                Behaviour = factory.makeEnemyBehaviour(Actions);
                 break;
             }
 
