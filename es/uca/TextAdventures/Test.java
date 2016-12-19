@@ -1,36 +1,37 @@
 package es.uca.TextAdventures;
 
-import es.uca.TextAdventures.Action.Action;
-import es.uca.TextAdventures.Item.*;
+import es.uca.TextAdventures.Item.Item;
+import es.uca.TextAdventures.Item.RecoveryItem;
+import es.uca.TextAdventures.Item.WeaponItem;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
+
 import java.util.HashSet;
 import java.util.Set;
 
 /**
- *
  * @author juan
  */
 public class Test {
 
-    public static void main(String args[]) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException{
+    public static void main(String args[]) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
 
         Map mapa;
         MapLoader maploader;
         Set<Item> Inventory = new HashSet<>();
-        WeaponItem sword = new WeaponItem(5,0,0);
-        RecoveryItem potion = new RecoveryItem(10,1);
+        WeaponItem sword = new WeaponItem(5, 0, 0);
+        RecoveryItem potion = new RecoveryItem(10, 1);
         MockDB mockDB = new MockDB();
-        
+
         Inventory.add(sword);
         Inventory.add(potion);
-        
+
         PlayerCharacter player = new PlayerCharacter("Juan", 1, 100, Inventory, 10, 0, 0);
-        
+
         DecisionEngine decEng = new DecisionEngine(player);
-        
+
         decEng.run();
-       
+
         //maploader = new MapLoader(player);
 
         //mapa = maploader.loadFromFile("map.xml");

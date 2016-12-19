@@ -1,11 +1,11 @@
 package es.uca.TextAdventures.Output;
 
-import java.util.Set;
-
+import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Action.BattleAction;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
-import es.uca.TextAdventures.Action.Action;
+
+import java.util.Set;
 
 /**
  * ConsoleOutput
@@ -24,6 +24,10 @@ public class ConsoleOutput implements OutputHandler {
         this.consoleWidth = consoleWidth;
         this.consoleHeight = consoleHeight;
         this.output = new char[consoleWidth][consoleHeight];
+    }
+
+    public static void main(String[] args) {
+
     }
 
     private void clear() {
@@ -61,7 +65,7 @@ public class ConsoleOutput implements OutputHandler {
         for (Action i : actions)
             this.print(String.format("%d. %s", counter++, i.getDescription()), 10, lastRow + 1, consoleWidth, consoleHeight);
         this.print("Selecciona una opcion:", 0, lastRow + 3, consoleWidth, consoleHeight);
-    
+
         this.printMatrix();
     }
 
@@ -98,7 +102,7 @@ public class ConsoleOutput implements OutputHandler {
     public void showBattleActions(Set<BattleAction> battleActions) {
         clear();
         int counter = 1;
-        for(BattleAction i : battleActions)
+        for (BattleAction i : battleActions)
             this.print(String.format("%d. %s", counter++, i.getDescription()), 10, lastRow + 1, consoleWidth, consoleHeight);
         this.print("Selecciona una opcion:", 0, lastRow + 3, consoleWidth, consoleHeight);
         this.printMatrix();
@@ -132,9 +136,5 @@ public class ConsoleOutput implements OutputHandler {
         int i = 0;
         for (int x = centerWidth - halfTextLength; x != centerWidth + halfTextLength; ++x)
             output[centerHeight][x] = text.charAt(i++);
-    }
-
-    public static void main(String[] args) {
-
     }
 }

@@ -1,6 +1,7 @@
 package es.uca.TextAdventures.Action;
 
-import es.uca.TextAdventures.Player.*;
+import es.uca.TextAdventures.Player.Player;
+import es.uca.TextAdventures.Player.PlayerCharacter;
 
 public class Attack extends BattleAction {
     private Player enemy;
@@ -8,9 +9,9 @@ public class Attack extends BattleAction {
     /**
      * Constructor
      *
-     * @param description This initializes the parameter of the super-class.
-     * @param playerCharacter      Initializes the super-class parameter.
-     * @param enemy       Initializes the instance variable which represents the Enemy.
+     * @param description     This initializes the parameter of the super-class.
+     * @param playerCharacter Initializes the super-class parameter.
+     * @param enemy           Initializes the instance variable which represents the Enemy.
      */
     public Attack(String description, PlayerCharacter playerCharacter, Player enemy) {
         super(description, playerCharacter);

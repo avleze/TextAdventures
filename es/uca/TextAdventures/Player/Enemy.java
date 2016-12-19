@@ -1,8 +1,8 @@
 package es.uca.TextAdventures.Player;
 
+import es.uca.TextAdventures.Item.ArmorItem;
 import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Item.WeaponItem;
-import es.uca.TextAdventures.Item.ArmorItem;
 
 import java.util.Set;
 
@@ -23,10 +23,7 @@ public abstract class Enemy extends Player {
 
     private int type;
 
-    public class TypeNotFoundException extends Exception {
-    }
-
-    public Enemy(String name, int id, double healthPoints, Set<Item> inventory, int baseDamage, int type) throws TypeNotFoundException{
+    public Enemy(String name, int id, double healthPoints, Set<Item> inventory, int baseDamage, int type) throws TypeNotFoundException {
         super(name, id, healthPoints, inventory, baseDamage);
         if (type > TYPE_TEPIC || type < TYPE_WATER) {
             TypeNotFoundException exceptionType = new TypeNotFoundException();
@@ -40,13 +37,13 @@ public abstract class Enemy extends Player {
 
         int Armor = 0;
         Item playerArmor = currentPlayer.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
-        if (playerArmor != null ) {
+        if (playerArmor != null) {
             Armor = playerArmor.use();
         }
 
         if (this.hasWeapon()) {
-            WeaponItem EnemyWeapon = (WeaponItem)inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-            WeaponItem PlayerWeapon = (WeaponItem)currentPlayer.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+            WeaponItem EnemyWeapon = (WeaponItem) inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+            WeaponItem PlayerWeapon = (WeaponItem) currentPlayer.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
             setHealthPoints((currentPlayer.getHealthPoints() + Armor) - EnemyWeapon.use() * DAMAGE_TABLE[EnemyWeapon.getType()][PlayerWeapon.getType()]);
         } else {
             setHealthPoints(currentPlayer.getHealthPoints() + Armor - this.baseDamage);
@@ -57,6 +54,9 @@ public abstract class Enemy extends Player {
 
     public int getType() {
         return this.type;
+    }
+
+    public class TypeNotFoundException extends Exception {
     }
 
 }

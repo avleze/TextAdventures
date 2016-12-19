@@ -9,10 +9,6 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  * @version 1.1
  */
 public class MovementAction extends Action {
-    public enum movementType {
-        UP, DOWN, LEFT, RIGHT
-    }
-
     /**
      * Constructor
      *
@@ -29,5 +25,9 @@ public class MovementAction extends Action {
      */
     public void run(ActionParameter actionParameters) {
 
+    }
+
+    public enum movementType {
+        UP, DOWN, LEFT, RIGHT
     }
 }
