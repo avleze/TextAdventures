@@ -7,12 +7,13 @@ import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
-import java.util.*;
+
+import java.util.Set;
 
 /**
  * @author Manuel Rodríguez-Sánchez Guerra.
  */
-public class BattleManager{
+public class BattleManager {
 
     EnemyBehaviour enemyBehaviour;
 
@@ -33,9 +34,6 @@ public class BattleManager{
         }
         out.showMessage("Battle has ended");
     }
-
-
-
 
 
 }

@@ -46,9 +46,9 @@ public class Room {
     public Set<Action> getActions() {
         return actions;
     }
-    
+
     public Action getAction(int index) {
-        return (Action)actions.toArray()[index];
+        return (Action) actions.toArray()[index];
     }
 
     /**
