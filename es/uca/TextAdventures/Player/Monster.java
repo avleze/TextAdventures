@@ -13,7 +13,7 @@ import java.util.Set;
 
 public class Monster extends Enemy {
 
-    public Monster(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage, int type) {
+    public Monster(String name, int id, int healthPoints, Set<Item> inventory, int baseDamage, int type) throws Enemy.TypeNotFoundException {
         super(name, id, healthPoints, inventory, baseDamage, type);
     }
 
