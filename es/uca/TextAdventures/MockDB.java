@@ -135,16 +135,27 @@ public class MockDB {
         }
     }
 
-    private PlayerCharacter getSavedPlayer(Node player) {
+    private PlayerCharacter getSavedPlayer(Node player) throws WeaponItem.TypeNotFoundException{
         NamedNodeMap playerAttributes = player.getAttributes();
 
 
-        int playerBaseDamage = Integer.parseInt(playerAttributes.item(0).getNodeValue());
-        double playerHealthPoints = Double.parseDouble(playerAttributes.item(1).getNodeValue());
-        int playerId = Integer.parseInt(playerAttributes.item(2).getNodeValue());
-        String playerName = playerAttributes.item(3).getNodeValue();
-        int playerXPosition = Integer.parseInt(playerAttributes.item(4).getNodeValue());
-        int playerYPosition = Integer.parseInt(playerAttributes.item(5).getNodeValue());
+        int playerBaseDamage = 
+            Integer.parseInt(playerAttributes.getNamedItem("baseDamage").getNodeValue());
+        
+        double playerHealthPoints = 
+            Double.parseDouble(playerAttributes.getNamedItem("healthPoints").getNodeValue());
+        
+        int playerId = 
+            Integer.parseInt(playerAttributes.getNamedItem("id").getNodeValue());
+        
+        String playerName = 
+            playerAttributes.getNamedItem("name").getNodeValue();
+        
+        int playerXPosition = 
+            Integer.parseInt(playerAttributes.getNamedItem("xPosition").getNodeValue());
+        
+        int playerYPosition = 
+            Integer.parseInt(playerAttributes.getNamedItem("yPosition").getNodeValue());
 
         NodeList Inventory = player.getChildNodes();
 
@@ -160,28 +171,24 @@ public class MockDB {
             if (item.getNodeType() == Node.ELEMENT_NODE) {
                 NamedNodeMap itemAttributes = item.getAttributes();
 
-                if (itemAttributes.item(0).getNodeName().equals("damage")) {
+                if (itemAttributes.getNamedItem("damage") != null) {
 
-                    int damageSaved = Integer.parseInt(itemAttributes.item(2).getNodeValue());
-                    int type = Integer.parseInt(itemAttributes.item(1).getNodeValue());
-                    int id = Integer.parseInt(itemAttributes.item(0).getNodeValue());
+                    int damageSaved = Integer.parseInt(itemAttributes.getNamedItem("damage").getNodeValue());
+                    int type = Integer.parseInt(itemAttributes.getNamedItem("type").getNodeValue());
+                    int id = Integer.parseInt(itemAttributes.getNamedItem("id").getNodeValue());
 
-                    try {
-                        weaponItem = new WeaponItem(id, type, damageSaved);
-                    } catch (WeaponItem.TypeNotFoundException e) {
-                    }
-
+                    weaponItem = new WeaponItem(id, type, damageSaved);
                     playerInventory.add(weaponItem);
-                    System.out.println(itemAttributes.item(1).getNodeName());
-                } else if (itemAttributes.item(1).getNodeName().equals("pointsToHealth")) {
-                    int pointsToHealth = Integer.parseInt(itemAttributes.item(1).getNodeValue());
-                    int id = Integer.parseInt(itemAttributes.item(0).getNodeValue());
+                    
+                } else if (itemAttributes.getNamedItem("pointsToHealth") != null) {
+                    int pointsToHealth = Integer.parseInt(itemAttributes.getNamedItem("pointsToHealth").getNodeValue());
+                    int id = Integer.parseInt(itemAttributes.getNamedItem("id").getNodeValue());
 
                     recoveryItem = new RecoveryItem(pointsToHealth, id);
                     playerInventory.add(recoveryItem);
                 } else {
-                    int defensePoints = Integer.parseInt(itemAttributes.item(1).getNodeValue());
-                    int id = Integer.parseInt(itemAttributes.item(0).getNodeValue());
+                    int defensePoints = Integer.parseInt(itemAttributes.getNamedItem("defensePoints").getNodeValue());
+                    int id = Integer.parseInt(itemAttributes.getNamedItem("id").getNodeValue());
 
                     armorItem = new ArmorItem(defensePoints, id);
                     playerInventory.add(armorItem);
@@ -201,7 +208,7 @@ public class MockDB {
         return playerSaved;
     }
 
-    PlayerCharacter loadLastGame() {
+    PlayerCharacter loadLastGame() throws WeaponItem.TypeNotFoundException{
 
         PlayerCharacter savedPlayer = null;
 
