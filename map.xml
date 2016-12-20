@@ -1,4 +1,4 @@
-﻿﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <mapa width="2" height="2">
     <room row="0" col="0">
         <message caption="Estás en la sala principal" message="Hacia donde quieres ir:"></message>
