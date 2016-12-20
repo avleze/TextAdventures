@@ -43,7 +43,6 @@ public class PlayerCharacter extends Player {
 
     @Override
     public boolean attack(Player enemy) {
-        int armor = 0;
 
         if (this.hasWeapon()) {
             if (enemy.hasArmor()) {
