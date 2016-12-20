@@ -13,7 +13,7 @@ public class Attack extends BattleAction {
      * @param playerCharacter Initializes the super-class parameter.
      * @param enemy           Initializes the instance variable which represents the Enemy.
      */
-    public Attack(String description, PlayerCharacter playerCharacter, Player enemy) {
+    public Attack(String description, Player playerCharacter, Player enemy) {
         super(description, playerCharacter);
         this.enemy = enemy;
     }
@@ -23,7 +23,7 @@ public class Attack extends BattleAction {
      * Executes action
      */
     public void run(ActionParameter actionParameters) {
-        this.playerCharacter.attack(this.enemy);
+        this.player.attack(this.enemy);
     }
 
 }

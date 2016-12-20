@@ -1,5 +1,6 @@
 package es.uca.TextAdventures.Action;
 
+import es.uca.TextAdventures.Player.Player;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
 /**
@@ -8,11 +9,11 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  */
 public class Heal extends BattleAction {
 
-    public Heal(String description, PlayerCharacter playerCharacter) {
+    public Heal(String description, Player playerCharacter) {
         super(description, playerCharacter);
     }
 
     public void run(ActionParameter actionParameters) {
-        this.playerCharacter.usePotion();
+        ((PlayerCharacter) this.player).usePotion();
     }
 }

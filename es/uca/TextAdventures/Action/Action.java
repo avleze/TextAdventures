@@ -1,6 +1,6 @@
 package es.uca.TextAdventures.Action;
 
-import es.uca.TextAdventures.Player.PlayerCharacter;
+import es.uca.TextAdventures.Player.Player;
 
 /**
  * This abstract class represents an action of the game.
@@ -10,11 +10,11 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  */
 public abstract class Action {
     protected String description;
-    protected PlayerCharacter playerCharacter;
+    protected Player player;
 
-    public Action(String description, PlayerCharacter playerCharacter) {
+    public Action(String description, Player player) {
         this.description = description;
-        this.playerCharacter = playerCharacter;
+        this.player = player;
     }
 
     public String getDescription() {

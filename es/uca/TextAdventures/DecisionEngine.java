@@ -20,26 +20,22 @@ import java.util.Set;
 public class DecisionEngine {
 
     private PlayerCharacter playerCharacter;
-    private Map map;
-    private ConsoleOutput consoleOut;
     private OutputManager output;
     private InputManager input;
-    private ConsoleInput consoleIn;
     private MapLoader mapLoader;
-    private ActionParameter actionParameters;
-    private Set<Action> playerActions;
 
     DecisionEngine(PlayerCharacter playerCharacter) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
         this.playerCharacter = playerCharacter;
         this.mapLoader = new MapLoader(this.playerCharacter);
-        this.consoleIn = new ConsoleInput();
-        this.input = new InputManager(consoleIn);
-        this.map = mapLoader.loadFromFile("map.xml");
-        this.consoleOut = new ConsoleOutput();
+        this.input = new InputManager(new ConsoleInput());
+
     }
 
-    private void startGame() {
+    private void startGame() throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
         boolean gameOver = false;
+        Set<Action> playerActions;
+        ActionParameter actionParameters;
+        Map map = mapLoader.loadFromFile("map.xml");
 
         while (!gameOver) {
 
@@ -76,7 +72,7 @@ public class DecisionEngine {
     public void run() {
         int menuOption;
 
-        output = new OutputManager(consoleOut, null, playerCharacter);
+        output = new OutputManager(new ConsoleOutput(), null, playerCharacter);
 
         do {
             output.showMenu();
@@ -85,7 +81,11 @@ public class DecisionEngine {
 
         switch (menuOption) {
             case 1:
-                startGame();
+                try {
+                    startGame();
+                } catch (Exception e) {
+
+                }
                 break;
             case 2:
                 // Needs to be implemented
