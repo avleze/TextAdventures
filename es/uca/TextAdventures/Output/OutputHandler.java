@@ -1,6 +1,7 @@
 package es.uca.TextAdventures.Output;
 
 import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
 
@@ -17,6 +18,8 @@ public interface OutputHandler {
     void showWelcomeScreen(PlayerCharacter playerCharacter);
 
     void showCharacterInformation(PlayerCharacter playerCharacter);
+
+    void showEnemyInformation(Enemy enemy);
 
     void showGameOverScreen(PlayerCharacter playerCharacter);
 

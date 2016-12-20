@@ -1,6 +1,7 @@
 package es.uca.TextAdventures.Output;
 
 import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
 
@@ -47,6 +48,8 @@ public class OutputManager {
     public void showCharacterInformation() {
         currentOutputHandler.showCharacterInformation(playerCharacter);
     }
+
+    public void showEnemyInformation(Enemy enemy) { currentOutputHandler.showEnemyInformation(enemy);}
 
     public void showWinnerScreen() {
         currentOutputHandler.showWinnerScreen(playerCharacter);
