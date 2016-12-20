@@ -65,13 +65,13 @@ public class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showGameOverScreen(PlayerCharacter playerCharacter) {
-        String text = String.format("GAME OVER! You should try again %s ...", playerCharacter.getName());
+        String text = String.format(" \u001B[34m GAME OVER! You should try again %s ...  \u001B[0m", playerCharacter.getName());
         System.out.println(text);
     }
 
     @Override
     public void showWinnerScreen(PlayerCharacter playerCharacter) {
-        String text = String.format("You win this time %s ...", playerCharacter.getName());
+        String text = String.format("\u001B[33m You win this time %s ... \u001B[0m", playerCharacter.getName());
         System.out.println(text);
     }
 

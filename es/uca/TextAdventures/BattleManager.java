@@ -21,7 +21,10 @@ public class BattleManager {
     }
 
     public void run(OutputManager out, InputManager in, Set<Action> playerActions, PlayerCharacter player, Enemy enemy) {
-        out.showMessage("Battle is starting, prepare yourself!");
+
+        int input;
+
+        out.showMessage("\u001B[36m Battle is starting, prepare yourself! \u001B[0m");
         player.enableBattle();
         while (player.isAlive() && enemy.isAlive() && player.isOnBattle()) {
             out.showEnemyInformation(enemy);
@@ -30,11 +33,16 @@ public class BattleManager {
             out.showMessage("Enemy attacks!");
             enemyBehaviour.getAction().run(null);
             out.showActions(playerActions);
-            ((Action) playerActions.toArray()[in.getInput() - 1]).run(null);
+
+            do {
+                input = in.getInput() - 1;
+            } while (input > playerActions.size() || input < 0);
+
+            ((Action) playerActions.toArray()[input]).run(null);
 
             out.showMessage("You attack the enemy! It's so effective");
         }
-        out.showMessage("Battle has ended");
+        out.showMessage("\u001B[33m Battle has ended \u001B[0m");
     }
 
 
