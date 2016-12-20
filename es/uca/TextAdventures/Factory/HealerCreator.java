@@ -9,7 +9,7 @@ import java.util.Set;
 /**
  * Created by manuel on 19/12/16.
  */
-public class HealerCreator extends Creator{
+public class HealerCreator extends Creator {
 
     @Override
     public EnemyBehaviour makeEnemyBehaviour(Set<BattleAction> Actions) {

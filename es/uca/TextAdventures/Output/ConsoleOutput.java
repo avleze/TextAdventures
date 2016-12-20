@@ -1,7 +1,6 @@
 package es.uca.TextAdventures.Output;
 
 import es.uca.TextAdventures.Action.Action;
-import es.uca.TextAdventures.Action.BattleAction;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
 

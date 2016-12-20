@@ -4,9 +4,11 @@ import es.uca.TextAdventures.Action.*;
 import es.uca.TextAdventures.Input.ConsoleInput;
 import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Item.WeaponItem;
-import es.uca.TextAdventures.Output.*;
+import es.uca.TextAdventures.Output.ConsoleOutput;
+import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -57,17 +59,15 @@ public class DecisionEngine {
             actionParameters = new ActionParameter(output, input, playerActions, playerCharacter, room.getEnemy());
 
             output.setCurrentRoom(room);
-
             output.show();
+
             Action selectedAction = room.getAction(input.getInput() - 1);
 
             selectedAction.run(actionParameters);
 
             if (!playerCharacter.isAlive()) {
-
                 gameOver = true;
                 output.showGameOverScreen();
-
             }
 
         }
@@ -83,7 +83,7 @@ public class DecisionEngine {
             menuOption = input.getInput();
         } while (menuOption < 1 || menuOption > 3);
 
-        switch(menuOption) {
+        switch (menuOption) {
             case 1:
                 startGame();
                 break;

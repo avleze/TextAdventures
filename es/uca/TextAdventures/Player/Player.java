@@ -13,12 +13,6 @@ import java.util.Set;
 
 public abstract class Player {
 
-    protected String name;
-    protected int id;
-    protected double healthPoints;
-    protected Set<Item> inventory;
-    protected int baseDamage;
-
     static final double DAMAGE_TABLE[][] = {
             {1, 2, 0.5, 1, 0.5},
             {0.5, 1, 2, 1, 0.5},
@@ -26,6 +20,11 @@ public abstract class Player {
             {0.5, 2, 0.5, 1, 0.5},
             {2, 2, 2, 2, 1}
     };
+    protected String name;
+    protected int id;
+    protected double healthPoints;
+    protected Set<Item> inventory;
+    protected int baseDamage;
 
     public Player(String name, int id, double healthPoints, Set<Item> inventory, int baseDamage) {
         this.name = name;
@@ -40,7 +39,13 @@ public abstract class Player {
         return healthPoints;
     }
 
-    public int getBaseDamage() { return baseDamage; }
+    public void setHealthPoints(double healthPoints) {
+        this.healthPoints = healthPoints;
+    }
+
+    public int getBaseDamage() {
+        return baseDamage;
+    }
 
     public int getId() {
         return id;
@@ -52,10 +57,6 @@ public abstract class Player {
 
     public String getName() {
         return name;
-    }
-
-    public void setHealthPoints(double healthPoints) {
-        this.healthPoints = healthPoints;
     }
 
     public boolean isAlive() {

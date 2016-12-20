@@ -11,7 +11,7 @@ import java.util.Set;
 /**
  * Created by manuelrdsg on 4/12/16.
  */
-public class RandomEnemyBehaviour extends EnemyBehaviour{
+public class RandomEnemyBehaviour extends EnemyBehaviour {
 
     public RandomEnemyBehaviour(Set<BattleAction> actions) {
         super(actions);
@@ -23,10 +23,9 @@ public class RandomEnemyBehaviour extends EnemyBehaviour{
         Random rand = new Random();
         Action action;
 
-        if(rand.nextBoolean()){
+        if (rand.nextBoolean()) {
             action = this.actions.stream().filter((i) -> i instanceof Heal).iterator().next();
-        }
-        else {
+        } else {
             action = this.actions.stream().filter((i) -> i instanceof Attack).iterator().next();
         }
 

@@ -9,12 +9,8 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  * @version 1.1
  */
 public class MovementAction extends Action {
-    public enum MovementType {
-        UP, DOWN, LEFT, RIGHT
-    }
-
     MovementType movType;
-    
+
     /**
      * Constructor
      *
@@ -24,7 +20,7 @@ public class MovementAction extends Action {
      */
     public MovementAction(String description, PlayerCharacter player, MovementType tipo) {
         super(description, player);
-        this.movType = tipo; 
+        this.movType = tipo;
     }
 
     @Override
@@ -32,10 +28,10 @@ public class MovementAction extends Action {
      * Executes the action
      */
     public void run(ActionParameter actionParameters) {
-        
+
         PlayerCharacter playerChar = actionParameters.getPlayerCharacter();
-        
-        switch(movType){
+
+        switch (movType) {
             case UP:
                 playerChar.setXPosition(playerChar.getXPosition() - 1);
                 break;
@@ -49,5 +45,9 @@ public class MovementAction extends Action {
                 playerChar.setYPosition(playerChar.getYPosition() + 1);
                 break;
         }
+    }
+
+    public enum MovementType {
+        UP, DOWN, LEFT, RIGHT
     }
 }
