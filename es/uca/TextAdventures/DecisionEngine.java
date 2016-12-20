@@ -43,40 +43,65 @@ public class DecisionEngine {
     void run() {
 
         boolean gameOver = false;
+        int menuOption;
 
         output = new OutputManager(consoleOut, null, playerCharacter);
 
-        while (!gameOver) {
-            
-            if(playerCharacter.getXPosition() == 1 && playerCharacter.getYPosition() == 1){
-                gameOver = true;
-                output.showWinnerScreen();
+        do {
+            output.showMessage("Text Adventures");
+            output.showMessage("1. Load game");
+            output.showMessage("2. New game (unimplemented yet)");
+            output.showMessage("3. Credits (unimplemented yet)");
+            menuOption = input.getInput();
+        } while (menuOption < 1 || menuOption > 3);
+
+        switch(menuOption) {
+            case 1: {
+                while (!gameOver) {
+
+                    if (playerCharacter.getXPosition() == 1 && playerCharacter.getYPosition() == 1) {
+                        gameOver = true;
+                        output.showWinnerScreen();
+                    }
+
+                    Room room = map.getRoom(playerCharacter.getXPosition(),
+                            playerCharacter.getYPosition());
+
+                    playerActions = new HashSet<>();
+                    playerActions.add(new Heal("Curarse.", playerCharacter));
+                    playerActions.add(new RunAway("Huir.", playerCharacter));
+                    playerActions.add(new Attack("Atacar.", playerCharacter, room.getEnemy()));
+
+                    actionParameters = new ActionParameter(output, input, playerActions, playerCharacter, room.getEnemy());
+
+                    output.setCurrentRoom(room);
+
+                    output.show();
+                    Action selectedAction = room.getAction(input.getInput() - 1);
+
+                    selectedAction.run(actionParameters);
+
+                    if (!playerCharacter.isAlive()) {
+
+                        gameOver = true;
+                        output.showGameOverScreen();
+
+                    }
+
+                }
+
+                break;
             }
-            
-            Room room = map.getRoom(playerCharacter.getXPosition(),
-                    playerCharacter.getYPosition());
-            
-            playerActions = new HashSet<>();
-            playerActions.add(new Heal("Curarse.", playerCharacter));
-            playerActions.add(new RunAway("Huir.", playerCharacter));
-            playerActions.add(new Attack("Atacar.", playerCharacter, room.getEnemy()));
 
-            actionParameters = new ActionParameter(output, input, playerActions, playerCharacter, room.getEnemy());
-
-            output.setCurrentRoom(room);
-
-            output.show();
-            Action selectedAction = room.getAction(input.getInput() - 1);
-
-            selectedAction.run(actionParameters);
-
-            if (!playerCharacter.isAlive()) {
-
-                gameOver = true;
-                output.showGameOverScreen();
-
+            case 2: {
+                // Needs to be implemented
+                break;
             }
 
+            case 3: {
+                // Credits
+                break;
+            }
         }
 
     }
