@@ -52,7 +52,7 @@ public class MapLoader {
         } else {
             String description = actionAtributtes.getNamedItem("description").getNodeValue();
             MovementAction.MovementType movementType
-                  = MovementAction.MovementType.valueOf(actionAtributtes.getNamedItem("type").getNodeValue());
+                    = MovementAction.MovementType.valueOf(actionAtributtes.getNamedItem("type").getNodeValue());
             return new MovementAction(description, player, movementType);
         }
 
@@ -79,12 +79,12 @@ public class MapLoader {
 
         if (item.getNodeName().equals("RecoveryItem")) {
 
-            int idRecoveryItem = 
-                 Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
-            
-            int pointsToHealth = 
-                 Integer.parseInt(itemAtributtes.getNamedItem("pointsToHealth").getNodeValue());
-            
+            int idRecoveryItem =
+                    Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
+
+            int pointsToHealth =
+                    Integer.parseInt(itemAtributtes.getNamedItem("pointsToHealth").getNodeValue());
+
             return new RecoveryItem(pointsToHealth, idRecoveryItem);
 
         } else if (item.getNodeName().equals("WeaponItem")) {
@@ -96,7 +96,7 @@ public class MapLoader {
 
         } else {
             int idArmor = Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
-            int defensePoints = 
+            int defensePoints =
                     Integer.parseInt(itemAtributtes.getNamedItem("defensePoints").getNodeValue());
 
             return new ArmorItem(idArmor, defensePoints);
@@ -135,8 +135,8 @@ public class MapLoader {
 
         String name = enemyAtributtes.getNamedItem("name").getNodeValue();
         int id = Integer.parseInt(enemyAtributtes.getNamedItem("id").getNodeValue());
-        double healthPoints = 
-              Double.parseDouble(enemyAtributtes.getNamedItem("healthPoints").getNodeValue());
+        double healthPoints =
+                Double.parseDouble(enemyAtributtes.getNamedItem("healthPoints").getNodeValue());
         int baseDamage = Integer.parseInt(enemyAtributtes.getNamedItem("baseDamage").getNodeValue());
         int typeEnemy = Integer.parseInt(enemyAtributtes.getNamedItem("type").getNodeValue());
         Set<Item> inventory = readInventory(enemy);

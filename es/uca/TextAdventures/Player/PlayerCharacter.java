@@ -45,7 +45,13 @@ public class PlayerCharacter extends Player {
         int armor = 0;
         if (this.hasWeapon()) {
             WeaponItem playerWeapon = (WeaponItem) this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-            ArmorItem enemyArmor = (ArmorItem) enemy.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
+
+            ArmorItem enemyArmor;
+            try {
+                enemyArmor = (ArmorItem) enemy.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
+            } catch (Exception e) {
+                enemyArmor = null;
+            }
 
             if (enemyArmor != null) {
                 armor = enemyArmor.use();

@@ -1,64 +1,61 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <mapa width="2" height="2">
-    <room row="0" col="0">
+    <room col="0" row="0">
         <message caption="main hall" message="What you wanna do?:"></message>
+        <enemy name="Monster" id="0" healthPoints="50" baseDamage="5" type="0"></enemy>
         <actions>
             <StartBattleAction description="Attack"></StartBattleAction>
             <MovementAction description="Move to the right" type="RIGHT"></MovementAction>
             <MovementAction description="Move down." type="DOWN"></MovementAction>
         </actions>
-        <enemy name="Monster" id="0" healthPoints="50" baseDamage="5" type="0">
-            <inventory>
-                <RecoveryItem id="1" pointsToHealth="25"></RecoveryItem>
-                <WeaponItem id="2" type="1" damage="10"></WeaponItem>
-                <ArmorItem id="3" defensePoints="50"></ArmorItem>
-            </inventory>
-        </enemy>
+        <inventory>
+            <RecoveryItem id="1" pointsToHealth="25"></RecoveryItem>
+            <WeaponItem id="2" type="1" damage="10"></WeaponItem>
+            <ArmorItem id="3" defensePoints="50"></ArmorItem>
+        </inventory>
     </room>
 
-    <room row="0" col="1">
+    <room col="0" row="1">
         <message caption="ghost home" message="take care with caspers:"></message>
+        <enemy name="Monster" id="1" healthPoints="20" baseDamage="10" type="1"></enemy>
         <actions>
             <StartBattleAction description="Attack"></StartBattleAction>
             <MovementAction description="Move to the left" type="LEFT"></MovementAction>
             <MovementAction description="Move down" type="DOWN"></MovementAction>
         </actions>
-        <enemy name="Monster" id="1" healthPoints="20" baseDamage="10" type="1">
-            <inventory>
-                <WeaponItem id="3" type="2" damage="6"></WeaponItem>
-                <ArmorItem id="5" defensePoints="30"></ArmorItem>
-            </inventory>
-        </enemy>
+        <inventory>
+            <WeaponItem id="3" type="2" damage="6"></WeaponItem>
+            <ArmorItem id="5" defensePoints="30"></ArmorItem>
+        </inventory>
     </room>
 
-    <room row="1" col="0">
+    <room col="1" row="0">
         <message caption="You have arrived to the enhaunted basement"
                  message="You have no much to do here, either fight or go to another place:"></message>
+        <enemy name="Monster" id="2" healthPoints="90" baseDamage="2" type="2"></enemy>
         <actions>
             <StartBattleAction description="Attack"></StartBattleAction>
             <MovementAction description="Move to the right" type="RIGHT"></MovementAction>
             <MovementAction description="Move up" type="UP"></MovementAction>
         </actions>
-        <enemy name="Monster" id="2" healthPoints="90" baseDamage="2" type="2">
-            <inventory>
-                <WeaponItem id="4" type="4" damage="3"></WeaponItem>
-                <ArmorItem id="6" defensePoints="80"></ArmorItem>
-            </inventory>
-        </enemy>
+        <inventory>
+            <WeaponItem id="4" type="4" damage="3"></WeaponItem>
+            <ArmorItem id="6" defensePoints="80"></ArmorItem>
+        </inventory>
     </room>
 
-    <room row="1" col="1">
+    <room col="1" row="1">
         <message caption="Congratulations, you have arrived at the treasure room, but you have to faced up with the super
         boss" message="Sorry my friend, it's impossible to get out of here:"></message>
+        <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4"></enemy>
+
         <actions>
             <StartBattleAction description="Attack"></StartBattleAction>
         </actions>
-        <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
-            <inventory>
-                <RecoveryItem id="2" pointsToHealth="50"></RecoveryItem>
-                <WeaponItem id="5" type="4" damage="5"></WeaponItem>
-                <ArmorItem id="7" defensePoints="100"></ArmorItem>
-            </inventory>
-        </enemy>
+        <inventory>
+            <RecoveryItem id="2" pointsToHealth="50"></RecoveryItem>
+            <WeaponItem id="5" type="4" damage="5"></WeaponItem>
+            <ArmorItem id="7" defensePoints="100"></ArmorItem>
+        </inventory>
     </room>
 </mapa>

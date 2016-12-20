@@ -35,18 +35,23 @@ public abstract class Enemy extends Player {
     @Override
     public boolean attack(Player currentPlayer) {
 
-        int Armor = 0;
-        Item playerArmor = currentPlayer.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
+        int armor = 0;
+        Item playerArmor;
+        try {
+            playerArmor = currentPlayer.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
+        } catch (Exception e) {
+            playerArmor = null;
+        }
         if (playerArmor != null) {
-            Armor = playerArmor.use();
+            armor = playerArmor.use();
         }
 
         if (this.hasWeapon()) {
             WeaponItem EnemyWeapon = (WeaponItem) inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
             WeaponItem PlayerWeapon = (WeaponItem) currentPlayer.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-            setHealthPoints((currentPlayer.getHealthPoints() + Armor) - EnemyWeapon.use() * DAMAGE_TABLE[EnemyWeapon.getType()][PlayerWeapon.getType()]);
+            setHealthPoints((currentPlayer.getHealthPoints() + armor) - EnemyWeapon.use() * DAMAGE_TABLE[EnemyWeapon.getType()][PlayerWeapon.getType()]);
         } else {
-            setHealthPoints(currentPlayer.getHealthPoints() + Armor - this.baseDamage);
+            setHealthPoints(currentPlayer.getHealthPoints() + armor - this.baseDamage);
         }
 
         return currentPlayer.isAlive();

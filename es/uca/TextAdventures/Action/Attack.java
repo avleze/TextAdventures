@@ -1,10 +1,9 @@
 package es.uca.TextAdventures.Action;
 
 import es.uca.TextAdventures.Player.Player;
-import es.uca.TextAdventures.Player.PlayerCharacter;
 
 public class Attack extends BattleAction {
-    private Player enemy;
+    private Player secondPlayer;
 
     /**
      * Constructor
@@ -13,9 +12,9 @@ public class Attack extends BattleAction {
      * @param playerCharacter Initializes the super-class parameter.
      * @param enemy           Initializes the instance variable which represents the Enemy.
      */
-    public Attack(String description, Player playerCharacter, Player enemy) {
-        super(description, playerCharacter);
-        this.enemy = enemy;
+    public Attack(String description, Player firstPlayer, Player secondPlayer) {
+        super(description, firstPlayer);
+        this.secondPlayer = secondPlayer;
     }
 
     @Override
@@ -23,7 +22,7 @@ public class Attack extends BattleAction {
      * Executes action
      */
     public void run(ActionParameter actionParameters) {
-        this.player.attack(this.enemy);
+        this.player.attack(this.secondPlayer);
     }
 
 }
