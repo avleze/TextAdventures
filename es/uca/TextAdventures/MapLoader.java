@@ -19,6 +19,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -60,7 +61,7 @@ public class MapLoader {
 
     private Set<Action> readActions(NodeList actionsNodes, Enemy enemy) {
 
-        Set<Action> actions = new HashSet<>();
+        Set<Action> actions = new LinkedHashSet<>();
 
         for (int i = 0; i < actionsNodes.getLength(); ++i) {
             Node action = actionsNodes.item(i);
@@ -154,7 +155,7 @@ public class MapLoader {
         Boolean treasureRoom = Boolean.parseBoolean(attributesForRoom.getNamedItem("treasureRoom").getNodeValue());
 
         Message message = null;
-        Set<Action> actions = new HashSet<>();
+        Set<Action> actions = null;
         Enemy enemy = null;
 
         for (int i = 0; i < roomChilds.getLength(); ++i) {

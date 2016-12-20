@@ -10,6 +10,7 @@ import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -42,7 +43,7 @@ public class DecisionEngine {
             Room room = map.getRoom(playerCharacter.getXPosition(),
                     playerCharacter.getYPosition());
 
-            playerActions = new HashSet<>();
+            playerActions = new LinkedHashSet<>();
             playerActions.add(new Heal("Heal.", playerCharacter));
             playerActions.add(new RunAway("Run away.", playerCharacter));
             playerActions.add(new Attack("Attack.", playerCharacter, room.getEnemy()));
