@@ -67,4 +67,12 @@ public class ConsoleOutput implements OutputHandler {
             System.out.println(String.format("%d. %s", counter++, i.getDescription()));
         System.out.println("Selecciona una opcion:");
     }
+
+    @Override
+    public void showMenu() {
+        this.showMessage("Text Adventures");
+        this.showMessage("1. Load game");
+        this.showMessage("2. New game (unimplemented yet)");
+        this.showMessage("3. Credits (unimplemented yet)");
+    }
 }

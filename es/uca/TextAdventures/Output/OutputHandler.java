@@ -24,4 +24,6 @@ public interface OutputHandler {
     void showMessage(String message);
 
     void showActions(Set<Action> actions);
+
+    void showMenu();
 }

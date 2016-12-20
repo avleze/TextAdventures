@@ -55,4 +55,8 @@ public class OutputManager {
     public void showActions(Set<Action> actions) {
         currentOutputHandler.showActions(actions);
     }
+
+    public void showMenu() {
+        currentOutputHandler.showMenu();
+    }
 }
