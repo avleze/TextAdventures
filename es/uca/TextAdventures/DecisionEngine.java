@@ -39,11 +39,6 @@ public class DecisionEngine {
 
         while (!gameOver) {
 
-            if (playerCharacter.getXPosition() == 1 && playerCharacter.getYPosition() == 1) {
-                gameOver = true;
-                output.showWinnerScreen();
-            }
-
             Room room = map.getRoom(playerCharacter.getXPosition(),
                     playerCharacter.getYPosition());
 
@@ -64,6 +59,11 @@ public class DecisionEngine {
             if (!playerCharacter.isAlive()) {
                 gameOver = true;
                 output.showGameOverScreen();
+            }
+            
+            if (room.isTreasureRoom()) {
+                gameOver = true;
+                output.showWinnerScreen();
             }
 
         }

@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<map width="2" height="2">
-    <room col="0" row="0">
+<mapa width="2" height="2">
+    <room col="0" row="0" treasureRoom="false">
       <message caption="main hall" message="What you wanna do?:"></message>
       <enemy name="Monster" id="0" healthPoints="50" baseDamage="5" type="0">
           <inventory>
             <RecoveryItem id="1" pointsToHealth="25"></RecoveryItem>
-            <WeaponItem id="2" type="1" damage="10"></WeaponItem>
-            <ArmorItem id="3" defensePoints="50"></ArmorItem>
+            <ArmorItem id="3" defensePoints="20"></ArmorItem>
           </inventory>
       </enemy>
       <actions>
@@ -16,11 +15,11 @@
       </actions>
     </room>
 
-    <room col="0" row="1">
+    <room col="0" row="1" treasureRoom="false">
       <message caption="ghost home" message="take care with caspers:"></message>
       <enemy name="Monster" id="1" healthPoints="20" baseDamage="10" type="1">
         <inventory>
-          <WeaponItem id="3" type="2" damage="6"></WeaponItem>
+          <WeaponItem id="2" type="2" damage="6"></WeaponItem>
           <ArmorItem id="5" defensePoints="30"></ArmorItem>
         </inventory>
       </enemy>
@@ -31,7 +30,7 @@
       </actions>
     </room>
 
-    <room col="1" row="0">
+    <room col="1" row="0" treasureRoom="false">
       <message caption="You have arrived to the enhaunted basement"
           message="You have no much to do here, either fight or go to another place:"></message>
       <enemy name="Monster" id="2" healthPoints="90" baseDamage="2" type="2">
@@ -47,7 +46,7 @@
       </actions>
     </room>
 
-    <room col="1" row="1">
+    <room col="1" row="1" treasureRoom="true">
         <message caption="Congratulations, you have arrived at the treasure room, but you have to faced up with the super
         boss" message="Sorry my friend, it's impossible to get out of here:"></message>
         <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
@@ -61,4 +60,4 @@
             <StartBattleAction description="Attack"></StartBattleAction>
         </actions>
     </room>
-</map>
+</mapa>

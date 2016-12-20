@@ -53,7 +53,11 @@ public class Room {
     public Action getAction(int index) {
         return (Action) actions.toArray()[index];
     }
-
+    
+    public boolean isTreasureRoom(){
+        return this.treasureRoom;
+    }
+    
     /**
      * Returns the room's enemy.
      *

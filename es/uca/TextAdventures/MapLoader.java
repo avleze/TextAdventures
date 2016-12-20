@@ -151,6 +151,7 @@ public class MapLoader {
         NamedNodeMap attributesForRoom = room.getAttributes();
         int row = Integer.parseInt(attributesForRoom.getNamedItem("row").getNodeValue());
         int col = Integer.parseInt(attributesForRoom.getNamedItem("col").getNodeValue());
+        Boolean treasureRoom = Boolean.parseBoolean(attributesForRoom.getNamedItem("treasureRoom").getNodeValue());
 
         Message message = null;
         Set<Action> actions = new HashSet<>();
@@ -180,7 +181,7 @@ public class MapLoader {
             }
         }
 
-        Room ret = new Room(message, actions, enemy);
+        Room ret = new Room(message, actions, enemy, treasureRoom);
         rooms[row][col] = ret;
         return ret;
 
