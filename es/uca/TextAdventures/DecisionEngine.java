@@ -84,7 +84,7 @@ public class DecisionEngine {
                 try {
                     startGame();
                 } catch (Exception e) {
-
+                    e.printStackTrace();
                 }
                 break;
             case 2:

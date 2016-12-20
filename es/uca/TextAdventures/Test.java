@@ -17,20 +17,20 @@ public class Test {
     public static void main(String args[]) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
 
         Map mapa;
-        MapLoader maploader;
-        Set<Item> Inventory = new HashSet<>();
+        MapLoader mapLoader;
+        Set<Item> inventory = new HashSet<>();
         WeaponItem sword = new WeaponItem(5, 0, 0);
         RecoveryItem potion = new RecoveryItem(10, 1);
         MockDB mockDB = new MockDB();
 
-        Inventory.add(sword);
-        Inventory.add(potion);
+        inventory.add(sword);
+        inventory.add(potion);
 
-        PlayerCharacter player = new PlayerCharacter("Juan", 1, 100, Inventory, 10, 0, 0);
+        PlayerCharacter player = new PlayerCharacter("Juan", 1, 100, inventory, 10, 0, 0);
 
-        DecisionEngine decEng = new DecisionEngine(player);
+        DecisionEngine decisionEngine = new DecisionEngine(player);
 
-        decEng.run();
+        decisionEngine.run();
 
         //maploader = new MapLoader(player);
 

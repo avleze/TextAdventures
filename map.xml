@@ -10,7 +10,7 @@
         <enemy name="Monster" id="0" healthPoints="50" baseDamage="5" type="0">
             <inventory>
                 <RecoveryItem id="1" pointsToHealth="25"></RecoveryItem>
-                <WeaponItem id="2" type="1" Damage="10"></WeaponItem>
+                <WeaponItem id="2" type="1" damage="10"></WeaponItem>
                 <ArmorItem id="3" defensePoints="50"></ArmorItem>
             </inventory>
         </enemy>
@@ -25,7 +25,7 @@
         </actions>
         <enemy name="Monster" id="1" healthPoints="20" baseDamage="10" type="1">
             <inventory>
-                <WeaponItem id="3" type="2" Damage="6"></WeaponItem>
+                <WeaponItem id="3" type="2" damage="6"></WeaponItem>
                 <ArmorItem id="5" defensePoints="30"></ArmorItem>
             </inventory>
         </enemy>
@@ -41,7 +41,7 @@
         </actions>
         <enemy name="Monster" id="2" healthPoints="90" baseDamage="2" type="2">
             <inventory>
-                <WeaponItem id="4" type="4" Damage="3"></WeaponItem>
+                <WeaponItem id="4" type="4" damage="3"></WeaponItem>
                 <ArmorItem id="6" defensePoints="80"></ArmorItem>
             </inventory>
         </enemy>
@@ -56,7 +56,7 @@
         <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
             <inventory>
                 <RecoveryItem id="2" pointsToHealth="50"></RecoveryItem>
-                <WeaponItem id="5" type="4" Damage="5"></WeaponItem>
+                <WeaponItem id="5" type="4" damage="5"></WeaponItem>
                 <ArmorItem id="7" defensePoints="100"></ArmorItem>
             </inventory>
         </enemy>

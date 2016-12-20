@@ -1,5 +1,6 @@
 package es.uca.TextAdventures.Action;
 
+import es.uca.TextAdventures.Player.Player;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
 /**
@@ -7,11 +8,11 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  * @author Antonio Vélez Estévez
  */
 public class RunAway extends BattleAction {
-    public RunAway(String description, PlayerCharacter playerCharacter) {
-        super(description, playerCharacter);
+    public RunAway(String description, Player player) {
+        super(description, player);
     }
 
     public void run(ActionParameter actionParameters) {
-        playerCharacter.disableBattle();
+        ((PlayerCharacter) player).disableBattle();
     }
 }
