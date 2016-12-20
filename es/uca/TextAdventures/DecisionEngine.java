@@ -48,9 +48,9 @@ public class DecisionEngine {
                     playerCharacter.getYPosition());
 
             playerActions = new HashSet<>();
-            playerActions.add(new Heal("Curarse.", playerCharacter));
-            playerActions.add(new RunAway("Huir.", playerCharacter));
-            playerActions.add(new Attack("Atacar.", playerCharacter, room.getEnemy()));
+            playerActions.add(new Heal("Heal.", playerCharacter));
+            playerActions.add(new RunAway("Run away.", playerCharacter));
+            playerActions.add(new Attack("Attack.", playerCharacter, room.getEnemy()));
 
             actionParameters = new ActionParameter(output, input, playerActions, playerCharacter, room.getEnemy());
 

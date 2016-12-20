@@ -75,7 +75,7 @@ public class ConsoleOutput implements OutputHandler {
         int counter = 1;
         for (Action i : actions)
             System.out.println(String.format("%d. %s", counter++, i.getDescription()));
-        System.out.println("Selecciona una opcion:");
+        System.out.println("Choose an option:");
     }
 
     @Override
