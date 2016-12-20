@@ -9,7 +9,7 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
  * @version 1.1
  */
 public class MovementAction extends Action {
-    MovementType movType;
+    MovementType movementType;
 
     /**
      * Constructor
@@ -18,9 +18,9 @@ public class MovementAction extends Action {
      * @param player      Initializes the super-class parameter.
      * @param tipo
      */
-    public MovementAction(String description, PlayerCharacter player, MovementType tipo) {
+    public MovementAction(String description, PlayerCharacter player, MovementType movementType) {
         super(description, player);
-        this.movType = tipo;
+        this.movementType = movementType;
     }
 
     @Override
@@ -29,20 +29,20 @@ public class MovementAction extends Action {
      */
     public void run(ActionParameter actionParameters) {
 
-        PlayerCharacter playerChar = actionParameters.getPlayerCharacter();
+        PlayerCharacter playerChararacter = actionParameters.getPlayerCharacter();
 
-        switch (movType) {
+        switch (this.movementType) {
             case UP:
-                playerChar.setXPosition(playerChar.getXPosition() - 1);
+                playerChararacter.moveUp();
                 break;
             case DOWN:
-                playerChar.setXPosition(playerChar.getXPosition() + 1);
+                playerChararacter.moveDown();
                 break;
             case LEFT:
-                playerChar.setYPosition(playerChar.getYPosition() - 1);
+                playerChararacter.moveLeft();
                 break;
             case RIGHT:
-                playerChar.setYPosition(playerChar.getYPosition() + 1);
+                playerChararacter.moveRight();
                 break;
         }
     }

@@ -74,6 +74,22 @@ public class PlayerCharacter extends Player {
         this.yPosition = yPosition;
     }
 
+    public void moveLeft() {
+        this.xPosition -= 1;
+    }
+
+    public void moveRight() {
+        this.xPosition += 1;
+    }
+
+    public void moveUp() {
+        this.yPosition -= 1;
+    }
+
+    public void moveDown() {
+        this.yPosition += 1;
+    }
+
     public boolean isOnBattle() {
         return onBattle;
     }
