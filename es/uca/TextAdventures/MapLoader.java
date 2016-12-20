@@ -36,8 +36,8 @@ public class MapLoader {
 
     private Message readMessage(NamedNodeMap msgAtributtes) {
 
-        String caption = msgAtributtes.item(0).getNodeValue();
-        String messages = msgAtributtes.item(1).getNodeValue();
+        String caption = msgAtributtes.getNamedItem("caption").getNodeValue();
+        String messages = msgAtributtes.getNamedItem("message").getNodeValue();
         return new Message(caption, messages);
 
     }
@@ -47,12 +47,12 @@ public class MapLoader {
         NamedNodeMap actionAtributtes = action.getAttributes();
 
         if (action.getNodeName().equals("StartBattleAction")) {
-            String description = actionAtributtes.item(0).getNodeValue();
+            String description = actionAtributtes.getNamedItem("description").getNodeValue();
             return new StartBattleAction(description, player, enemy);
         } else {
-            String description = actionAtributtes.item(0).getNodeValue();
+            String description = actionAtributtes.getNamedItem("description").getNodeValue();
             MovementAction.MovementType movementType
-                    = MovementAction.MovementType.valueOf(actionAtributtes.item(1).getNodeValue());
+                  = MovementAction.MovementType.valueOf(actionAtributtes.getNamedItem("type").getNodeValue());
             return new MovementAction(description, player, movementType);
         }
 
@@ -79,20 +79,25 @@ public class MapLoader {
 
         if (item.getNodeName().equals("RecoveryItem")) {
 
-            int idRecoveryItem = Integer.parseInt(itemAtributtes.item(1).getNodeValue());
-            int pointsToHealth = Integer.parseInt(itemAtributtes.item(0).getNodeValue());
+            int idRecoveryItem = 
+                 Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
+            
+            int pointsToHealth = 
+                 Integer.parseInt(itemAtributtes.getNamedItem("pointsToHealth").getNodeValue());
+            
             return new RecoveryItem(pointsToHealth, idRecoveryItem);
 
         } else if (item.getNodeName().equals("WeaponItem")) {
 
-            int idWeapon = Integer.parseInt(itemAtributtes.item(1).getNodeValue());
-            int typeWeapon = Integer.parseInt(itemAtributtes.item(2).getNodeValue());
-            int damageWeapon = Integer.parseInt(itemAtributtes.item(0).getNodeValue());
+            int idWeapon = Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
+            int typeWeapon = Integer.parseInt(itemAtributtes.getNamedItem("type").getNodeValue());
+            int damageWeapon = Integer.parseInt(itemAtributtes.getNamedItem("damage").getNodeValue());
             return new WeaponItem(damageWeapon, typeWeapon, idWeapon);
 
         } else {
-            int idArmor = Integer.parseInt(itemAtributtes.item(1).getNodeValue());
-            int defensePoints = Integer.parseInt(itemAtributtes.item(0).getNodeValue());
+            int idArmor = Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
+            int defensePoints = 
+                    Integer.parseInt(itemAtributtes.getNamedItem("defensePoints").getNodeValue());
 
             return new ArmorItem(idArmor, defensePoints);
         }
@@ -128,11 +133,12 @@ public class MapLoader {
 
         NamedNodeMap enemyAtributtes = enemy.getAttributes();
 
-        String name = enemyAtributtes.item(3).getNodeValue();
-        int id = Integer.parseInt(enemyAtributtes.item(2).getNodeValue());
-        double healthPoints = Double.parseDouble(enemyAtributtes.item(1).getNodeValue());
-        int baseDamage = Integer.parseInt(enemyAtributtes.item(0).getNodeValue());
-        int typeEnemy = Integer.parseInt(enemyAtributtes.item(4).getNodeValue());
+        String name = enemyAtributtes.getNamedItem("name").getNodeValue();
+        int id = Integer.parseInt(enemyAtributtes.getNamedItem("id").getNodeValue());
+        double healthPoints = 
+              Double.parseDouble(enemyAtributtes.getNamedItem("healthPoints").getNodeValue());
+        int baseDamage = Integer.parseInt(enemyAtributtes.getNamedItem("baseDamage").getNodeValue());
+        int typeEnemy = Integer.parseInt(enemyAtributtes.getNamedItem("type").getNodeValue());
         Set<Item> inventory = readInventory(enemy);
 
         //At the moment Monster, but we will include more Enemies
@@ -143,8 +149,8 @@ public class MapLoader {
 
         NodeList roomChilds = room.getChildNodes();
         NamedNodeMap attributesForRoom = room.getAttributes();
-        int row = Integer.parseInt(attributesForRoom.item(1).getNodeValue());
-        int col = Integer.parseInt(attributesForRoom.item(0).getNodeValue());
+        int row = Integer.parseInt(attributesForRoom.getNamedItem("row").getNodeValue());
+        int col = Integer.parseInt(attributesForRoom.getNamedItem("col").getNodeValue());
 
         Message message = null;
         Set<Action> actions = new HashSet<>();
@@ -181,7 +187,6 @@ public class MapLoader {
     }
 
     Map loadFromFile(String file) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
-        Map map;
         int width = 0;
         int height = 0;
         Room[][] rooms = new Room[0][0];
@@ -204,7 +209,7 @@ public class MapLoader {
                 Node room = nRooms.item(i);
 
                 if (room.getNodeType() == Node.ELEMENT_NODE) {
-                    Room roomReaded = readRoom(doc, room, rooms);
+                    readRoom(doc, room, rooms);
                 }
 
             }
