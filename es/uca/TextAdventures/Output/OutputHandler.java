@@ -16,6 +16,8 @@ public interface OutputHandler {
 
     void showWelcomeScreen(PlayerCharacter playerCharacter);
 
+    void showCharacterInformation(PlayerCharacter playerCharacter);
+
     void showGameOverScreen(PlayerCharacter playerCharacter);
 
     void showWinnerScreen(PlayerCharacter playerCharacter);

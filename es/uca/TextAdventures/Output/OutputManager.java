@@ -44,6 +44,8 @@ public class OutputManager {
         currentOutputHandler.showGameOverScreen(playerCharacter);
     }
 
+    public void showCharacterInformation() { currentOutputHandler.showCharacterInformation(playerCharacter);}
+
     public void showWinnerScreen() {
         currentOutputHandler.showWinnerScreen(playerCharacter);
     }

@@ -37,6 +37,17 @@ public class ConsoleOutput implements OutputHandler {
     }
 
     @Override
+    public void showCharacterInformation(PlayerCharacter playerCharacter) {
+        String characterInf = String.format("Current playerCharacter: %s\t Health: %f", playerCharacter.getName(),
+                playerCharacter.getHealthPoints());
+        String separatorBar = "--------------------------------------------------------------------------------";
+
+        System.out.println(separatorBar);
+        System.out.println(characterInf);
+        System.out.println(separatorBar);
+    }
+
+    @Override
     public void showWelcomeScreen(PlayerCharacter playerCharacter) {
         String text = String.format("Welcome to TextAdventures %s, we hope you have fun.", playerCharacter.getName());
         System.out.println(text);

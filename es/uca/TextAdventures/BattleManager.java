@@ -25,6 +25,7 @@ public class BattleManager {
         player.enableBattle();
         while (player.isAlive() && enemy.isAlive() && player.isOnBattle()) {
             out.showMessage("Enemy attacks!");
+            out.showCharacterInformation();
             enemyBehaviour.getAction().run(null);
             out.showActions(playerActions);
             ((Action) playerActions.toArray()[in.getInput() - 1]).run(null);
