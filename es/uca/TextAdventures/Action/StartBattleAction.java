@@ -21,8 +21,8 @@ public class StartBattleAction extends Action {
         super(description, playerCharacter);
         this.enemy = enemy;
         Set<BattleAction> enemyActions = new HashSet<BattleAction>();
-        enemyActions.add(new Heal("Curarse.", playerCharacter));
-        enemyActions.add(new Attack("Atacar.", enemy, playerCharacter));
+        enemyActions.add(new Heal("Heal.", playerCharacter));
+        enemyActions.add(new Attack("Attack.", enemy, playerCharacter));
 
         RandomBehaviourCreator randomBehaviour = new RandomBehaviourCreator();
 
