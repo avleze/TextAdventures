@@ -43,22 +43,31 @@ public class PlayerCharacter extends Player {
     @Override
     public boolean attack(Player enemy) {
         int armor = 0;
+
         if (this.hasWeapon()) {
-            WeaponItem playerWeapon = (WeaponItem) this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+            if (enemy.hasArmor()) {
+                WeaponItem playerWeapon = (WeaponItem) this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+                ArmorItem enemyArmor = (ArmorItem) enemy.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
 
-            ArmorItem enemyArmor;
-            try {
-                enemyArmor = (ArmorItem) enemy.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
-            } catch (Exception e) {
-                enemyArmor = null;
-            }
 
-            if (enemyArmor != null) {
-                armor = enemyArmor.use();
+                if (enemyArmor.isBroken())
+                    enemy.setHealthPoints(enemy.getHealthPoints() - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) enemy).getType()]);
+                else
+                    enemyArmor.decrease(playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) enemy).getType()]);
+            } else {
+                WeaponItem playerWeapon = (WeaponItem) this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+                enemy.setHealthPoints(enemy.getHealthPoints() - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) enemy).getType()]);
             }
-            enemy.setHealthPoints((enemy.getHealthPoints() + armor) - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) enemy).getType()]);
         } else {
-            enemy.setHealthPoints((enemy.getHealthPoints() + armor) - this.baseDamage);
+            if (enemy.hasArmor()) {
+                ArmorItem enemyArmor = (ArmorItem) enemy.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
+
+                if (enemyArmor.isBroken())
+                    enemy.setHealthPoints(enemy.getHealthPoints() - this.baseDamage);
+                else
+                    enemyArmor.decrease(this.baseDamage);
+            } else
+                enemy.setHealthPoints(enemy.getHealthPoints() - this.baseDamage);
         }
 
         return enemy.isAlive();

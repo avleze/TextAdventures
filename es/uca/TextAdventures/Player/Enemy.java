@@ -36,22 +36,31 @@ public abstract class Enemy extends Player {
     public boolean attack(Player currentPlayer) {
 
         int armor = 0;
-        Item playerArmor;
-        try {
-            playerArmor = currentPlayer.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
-        } catch (Exception e) {
-            playerArmor = null;
-        }
-        if (playerArmor != null) {
-            armor = playerArmor.use();
-        }
 
         if (this.hasWeapon()) {
-            WeaponItem EnemyWeapon = (WeaponItem) inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-            WeaponItem PlayerWeapon = (WeaponItem) currentPlayer.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-            setHealthPoints((currentPlayer.getHealthPoints() + armor) - EnemyWeapon.use() * DAMAGE_TABLE[EnemyWeapon.getType()][PlayerWeapon.getType()]);
+            if (currentPlayer.hasArmor()) {
+                WeaponItem playerWeapon = (WeaponItem) this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+                ArmorItem enemyArmor = (ArmorItem) currentPlayer.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
+
+
+                if (enemyArmor.isBroken())
+                    currentPlayer.setHealthPoints(currentPlayer.getHealthPoints() - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) currentPlayer).getType()]);
+                else
+                    enemyArmor.decrease(playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) currentPlayer).getType()]);
+            } else {
+                WeaponItem playerWeapon = (WeaponItem) this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
+                currentPlayer.setHealthPoints(currentPlayer.getHealthPoints() - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) currentPlayer).getType()]);
+            }
         } else {
-            setHealthPoints(currentPlayer.getHealthPoints() + armor - this.baseDamage);
+            if (currentPlayer.hasArmor()) {
+                ArmorItem enemyArmor = (ArmorItem) currentPlayer.inventory.stream().filter((i) -> i instanceof ArmorItem).iterator().next();
+
+                if (enemyArmor.isBroken())
+                    currentPlayer.setHealthPoints(currentPlayer.getHealthPoints() - this.baseDamage);
+                else
+                    enemyArmor.decrease(this.baseDamage);
+            } else
+                currentPlayer.setHealthPoints(currentPlayer.getHealthPoints() - this.baseDamage);
         }
 
         return currentPlayer.isAlive();
@@ -60,6 +69,7 @@ public abstract class Enemy extends Player {
     public int getType() {
         return this.type;
     }
+
 
     public class TypeNotFoundException extends Exception {
     }

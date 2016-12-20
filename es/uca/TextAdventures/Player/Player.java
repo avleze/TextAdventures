@@ -2,6 +2,7 @@ package es.uca.TextAdventures.Player;
 
 import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Item.WeaponItem;
+import es.uca.TextAdventures.Item.ArmorItem;
 
 import java.util.Set;
 
@@ -66,6 +67,10 @@ public abstract class Player {
     public boolean hasWeapon() {
 
         return (inventory.stream().anyMatch((i) -> i instanceof WeaponItem));
+    }
+
+    public boolean hasArmor() {
+        return (inventory.stream().anyMatch((i) -> i instanceof ArmorItem));
     }
 
     public abstract boolean attack(Player otherCharacter);
