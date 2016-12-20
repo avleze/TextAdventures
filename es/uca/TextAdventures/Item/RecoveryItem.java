@@ -9,17 +9,17 @@ package es.uca.TextAdventures.Item;
 
 public class RecoveryItem extends Item {
 
-    private int pointstoHealth;
+    private int pointsToHealth;
 
-    public RecoveryItem(int pointstoHealth, int id) {
+    public RecoveryItem(int pointsToHealth, int id) {
         super(id);
-        this.pointstoHealth = pointstoHealth;
+        this.pointsToHealth = pointsToHealth;
     }
 
 
     @Override
     public int use() {
-        return pointstoHealth;
+        return pointsToHealth;
     }
 
 }
