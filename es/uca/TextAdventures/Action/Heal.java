@@ -14,6 +14,6 @@ public class Heal extends BattleAction {
     }
 
     public void run(ActionParameter actionParameters) {
-        ((PlayerCharacter) this.player).usePotion();
+        this.player.usePotion();
     }
 }

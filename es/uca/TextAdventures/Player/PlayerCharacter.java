@@ -28,6 +28,7 @@ public class PlayerCharacter extends Player {
         this.onBattle = false;
     }
 
+    @Override
     public boolean usePotion() {
         Iterator<Item> itPotion = this.inventory.stream().filter((i) -> i instanceof RecoveryItem).iterator();
         Item potion = itPotion.next();

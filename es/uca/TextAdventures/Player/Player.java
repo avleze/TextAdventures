@@ -64,6 +64,8 @@ public abstract class Player {
         return healthPoints > 0;
     }
 
+    public abstract boolean usePotion();
+
     public boolean hasWeapon() {
 
         return (inventory.stream().anyMatch((i) -> i instanceof WeaponItem));
