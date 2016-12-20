@@ -45,13 +45,13 @@ public abstract class Enemy extends Player {
 
 
                 if (enemyArmor.isBroken())
-                    currentPlayer.setHealthPoints(currentPlayer.getHealthPoints() - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) currentPlayer).getType()]);
+                    currentPlayer.setHealthPoints(currentPlayer.getHealthPoints() - playerWeapon.use() * DAMAGE_TABLE[this.getType()][playerWeapon.getType()]);
                 else
                     enemyArmor.decrease(playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) currentPlayer).getType()]);
 
             } else {
                 WeaponItem playerWeapon = (WeaponItem) this.inventory.stream().filter((i) -> i instanceof WeaponItem).iterator().next();
-                currentPlayer.setHealthPoints(currentPlayer.getHealthPoints() - playerWeapon.use() * DAMAGE_TABLE[playerWeapon.getType()][((Enemy) currentPlayer).getType()]);
+                currentPlayer.setHealthPoints(currentPlayer.getHealthPoints() - playerWeapon.use() * DAMAGE_TABLE[this.getType()][playerWeapon.getType()]);
             }
         } else {
             if (currentPlayer.hasArmor()) {
