@@ -1,0 +1,1110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>927</y>
+      <w>405</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>*DecisionEngine*
+--
+
++run()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>423</y>
+      <w>423</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>*OutputManager*
+--
+- currentOutputHandler : OutputHandler
+- currentRoom : Room
+- playerCharacter : PlayerCharacter
+--
++ OutputManager(in currentOutputHandler : OutputHandler,
+                              in currentRoom : Room,
+                              in playerCharacter : PlayerCharacter)       
++ show() : void
++ setOutputHandler(in outputHandler : OutputHandler) : void
++ showWelcomeScreen() : void
++ showWinnerScreen() : void
++ showGameOverScreen() : void
++ showMessage(in message : String) : void
++ showBattleActions(in battleActions : Set&lt;BattleAction&gt;) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1197</x>
+      <y>639</y>
+      <w>126</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+outputManager</panel_attributes>
+    <additional_attributes>10.0;320.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1197</x>
+      <y>342</y>
+      <w>162</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+currentOutputHandler
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>243</y>
+      <w>405</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>*OutputHandler*
+/&lt;&lt;interface&gt;&gt;/
+--
+/+ show(in playerCharacter : PlayerCharacter,/
+/             in room : Room,/
+/             in Set&lt;Action&gt; actions)/
+/+showMessage(in message: String) : void/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1197</x>
+      <y>153</y>
+      <w>207</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;100.0;10.0;50.0;210.0;50.0;210.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1224</x>
+      <y>0</y>
+      <w>450</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>*ConsoleOutput*
+--
+output : int[][]
+--
++ ConsoleOutput(in consoleWidth : int,
+                            in consoleHeight : int)
++ show(in playerCharacter : PlayerCharacter,
+             in room : Room,
+             in Set&lt;Action&gt; actions)
++ showMessage(in message: Sing) : void
++ showBattleActions(in battleActions : Set&lt;BattleAction&gt;) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1026</x>
+      <y>153</y>
+      <w>198</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>200.0;100.0;200.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>738</x>
+      <y>0</y>
+      <w>450</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>*...*
+--
+...
+--
+...
++ show(in playerCharacter : PlayerCharacter,
+             in room : Room,
+             in Set&lt;Action&gt; actions)
+
++ showMessage(in message: Sing) : void
++ showBattleActions(in battleActions : Set&lt;BattleAction&gt;) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>531</x>
+      <y>927</y>
+      <w>369</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>*InputManager*
+--
+- currentInputHandler : InputHandler
+--
++ InputManager(in currentInputHandler : InputHandler) 
++ getInput(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>891</x>
+      <y>954</y>
+      <w>144</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+inputManager</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>234</x>
+      <y>936</y>
+      <w>135</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*InputHandler*
+/&lt;&lt;interface&gt;&gt;/
+--
+/+ getInput() : int/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>954</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+currentInputHandler</panel_attributes>
+    <additional_attributes>190.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>864</y>
+      <w>144</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>*ConsoleInput*
+--
++ getInput() : int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1035</y>
+      <w>144</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>*...*
+--
+...
++ getInput() : int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>135</x>
+      <y>882</y>
+      <w>117</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>110.0;100.0;50.0;100.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>135</x>
+      <y>963</y>
+      <w>117</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>110.0;10.0;50.0;10.0;50.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>999</y>
+      <w>261</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+currentMap</panel_attributes>
+    <additional_attributes>270.0;10.0;270.0;160.0;10.0;160.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>261</x>
+      <y>1215</y>
+      <w>351</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>*MapLoader*
+--
+- playerCharacter : PlayerCharacter
+--
++ MapLoader(in playerCharacter : PlayerCharacter)
++ loadFromFile(in filepath: String): Map</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>396</x>
+      <y>999</y>
+      <w>675</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+mapLoader</panel_attributes>
+    <additional_attributes>730.0;10.0;730.0;130.0;10.0;130.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>522</x>
+      <y>1125</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*Note*
+We will use the map
+loader as a factory
+of maps.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1125</x>
+      <y>1152</y>
+      <w>369</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>*PlayerCharacter*
+--
+- xPosition : int
+- yPosition : int
+--
++ getXPosition() : int
++ setXPosition(in xPosition: int) : void
++ getYPosition() : int
++ setYPosition(in yPosition: int) : void
++ attack(in enemy: Player) : boolean
++ usePotion() : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1206</x>
+      <y>999</y>
+      <w>108</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1
+currentPlayer</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1125</x>
+      <y>1341</y>
+      <w>369</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>*Room*
+--
+- message : Message
+- actions : Set&lt;Action&gt;
+- enemy : Enemy
+--
++ Room(in message : Message,
+              in actions : Set&lt;Action&gt;,
+              in enemy : Enemy)
++ getMessage() : Message
++ getActions() : Set&lt;Action&gt;
++ getEnemy() : Enemy</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>1359</y>
+      <w>279</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=2..n
+contains &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0;290.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>873</x>
+      <y>1440</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*Note*
+This association is
+represented by
+the rooms attribute.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1521</x>
+      <y>648</y>
+      <w>306</w>
+      <h>297</h>
+    </coordinates>
+    <panel_attributes>*Player*
+/&lt;&lt;abstract&gt;&gt;/
+--
+- name : String
+- id : int
+- healthPoints : double
+- baseDamage : int
+- inventory : Set&lt;Item&gt;
+--
++ Player(in int : id
+               in name : String,
+               in healthPoints : double
+               in damage : int)
++ getHealthPoints() : double
++ getInventory() : Set&lt;Item&gt;
++ getDamage() : int
++ getName() : String
++ setHealthPoints(in healthPoints : int) : void
++ isAlive() : boolean
+/+ attack(in enemy : Player)  : boolean/
++ hasWeapon() : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1305</x>
+      <y>936</y>
+      <w>378</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>400.0;10.0;400.0;140.0;10.0;140.0;10.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1656</x>
+      <y>936</y>
+      <w>333</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>
+lt=&lt;&lt;-
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0;350.0;140.0;350.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>207</x>
+      <y>891</y>
+      <w>702</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>TextAdventures.Output
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>999</x>
+      <y>207</y>
+      <w>486</w>
+      <h>477</h>
+    </coordinates>
+    <panel_attributes>TextAdventures.Output
+--
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1845</x>
+      <y>1143</y>
+      <w>252</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>*Enemy*
+/&lt;&lt;abstract&gt;&gt;/
+--
+type : int
+--
+
++ attack(in enemy: Player) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>1647</x>
+      <y>963</y>
+      <w>181</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+{complete, disjoint}</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//This is an element with activated wordwrap
+//If a line would exceed the elements border, instead
+//the exceeding part is written into the next line
+
+int y=textHeight();
+
+setWordWrap(true);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1692</x>
+      <y>1332</y>
+      <w>252</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>*Monster*
+--
+
+--
+
++ attack(in enemy: Player) : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1980</x>
+      <y>1332</y>
+      <w>189</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>*...*
+--
+
+--
+
+New enemies incoming...</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>2133</x>
+      <y>1143</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>*Note*
+The difference between this
+class and it's subclasses is
+the default implementation
+of the attack method
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1836</x>
+      <y>1233</y>
+      <w>153</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1962</x>
+      <y>1233</y>
+      <w>126</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;120.0;70.0;120.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2043</x>
+      <y>738</y>
+      <w>126</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>*Item*
+/&lt;&lt;abstract&gt;&gt;/
+--
+- id : int
+--
++ Item()
++ getId() : int
+/+ use() : int/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1818</x>
+      <y>783</y>
+      <w>243</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=*
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;250.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>1953</x>
+      <y>1260</y>
+      <w>181</w>
+      <h>73</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+{complete, disjoint}</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//This is an element with activated wordwrap
+//If a line would exceed the elements border, instead
+//the exceeding part is written into the next line
+
+int y=textHeight();
+
+setWordWrap(true);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1881</x>
+      <y>927</y>
+      <w>216</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>*WeaponItem*
+--
+- damage : int
+- type : int
+--
++ WeaponItem(in damage : int,
+                         in type : enum)
++ use() : int
++ getType(): enum</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2412</x>
+      <y>927</y>
+      <w>261</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>*RecoveryItem*
+--
+- pointsToHealth : int
+--
++ RecoveryItem(in recoveryPoints : int)
++ use() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2097</x>
+      <y>846</y>
+      <w>459</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;490.0;50.0;490.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1971</x>
+      <y>846</y>
+      <w>153</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>150.0;10.0;150.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1836</x>
+      <y>702</y>
+      <w>198</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*Note*
+This association is represent
+ed by the inventory attribute.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>2124</x>
+      <y>864</y>
+      <w>181</w>
+      <h>73</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+{complete, disjoint}</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//This is an element with activated wordwrap
+//If a line would exceed the elements border, instead
+//the exceeding part is written into the next line
+
+int y=textHeight();
+
+setWordWrap(true);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1422</x>
+      <y>1611</y>
+      <w>252</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>*Message*
+--
+- caption : String
+- message : String
+--
++ getCaption() : String
++ getMessage() : String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>963</x>
+      <y>1602</y>
+      <w>306</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>*Action*
+/&lt;&lt;abstract&gt;&gt;/
+--
+- description : String
+- player : PlayerCharacter
+--
++ Action(in description : String,
+               in playerCharacter: PlayerCharacter)
++ getDescription() : String
+/+ run(in actionParameters : ActionParameter)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1089</x>
+      <y>1494</y>
+      <w>225</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..n
+&lt; has</panel_attributes>
+    <additional_attributes>230.0;10.0;230.0;80.0;10.0;80.0;10.0;123.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>864</x>
+      <y>1521</y>
+      <w>198</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>*Note*
+This association is represent
+ed by the actions attribute.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1350</x>
+      <y>1494</y>
+      <w>216</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>220.0;130.0;220.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <type>CustomElementImpl</type>
+    <coordinates>
+      <x>1098</x>
+      <y>1755</y>
+      <w>181</w>
+      <h>73</h>
+    </coordinates>
+    <panel_attributes>// Modify the text below and
+// observe the element preview.
+
+{complete, disjoint}</panel_attributes>
+    <additional_attributes/>
+    <custom_code>//This is an element with activated wordwrap
+//If a line would exceed the elements border, instead
+//the exceeding part is written into the next line
+
+int y=textHeight();
+
+setWordWrap(true);
+
+for(String textline : textlines) {
+	y += printCenter(textline,y);
+}</custom_code>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>432</x>
+      <y>1818</y>
+      <w>468</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>*MovementAction*
+--
+- movementType : enum{UP, DOWN, LEFT, RIGHT}
+--
++ MovementAction(in description : String,
+                               in playerCharacter: PlayerCharacter
+                               in movementType : enum{UP, DOWN, LEFT, RIGHT})
++ run(in actionParameters : ActionParameter)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1818</x>
+      <y>1809</y>
+      <w>342</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>*BattleAction*
+/&lt;&lt;abstract&gt;&gt;/
+--
+- enemy : Player
+--
++ BattleAction(in description : String,
+                        in playerCharacter: PlayerCharacter
+                        in enemy : Player)
+/+ run(in actionParameters : ActionParameter)/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1089</x>
+      <y>1737</y>
+      <w>27</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>1737</y>
+      <w>396</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;420.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>1809</y>
+      <w>342</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>*StartBattleAction*
+
+--
+- enemy : Player
+--
++ StartBattleAction(in description : String,
+                        in playerCharacter: PlayerCharacter
+                        in enemy : Player)
++ run(in actionParameters : ActionParameter)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1278</x>
+      <y>1872</y>
+      <w>72</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1089</x>
+      <y>1737</y>
+      <w>909</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;990.0;50.0;990.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1665</x>
+      <y>1863</y>
+      <w>171</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1..*
+has &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1332</x>
+      <y>1809</y>
+      <w>342</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>*BattleManager*
+
+--
+- enemy : Player
+--
++ BattleAction(in description : String,
+                        in playerCharacter: PlayerCharacter
+                        in enemy : Player)
++ run(in actionParameters : ActionParameter)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1998</x>
+      <y>1935</y>
+      <w>27</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1485</x>
+      <y>2034</y>
+      <w>342</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>*Attack*
+--
+- enemy : Player
+--
++ BattleAction(in description : String,
+                        in playerCharacter: PlayerCharacter
+                        in enemy : Player)
++ run(in actionParameters : ActionParameter)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1854</x>
+      <y>2034</y>
+      <w>342</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>*Heal*
+--
+- enemy : Player
+--
++ BattleAction(in description : String,
+                        in playerCharacter: PlayerCharacter
+                        in enemy : Player)
++ run(in actionParameters : ActionParameter)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2223</x>
+      <y>2034</y>
+      <w>342</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>*Run*
+--
+- enemy : Player
+--
++ BattleAction(in description : String,
+                        in playerCharacter: PlayerCharacter
+                        in enemy : Player)
++ run(in actionParameters : ActionParameter)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1647</x>
+      <y>1971</y>
+      <w>765</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;70.0;10.0;20.0;830.0;20.0;830.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2124</x>
+      <y>927</y>
+      <w>261</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>*ArmorItem*
+--
+- defensePoints : int
+--
++ ArmorItem(in defensePoints : int)
++ getArmor() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2250</x>
+      <y>882</y>
+      <w>27</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>693</x>
+      <y>1215</y>
+      <w>369</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>*Map*
+--
+- rooms : Room[][]
+- width : int
+- height: int
+--
++ getRooms() : Room[][]
++ getRoom(in x : int, in y: int) : Room
++ setRooms(in rooms : void
++ getWidth() : int
++ setWidth(in width: int) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
