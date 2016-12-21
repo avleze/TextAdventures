@@ -2,7 +2,7 @@ package es.uca.TextAdventures.Player;
 
 import es.uca.TextAdventures.Item.ArmorItem;
 import es.uca.TextAdventures.Item.Item;
-import es.uca.TextAdventures.Item.RecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.RecoveryItem;
 import es.uca.TextAdventures.Item.WeaponItem;
 
 import java.util.Iterator;

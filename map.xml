@@ -4,7 +4,7 @@
       <message caption="main hall" message="What you wanna do?:"></message>
       <enemy name="Monster" id="0" healthPoints="50" baseDamage="5" type="0">
           <inventory>
-            <RecoveryItem id="1" pointsToHealth="25"></RecoveryItem>
+              <SimpleRecoveryItem id="1" pointsToHealth="25"></SimpleRecoveryItem>
             <ArmorItem id="3" defensePoints="20"></ArmorItem>
           </inventory>
       </enemy>
@@ -51,7 +51,7 @@
         boss" message="Sorry my friend, it's impossible to get out of here:"></message>
         <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
           <inventory>
-            <RecoveryItem id="2" pointsToHealth="50"></RecoveryItem>
+              <HyperRecoveryItem id="2" pointsToHealth="50"></HyperRecoveryItem>
             <WeaponItem id="5" type="4" damage="5"></WeaponItem>
             <ArmorItem id="7" defensePoints="100"></ArmorItem>
           </inventory>        

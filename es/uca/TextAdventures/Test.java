@@ -1,7 +1,10 @@
 package es.uca.TextAdventures;
 
+import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Item.Item;
-import es.uca.TextAdventures.Item.RecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.RecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.SimpleRecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.SuperRecoveryItem;
 import es.uca.TextAdventures.Item.WeaponItem;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
@@ -20,11 +23,11 @@ public class Test {
         MapLoader mapLoader;
         Set<Item> inventory = new HashSet<>();
         WeaponItem sword = new WeaponItem(5, 0, 0);
-        RecoveryItem potion = new RecoveryItem(10, 1);
+        RecoveryItem superPotion = new SuperRecoveryItem(new SimpleRecoveryItem(10, 1));
         MockDB mockDB = new MockDB();
 
         inventory.add(sword);
-        inventory.add(potion);
+        inventory.add(superPotion);
 
         PlayerCharacter player = new PlayerCharacter("Juan", 1, 100, inventory, 10, 0, 0);
 
@@ -32,14 +35,14 @@ public class Test {
 
         decisionEngine.run();
 
-        //maploader = new MapLoader(player);
+        /*mapLoader = new MapLoader(player);
 
-        //mapa = maploader.loadFromFile("map.xml");
+        mapa = mapLoader.loadFromFile("map.xml");
 
-        /*System.out.println("Tamaño: " + mapa.getWidth() + "x" + mapa.getHeight());
+        System.out.println("Tamaño: " + mapa.getWidth() + "x" + mapa.getHeight());
         Room[][] room = mapa.getRooms();
 
-        /*System.out.println(room[0][0].getMessage().getCaption());
+        System.out.println(room[0][0].getMessage().getCaption());
         System.out.println(room[0][0].getMessage().getMessage());
         for(Action action : room[0][0].getActions()){
             System.out.println(action.getDescription());
@@ -54,9 +57,9 @@ public class Test {
         System.out.println(room[1][0].getMessage().getCaption());
         System.out.println(room[1][0].getMessage().getMessage());
         System.out.println(room[1][0].getActions().size());
-        System.out.println(room[1][0].getEnemy().getName());*/
+        System.out.println(room[1][0].getEnemy().getName());
         
-        /*player.setYPosition(1);
+        player.setYPosition(1);
         
         mockDB.saveCurrentGame(player);
         

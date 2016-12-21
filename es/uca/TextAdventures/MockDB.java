@@ -2,7 +2,10 @@ package es.uca.TextAdventures;
 
 import es.uca.TextAdventures.Item.ArmorItem;
 import es.uca.TextAdventures.Item.Item;
-import es.uca.TextAdventures.Item.RecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.HyperRecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.RecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.SimpleRecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.SuperRecoveryItem;
 import es.uca.TextAdventures.Item.WeaponItem;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import org.w3c.dom.*;
@@ -86,7 +89,7 @@ public class MockDB {
 
                     playerInventory.appendChild(weapon);
 
-                } else if (item.getClass().getSimpleName().equals("RecoveryItem")) {
+                } else if (item.getClass().getSimpleName().equals("SimpleRecoveryItem")) {
                     recoveryItem = (RecoveryItem) item;
                     Element potion = doc.createElement("RecoveryItem");
 
@@ -95,6 +98,27 @@ public class MockDB {
                     createAttr(doc, potion, "id", Integer.toString(recoveryItem.getId()));
 
                     playerInventory.appendChild(potion);
+
+                } else if (item.getClass().getSimpleName().equals("SuperRecoveryItem")) {
+                    recoveryItem = (RecoveryItem) item;
+                    Element potion = doc.createElement("SuperRecoveryItem");
+
+                    createAttr(doc, potion, "pointsToHealth",
+                            Integer.toString(recoveryItem.use()));
+                    createAttr(doc, potion, "id", Integer.toString(recoveryItem.getId()));
+
+                    playerInventory.appendChild(potion);
+
+                } else if (item.getClass().getSimpleName().equals("HyperRecoveryItem")) {
+                    recoveryItem = (RecoveryItem) item;
+                    Element potion = doc.createElement("HyperRecoveryItem");
+
+                    createAttr(doc, potion, "pointsToHealth",
+                            Integer.toString(recoveryItem.use()));
+                    createAttr(doc, potion, "id", Integer.toString(recoveryItem.getId()));
+
+                    playerInventory.appendChild(potion);
+
                 } else {
                     armorItem = (ArmorItem) item;
                     Element armor = doc.createElement("ArmorItem");
@@ -184,7 +208,14 @@ public class MockDB {
                     int pointsToHealth = Integer.parseInt(itemAttributes.getNamedItem("pointsToHealth").getNodeValue());
                     int id = Integer.parseInt(itemAttributes.getNamedItem("id").getNodeValue());
 
-                    recoveryItem = new RecoveryItem(pointsToHealth, id);
+                    if (item.getNodeName().equals("SimpleRecoveryItem"))
+                        recoveryItem = new SimpleRecoveryItem(pointsToHealth, id);
+                    else if (item.getNodeName().equals("SuperRecoveryItem"))
+                        recoveryItem = new SuperRecoveryItem(new SimpleRecoveryItem(pointsToHealth, id));
+                    else
+                        recoveryItem = new HyperRecoveryItem(new SuperRecoveryItem(new SimpleRecoveryItem(pointsToHealth, id)));
+
+
                     playerInventory.add(recoveryItem);
                 } else {
                     int defensePoints = Integer.parseInt(itemAttributes.getNamedItem("defensePoints").getNodeValue());

@@ -5,7 +5,9 @@ import es.uca.TextAdventures.Action.MovementAction;
 import es.uca.TextAdventures.Action.StartBattleAction;
 import es.uca.TextAdventures.Item.ArmorItem;
 import es.uca.TextAdventures.Item.Item;
-import es.uca.TextAdventures.Item.RecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.HyperRecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.SimpleRecoveryItem;
+import es.uca.TextAdventures.Item.RecoveryItemDecorator.SuperRecoveryItem;
 import es.uca.TextAdventures.Item.WeaponItem;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.Monster;
@@ -78,7 +80,7 @@ public class MapLoader {
 
         NamedNodeMap itemAtributtes = item.getAttributes();
 
-        if (item.getNodeName().equals("RecoveryItem")) {
+        if (item.getNodeName().equals("SimpleRecoveryItem")) {
 
             int idRecoveryItem =
                     Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
@@ -86,7 +88,25 @@ public class MapLoader {
             int pointsToHealth =
                     Integer.parseInt(itemAtributtes.getNamedItem("pointsToHealth").getNodeValue());
 
-            return new RecoveryItem(pointsToHealth, idRecoveryItem);
+            return new SimpleRecoveryItem(pointsToHealth, idRecoveryItem);
+
+        } else if (item.getNodeName().equals("SuperRecoveryItem")) {
+            int idRecoveryItem =
+                    Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
+
+            int pointsToHealth =
+                    Integer.parseInt(itemAtributtes.getNamedItem("pointsToHealth").getNodeValue());
+
+            return new SuperRecoveryItem(new SimpleRecoveryItem(pointsToHealth, idRecoveryItem));
+
+        } else if (item.getNodeName().equals("HyperRecoveryItem")) {
+            int idRecoveryItem =
+                    Integer.parseInt(itemAtributtes.getNamedItem("id").getNodeValue());
+
+            int pointsToHealth =
+                    Integer.parseInt(itemAtributtes.getNamedItem("pointsToHealth").getNodeValue());
+
+            return new HyperRecoveryItem(new SuperRecoveryItem(new SimpleRecoveryItem(pointsToHealth, idRecoveryItem)));
 
         } else if (item.getNodeName().equals("WeaponItem")) {
 
