@@ -10,6 +10,6 @@ public class SuperRecoveryItem extends RecoveryItemDecorator {
     }
 
     public int use() {
-        return super.use() + 20;
+        return super.use() + 10;
     }
 }
