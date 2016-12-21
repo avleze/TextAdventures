@@ -52,8 +52,15 @@ public class DecisionEngine {
 
             output.setCurrentRoom(room);
             output.show();
+            int option;
 
-            Action selectedAction = room.getAction(input.getInput() - 1);
+            Action selectedAction = null;
+
+            do {
+                option = input.getInput();
+            } while (option > room.getActions().size() || option <= 0);
+
+            selectedAction = room.getAction(option - 1);
 
             selectedAction.run(actionParameters);
 

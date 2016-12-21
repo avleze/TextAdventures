@@ -35,10 +35,10 @@ public class BattleManager {
             out.showActions(playerActions);
 
             do {
-                input = in.getInput() - 1;
-            } while (input > playerActions.size() || input < 0);
+                input = in.getInput();
+            } while (input > playerActions.size() || input <= 0);
 
-            ((Action) playerActions.toArray()[input]).run(null);
+            ((Action) playerActions.toArray()[input - 1]).run(null);
 
             out.showMessage("You attack the enemy! It's so effective");
         }
