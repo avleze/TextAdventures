@@ -10,7 +10,9 @@ import es.uca.TextAdventures.Player.PlayerCharacter;
 import java.util.Set;
 
 /**
- * @author Manuel Rodríguez-Sánchez Guerra.
+ * es.uca.TextAdventures.BattleManager
+ *
+ * @author Manuel Rodríguez-Sánchez Guerra
  */
 public class BattleManager {
 

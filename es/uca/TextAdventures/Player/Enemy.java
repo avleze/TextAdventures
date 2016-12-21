@@ -35,8 +35,6 @@ public abstract class Enemy extends Player {
     @Override
     public boolean attack(Player currentPlayer) {
 
-        int armor = 0;
-
         if (this.hasWeapon()) {
             if (currentPlayer.hasArmor()) {
 
