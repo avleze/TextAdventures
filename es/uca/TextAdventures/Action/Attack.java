@@ -9,8 +9,8 @@ public class Attack extends BattleAction {
      * Constructor
      *
      * @param description     This initializes the parameter of the super-class.
-     * @param playerCharacter Initializes the super-class parameter.
-     * @param enemy           Initializes the instance variable which represents the Enemy.
+     * @param firstPlayer     Initializes the super-class parameter.
+     * @param secondPlayer    Initializes the instance variable which represents the Enemy.
      */
     public Attack(String description, Player firstPlayer, Player secondPlayer) {
         super(description, firstPlayer);

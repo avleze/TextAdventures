@@ -16,7 +16,7 @@ public class MovementAction extends Action {
      *
      * @param description This initializes the parameter of the super-class.
      * @param player      Initializes the super-class parameter.
-     * @param tipo
+     * @param movementType Indicates the type of the action.
      */
     public MovementAction(String description, PlayerCharacter player, MovementType movementType) {
         super(description, player);
@@ -29,20 +29,20 @@ public class MovementAction extends Action {
      */
     public void run(ActionParameter actionParameters) {
 
-        PlayerCharacter playerChararacter = actionParameters.getPlayerCharacter();
+        PlayerCharacter playerCharacter = actionParameters.getPlayerCharacter();
 
         switch (this.movementType) {
             case UP:
-                playerChararacter.moveUp();
+                playerCharacter.moveUp();
                 break;
             case DOWN:
-                playerChararacter.moveDown();
+                playerCharacter.moveDown();
                 break;
             case LEFT:
-                playerChararacter.moveLeft();
+                playerCharacter.moveLeft();
                 break;
             case RIGHT:
-                playerChararacter.moveRight();
+                playerCharacter.moveRight();
                 break;
         }
     }

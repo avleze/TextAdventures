@@ -23,7 +23,7 @@ public class Room {
      * @param message Message of the room
      * @param actions Set the available actions within the room
      * @param enemy   The enemy in the room
-     * @param treasureRoom Indicates wether this room is the treasure one or not.
+     * @param treasureRoom Indicates whether this room is the treasure one or not.
      */
     public Room(Message message, Set<Action> actions, Enemy enemy, boolean treasureRoom) {
         this.message = message;

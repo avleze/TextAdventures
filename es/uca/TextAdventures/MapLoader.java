@@ -208,7 +208,7 @@ public class MapLoader {
 
     }
 
-    Map loadFromFile(String file) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
+    public Map loadFromFile(String file) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
         int width = 0;
         int height = 0;
         Room[][] rooms = new Room[0][0];

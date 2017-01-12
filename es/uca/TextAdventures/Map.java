@@ -25,7 +25,7 @@ public class Map {
         this.rooms = rooms;
     }
 
-    Room getRoom(int x, int y) {
+    public Room getRoom(int x, int y) {
         return rooms[x][y];
     }
 
