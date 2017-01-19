@@ -2,8 +2,6 @@ package es.uca.TextAdventures.EnemyBehaviour;
 
 import es.uca.TextAdventures.Action.BattleAction;
 import es.uca.TextAdventures.Action.*;
-import es.uca.TextAdventures.Input.ConsoleInput;
-import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Item.RecoveryItemDecorator.RecoveryItem;
 import es.uca.TextAdventures.Item.RecoveryItemDecorator.SimpleRecoveryItem;
@@ -11,8 +9,6 @@ import es.uca.TextAdventures.Item.RecoveryItemDecorator.SuperRecoveryItem;
 import es.uca.TextAdventures.Item.WeaponItem;
 import es.uca.TextAdventures.Map;
 import es.uca.TextAdventures.MapLoader;
-import es.uca.TextAdventures.Output.ConsoleOutput;
-import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
 import org.junit.Test;
