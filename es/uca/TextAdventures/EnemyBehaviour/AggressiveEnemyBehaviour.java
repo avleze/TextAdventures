@@ -9,9 +9,9 @@ import java.util.Set;
 /**
  * Created by manuelrdsg on 4/12/16.
  */
-public class AgressiveEnemyBehaviour extends EnemyBehaviour {
+public class AggressiveEnemyBehaviour extends EnemyBehaviour {
 
-    public AgressiveEnemyBehaviour(Set<BattleAction> actions) {
+    public AggressiveEnemyBehaviour(Set<BattleAction> actions) {
         super(actions);
     }
 

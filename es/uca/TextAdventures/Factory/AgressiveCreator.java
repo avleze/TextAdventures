@@ -1,7 +1,7 @@
 package es.uca.TextAdventures.Factory;
 
 import es.uca.TextAdventures.Action.BattleAction;
-import es.uca.TextAdventures.EnemyBehaviour.AgressiveEnemyBehaviour;
+import es.uca.TextAdventures.EnemyBehaviour.AggressiveEnemyBehaviour;
 import es.uca.TextAdventures.EnemyBehaviour.EnemyBehaviour;
 
 import java.util.Set;
@@ -12,6 +12,6 @@ import java.util.Set;
 public class AgressiveCreator extends Creator {
     @Override
     public EnemyBehaviour makeEnemyBehaviour(Set<BattleAction> Actions) {
-        return new AgressiveEnemyBehaviour(Actions);
+        return new AggressiveEnemyBehaviour(Actions);
     }
 }
