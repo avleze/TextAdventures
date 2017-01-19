@@ -36,10 +36,6 @@ public class TestEnemyBehaviour {
 
         PlayerCharacter playerCharacter = new PlayerCharacter("Juan", 1, 100, inventory, 10, 0, 0);
 
-        OutputManager output = new OutputManager(new ConsoleOutput(), null, playerCharacter);
-
-        InputManager input = new InputManager(new ConsoleInput());
-
         MapLoader mapLoader = new MapLoader(playerCharacter);
 
         Map map = mapLoader.loadFromFile("map.xml");
@@ -72,10 +68,6 @@ public class TestEnemyBehaviour {
 
         PlayerCharacter playerCharacter = new PlayerCharacter("Juan", 1, 100, inventory, 10, 0, 0);
 
-        OutputManager output = new OutputManager(new ConsoleOutput(), null, playerCharacter);
-
-        InputManager input = new InputManager(new ConsoleInput());
-
         MapLoader mapLoader = new MapLoader(playerCharacter);
 
         Map map = mapLoader.loadFromFile("map.xml");
@@ -107,10 +99,6 @@ public class TestEnemyBehaviour {
         inventory.add(superPotion);
 
         PlayerCharacter playerCharacter = new PlayerCharacter("Juan", 1, 100, inventory, 10, 0, 0);
-
-        OutputManager output = new OutputManager(new ConsoleOutput(), null, playerCharacter);
-
-        InputManager input = new InputManager(new ConsoleInput());
 
         MapLoader mapLoader = new MapLoader(playerCharacter);
 
