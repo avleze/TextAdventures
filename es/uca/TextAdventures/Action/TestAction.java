@@ -9,12 +9,11 @@ import es.uca.TextAdventures.Item.RecoveryItemDecorator.SuperRecoveryItem;
 import es.uca.TextAdventures.Item.WeaponItem;
 import es.uca.TextAdventures.Map;
 import es.uca.TextAdventures.MapLoader;
-import es.uca.TextAdventures.Output.ConsoleOutput;
+import es.uca.TextAdventures.Output.NormalConsoleOutput;
 import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.Monster;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
-
 import org.junit.jupiter.api.*;
 
 import java.util.HashSet;
@@ -48,7 +47,7 @@ public class TestAction {
 
         this.playerCharacter = new PlayerCharacter("Juan", 1, 100, inventory, 10, 0, 0);
 
-        this.output = new OutputManager(new ConsoleOutput(), null, playerCharacter);
+        this.output = new OutputManager(new NormalConsoleOutput(), null, playerCharacter);
 
         this.input = new InputManager(new ConsoleInput());
 

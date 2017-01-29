@@ -4,12 +4,11 @@ import es.uca.TextAdventures.Action.*;
 import es.uca.TextAdventures.Input.ConsoleInput;
 import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Item.WeaponItem;
-import es.uca.TextAdventures.Output.ConsoleOutput;
+import es.uca.TextAdventures.Output.NormalConsoleOutput;
 import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -80,7 +79,7 @@ public class DecisionEngine {
     public void run() {
         int menuOption;
 
-        output = new OutputManager(new ConsoleOutput(), null, playerCharacter);
+        output = new OutputManager(new NormalConsoleOutput(), null, playerCharacter);
 
         do {
             output.showMenu();

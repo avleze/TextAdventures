@@ -12,7 +12,7 @@ import java.util.Set;
  *
  * @author Antonio Vélez Estévez
  */
-public class ConsoleOutput implements OutputHandler {
+public abstract class ConsoleOutput implements OutputHandler {
 
     public ConsoleOutput() {
 
@@ -21,31 +21,15 @@ public class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showGameInformation(PlayerCharacter playerCharacter, Room room, Set<Action> actions) {
-
-
-        String headText = String.format("Current playerCharacter: %s\t Health: %f", playerCharacter.getName(),
-                playerCharacter.getHealthPoints());
-        String separatorBar = "--------------------------------------------------------------------------------";
-
-        System.out.println(headText);
-        System.out.println(separatorBar);
-        System.out.println("You have arrived at the " + room.getMessage().getCaption() + " room");
-        System.out.println(separatorBar);
-        System.out.println(room.getMessage().getMessage());
-
+        showCharacterInformation(playerCharacter);
+        showRoomInformation(room);
         showActions(actions);
     }
 
     @Override
-    public void showCharacterInformation(PlayerCharacter playerCharacter) {
-        String characterInf = String.format("Current player: \u001B[34m  %s \u001B[0m \t Health: \u001B[33m %f \u001B[0m \t", playerCharacter.getName(),
-                playerCharacter.getHealthPoints());
-        String separatorBar = "--------------------------------------------------------------------------------";
+    public abstract void showCharacterInformation(PlayerCharacter playerCharacter);
 
-        System.out.println(separatorBar);
-        System.out.println(characterInf);
-        System.out.println(separatorBar);
-    }
+    public abstract void showRoomInformation(Room room);
 
     @Override
     public void showEnemyInformation(Enemy enemy) {
@@ -81,12 +65,7 @@ public class ConsoleOutput implements OutputHandler {
     }
 
     @Override
-    public void showActions(Set<Action> actions) {
-        int counter = 1;
-        for (Action i : actions)
-            System.out.println(String.format("\t%d. %s", counter++, i.getDescription()));
-        System.out.println("Choose an option:");
-    }
+    public abstract void showActions(Set<Action> actions);
 
     @Override
     public void showMenu() {
