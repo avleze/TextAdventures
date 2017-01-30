@@ -12,10 +12,10 @@ import es.uca.TextAdventures.Item.Item;
 /**
  * Created by juan on 30/01/17.
  */
-public class SuperifyPotion extends InventoryAction {
+public class SuperifyPotionAction extends InventoryAction {
 
 
-    public SuperifyPotion(String description, Player player) {
+    public SuperifyPotionAction(String description, Player player) {
         super(description, player);
     }
 

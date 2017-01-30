@@ -1,9 +1,9 @@
 package es.uca.TextAdventures.EnemyBehaviour;
 
 import es.uca.TextAdventures.Action.Action;
-import es.uca.TextAdventures.Action.Attack;
+import es.uca.TextAdventures.Action.AttackAction;
 import es.uca.TextAdventures.Action.BattleAction;
-import es.uca.TextAdventures.Action.Heal;
+import es.uca.TextAdventures.Action.HealAction;
 
 import java.util.Random;
 import java.util.Set;
@@ -24,9 +24,9 @@ public class RandomEnemyBehaviour extends EnemyBehaviour {
         Action action;
 
         if (rand.nextBoolean()) {
-            action = this.actions.stream().filter((i) -> i instanceof Heal).iterator().next();
+            action = this.actions.stream().filter((i) -> i instanceof HealAction).iterator().next();
         } else {
-            action = this.actions.stream().filter((i) -> i instanceof Attack).iterator().next();
+            action = this.actions.stream().filter((i) -> i instanceof AttackAction).iterator().next();
         }
 
         return action;

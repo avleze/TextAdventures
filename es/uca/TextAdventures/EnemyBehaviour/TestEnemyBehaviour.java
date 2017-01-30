@@ -28,7 +28,7 @@ public class TestEnemyBehaviour {
     private PlayerCharacter playerCharacter;
     private Map map;
     private Room room;
-    private Attack attackAction;
+    private AttackAction attackAction;
     private Set<Action> playerActions;
     private Set<BattleAction> enemyActions;
 
@@ -49,36 +49,36 @@ public class TestEnemyBehaviour {
         this.room = map.getRoom(playerCharacter.getXPosition(),
                 playerCharacter.getYPosition());
 
-        this.attackAction = new Attack("Attack.", playerCharacter, room.getEnemy());
+        this.attackAction = new AttackAction("Attack.", playerCharacter, room.getEnemy());
 
         this.playerActions = new LinkedHashSet<>();
-        this.playerActions.add(new Heal("Heal.", playerCharacter));
-        this.playerActions.add(new RunAway("Run away.", playerCharacter));
+        this.playerActions.add(new HealAction("Heal.", playerCharacter));
+        this.playerActions.add(new RunAwayAction("Run away.", playerCharacter));
         this.playerActions.add(attackAction);
 
         this.enemyActions = new LinkedHashSet<>();
-        this.enemyActions.add(new Attack("Attack.", playerCharacter, room.getEnemy()));
-        this.enemyActions.add(new Heal("Heal.", room.getEnemy()));
+        this.enemyActions.add(new AttackAction("Attack.", playerCharacter, room.getEnemy()));
+        this.enemyActions.add(new HealAction("Heal.", room.getEnemy()));
     }
 
     @Test
     public void testAggressiveEnemyBehaviour() {
         AggressiveEnemyBehaviour aggressive = new AggressiveEnemyBehaviour(enemyActions);
 
-        assert(aggressive.getAction() instanceof Attack);
+        assert (aggressive.getAction() instanceof AttackAction);
     }
 
     @Test
     public void testHealerEnemyBehaviour() {
         HealerEnemyBehaviour healer = new HealerEnemyBehaviour(enemyActions);
 
-        assert(healer.getAction() instanceof Heal);
+        assert (healer.getAction() instanceof HealAction);
     }
 
     @Test
     public void testRandomEnemyBehaviour() {
         RandomEnemyBehaviour random = new RandomEnemyBehaviour(enemyActions);
 
-        assert(random.getAction() instanceof Attack || random.getAction() instanceof Heal);
+        assert (random.getAction() instanceof AttackAction || random.getAction() instanceof HealAction);
     }
 }

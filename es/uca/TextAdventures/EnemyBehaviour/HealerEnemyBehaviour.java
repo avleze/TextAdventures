@@ -2,7 +2,7 @@ package es.uca.TextAdventures.EnemyBehaviour;
 
 import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Action.BattleAction;
-import es.uca.TextAdventures.Action.Heal;
+import es.uca.TextAdventures.Action.HealAction;
 
 import java.util.Set;
 
@@ -17,6 +17,6 @@ public class HealerEnemyBehaviour extends EnemyBehaviour {
 
     @Override
     public Action getAction() {
-        return this.actions.stream().filter((i) -> i instanceof Heal).iterator().next();
+        return this.actions.stream().filter((i) -> i instanceof HealAction).iterator().next();
     }
 }

@@ -35,6 +35,7 @@ public class TestAction {
     private Map map;
     private Room room;
     private Set<Action> playerActions;
+    private Set<InventoryAction> inventoryActions;
     private ActionParameter actionParameters;
 
     @BeforeAll
@@ -59,11 +60,17 @@ public class TestAction {
                 playerCharacter.getYPosition());
 
         this.playerActions = new LinkedHashSet<>();
-        this.playerActions.add(new Heal("Heal.", playerCharacter));
-        this.playerActions.add(new RunAway("Run away.", playerCharacter));
-        this.playerActions.add(new Attack("Attack.", playerCharacter, room.getEnemy()));
+        this.playerActions.add(new HealAction("Heal.", playerCharacter));
+        this.playerActions.add(new RunAwayAction("Run away.", playerCharacter));
+        this.playerActions.add(new AttackAction("Attack.", playerCharacter, room.getEnemy()));
+        this.playerActions.add(new ShowInventoryAction("Show inventory.", playerCharacter));
 
-        this.actionParameters = new ActionParameter(output, input, playerActions, playerCharacter, room.getEnemy());
+        this.inventoryActions = new LinkedHashSet<>();
+        inventoryActions.add(new DropItemAction("Drop item", playerCharacter));
+        inventoryActions.add(new SuperifyPotionAction("Superify potion", playerCharacter));
+        inventoryActions.add(new HyperifyPotionAction("Hyperify potion", playerCharacter));
+
+        this.actionParameters = new ActionParameter(output, input, playerActions, inventoryActions, playerCharacter, room.getEnemy());
     }
 
     @Test

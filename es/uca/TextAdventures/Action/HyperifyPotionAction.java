@@ -10,9 +10,9 @@ import es.uca.TextAdventures.Player.Player;
 /**
  * Created by juan on 30/01/17.
  */
-public class HyperifyPotion extends InventoryAction {
+public class HyperifyPotionAction extends InventoryAction {
 
-    public HyperifyPotion(String description, Player player) {
+    public HyperifyPotionAction(String description, Player player) {
         super(description, player);
     }
 

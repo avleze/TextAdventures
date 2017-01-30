@@ -44,15 +44,15 @@ public class DecisionEngine {
                     playerCharacter.getYPosition());
 
             playerActions = new LinkedHashSet<>();
-            playerActions.add(new Heal("Heal.", playerCharacter));
-            playerActions.add(new RunAway("Run away.", playerCharacter));
-            playerActions.add(new Attack("Attack.", playerCharacter, room.getEnemy()));
-            playerActions.add(new ShowInventory("Show inventory.", playerCharacter));
+            playerActions.add(new HealAction("HealAction.", playerCharacter));
+            playerActions.add(new RunAwayAction("Run away.", playerCharacter));
+            playerActions.add(new AttackAction("AttackAction.", playerCharacter, room.getEnemy()));
+            playerActions.add(new ShowInventoryAction("Show inventory.", playerCharacter));
 
             inventoryActions = new LinkedHashSet<>();
-            inventoryActions.add(new DropItem("Drop item", playerCharacter));
-            inventoryActions.add(new SuperifyPotion("Superify potion", playerCharacter));
-            inventoryActions.add(new HyperifyPotion("Hyperify potion", playerCharacter));
+            inventoryActions.add(new DropItemAction("Drop item", playerCharacter));
+            inventoryActions.add(new SuperifyPotionAction("Superify potion", playerCharacter));
+            inventoryActions.add(new HyperifyPotionAction("Hyperify potion", playerCharacter));
 
             actionParameters = new ActionParameter(output, input, playerActions, inventoryActions, playerCharacter, room.getEnemy());
 

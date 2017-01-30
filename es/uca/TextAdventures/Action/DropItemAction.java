@@ -6,9 +6,9 @@ import es.uca.TextAdventures.Player.Player;
 /**
  * Created by juan on 19/01/17.
  */
-public class DropItem extends InventoryAction {
+public class DropItemAction extends InventoryAction {
 
-    public DropItem(String description, Player player) {
+    public DropItemAction(String description, Player player) {
         super(description, player);
     }
 

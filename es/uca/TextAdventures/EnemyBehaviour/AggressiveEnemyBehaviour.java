@@ -1,7 +1,7 @@
 package es.uca.TextAdventures.EnemyBehaviour;
 
 import es.uca.TextAdventures.Action.Action;
-import es.uca.TextAdventures.Action.Attack;
+import es.uca.TextAdventures.Action.AttackAction;
 import es.uca.TextAdventures.Action.BattleAction;
 
 import java.util.Set;
@@ -17,6 +17,6 @@ public class AggressiveEnemyBehaviour extends EnemyBehaviour {
 
     @Override
     public Action getAction() {
-        return this.actions.stream().filter((i) -> i instanceof Attack).iterator().next();
+        return this.actions.stream().filter((i) -> i instanceof AttackAction).iterator().next();
     }
 }

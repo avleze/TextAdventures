@@ -3,7 +3,7 @@ package es.uca.TextAdventures;
 import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Action.ActionParameter;
 import es.uca.TextAdventures.Action.InventoryAction;
-import es.uca.TextAdventures.Action.ShowInventory;
+import es.uca.TextAdventures.Action.ShowInventoryAction;
 import es.uca.TextAdventures.EnemyBehaviour.EnemyBehaviour;
 import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Output.OutputManager;
@@ -44,8 +44,8 @@ public class BattleManager {
                 input = in.getInput();
             } while (input > playerActions.size() || input <= 0);
 
-            if (playerActions.toArray()[input - 1] instanceof ShowInventory)
-                ((ShowInventory) playerActions.toArray()[input - 1]).run(actionParameter);
+            if (playerActions.toArray()[input - 1] instanceof ShowInventoryAction)
+                ((ShowInventoryAction) playerActions.toArray()[input - 1]).run(actionParameter);
             else
                 ((Action) playerActions.toArray()[input - 1]).run(null);
 

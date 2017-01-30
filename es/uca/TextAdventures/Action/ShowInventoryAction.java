@@ -10,9 +10,9 @@ import java.util.Set;
 /**
  * Created by juan on 19/01/17.
  */
-public class ShowInventory extends Action {
+public class ShowInventoryAction extends Action {
 
-    public ShowInventory(String description, Player player) {
+    public ShowInventoryAction(String description, Player player) {
         super(description, player);
     }
 
@@ -27,7 +27,7 @@ public class ShowInventory extends Action {
                 actionParameter.getOutput().showInventoryActions(actionParameter.getInventoryActions());
             else {
                 Set<InventoryAction> notAPotionActions = new LinkedHashSet<>();
-                notAPotionActions.add(new DropItem("Drop " + itemSelected.getClass().getName(), this.player));
+                notAPotionActions.add(new DropItemAction("Drop " + itemSelected.getClass().getName(), this.player));
                 actionParameter.getOutput().showInventoryActions(notAPotionActions);
             }
             int selectedAction = actionParameter.getInput().getInput();
