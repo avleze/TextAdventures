@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>10</zoom_level>
+  <zoom_level>4</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1950</x>
-      <y>1760</y>
-      <w>450</w>
-      <h>90</h>
+      <x>1368</x>
+      <y>968</y>
+      <w>180</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*DecisionEngine*
 --
@@ -19,10 +19,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1940</x>
-      <y>1190</y>
-      <w>520</w>
-      <h>370</h>
+      <x>1364</x>
+      <y>740</y>
+      <w>208</w>
+      <h>148</h>
     </coordinates>
     <panel_attributes>*OutputManager*
 --
@@ -53,10 +53,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2150</x>
-      <y>1550</y>
-      <w>140</w>
-      <h>230</h>
+      <x>1448</x>
+      <y>884</y>
+      <w>56</w>
+      <h>92</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -67,10 +67,10 @@ outputManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2150</x>
-      <y>1080</y>
-      <w>180</w>
-      <h>130</h>
+      <x>1448</x>
+      <y>696</y>
+      <w>72</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 currentOutputHandler
@@ -81,10 +81,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1940</x>
-      <y>830</y>
-      <w>520</w>
-      <h>260</h>
+      <x>1364</x>
+      <y>596</y>
+      <w>208</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>*OutputHandler*
 /&lt;&lt;interface&gt;&gt;/
@@ -107,10 +107,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2180</x>
-      <y>610</y>
-      <w>230</w>
-      <h>240</h>
+      <x>1460</x>
+      <y>508</y>
+      <w>92</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;220.0;10.0;80.0;210.0;80.0;210.0;10.0</additional_attributes>
@@ -118,10 +118,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2210</x>
-      <y>300</y>
-      <w>570</w>
-      <h>320</h>
+      <x>1472</x>
+      <y>384</y>
+      <w>228</w>
+      <h>128</h>
     </coordinates>
     <panel_attributes>*ConsoleOutput*
 /&lt;&lt;abstract&gt;&gt;/
@@ -147,10 +147,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1990</x>
-      <y>640</y>
-      <w>220</w>
-      <h>210</h>
+      <x>1384</x>
+      <y>520</y>
+      <w>88</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>200.0;190.0;200.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
@@ -158,10 +158,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1670</x>
-      <y>470</y>
-      <w>500</w>
-      <h>180</h>
+      <x>1256</x>
+      <y>452</y>
+      <w>200</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>*...*
 --
@@ -179,10 +179,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1410</x>
-      <y>1760</y>
-      <w>410</w>
-      <h>100</h>
+      <x>1152</x>
+      <y>968</y>
+      <w>164</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>*InputManager*
 --
@@ -197,10 +197,10 @@ m2=1</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1810</x>
-      <y>1790</y>
-      <w>160</w>
-      <h>50</h>
+      <x>1312</x>
+      <y>980</y>
+      <w>64</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -211,10 +211,10 @@ inputManager</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1080</x>
-      <y>1770</y>
-      <w>150</w>
-      <h>70</h>
+      <x>1020</x>
+      <y>972</y>
+      <w>60</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>*InputHandler*
 /&lt;&lt;interface&gt;&gt;/
@@ -225,10 +225,10 @@ inputManager</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1220</x>
-      <y>1790</y>
-      <w>210</w>
-      <h>50</h>
+      <x>1076</x>
+      <y>980</y>
+      <w>84</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -239,10 +239,10 @@ currentInputHandler</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>820</x>
-      <y>1690</y>
-      <w>160</w>
-      <h>60</h>
+      <x>916</x>
+      <y>940</y>
+      <w>64</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>*ConsoleInput*
 --
@@ -253,10 +253,10 @@ currentInputHandler</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>820</x>
-      <y>1880</y>
-      <w>160</w>
-      <h>60</h>
+      <x>916</x>
+      <y>1016</y>
+      <w>64</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>*...*
 --
@@ -268,10 +268,10 @@ currentInputHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>970</x>
-      <y>1710</y>
-      <w>130</w>
-      <h>120</h>
+      <x>976</x>
+      <y>948</y>
+      <w>52</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>110.0;100.0;50.0;100.0;50.0;10.0;10.0;10.0</additional_attributes>
@@ -279,10 +279,10 @@ currentInputHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>970</x>
-      <y>1800</y>
-      <w>130</w>
-      <h>130</h>
+      <x>976</x>
+      <y>984</y>
+      <w>52</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>110.0;10.0;50.0;10.0;50.0;110.0;10.0;110.0</additional_attributes>
@@ -290,10 +290,10 @@ currentInputHandler</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1780</x>
-      <y>1840</y>
-      <w>290</w>
-      <h>260</h>
+      <x>1300</x>
+      <y>1000</y>
+      <w>116</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -304,10 +304,10 @@ currentMap</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>960</x>
-      <y>2080</y>
-      <w>540</w>
-      <h>250</h>
+      <x>972</x>
+      <y>1096</y>
+      <w>216</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>*MapLoader*
 --
@@ -330,10 +330,10 @@ currentMap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1260</x>
-      <y>1840</y>
-      <w>750</w>
-      <h>260</h>
+      <x>1092</x>
+      <y>1000</y>
+      <w>300</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -344,10 +344,10 @@ mapLoader</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1400</x>
-      <y>1980</y>
-      <w>160</w>
-      <h>70</h>
+      <x>1148</x>
+      <y>1056</y>
+      <w>64</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>*Note*
 We will use the map
@@ -358,10 +358,10 @@ of maps.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2070</x>
-      <y>2010</y>
-      <w>410</w>
-      <h>290</h>
+      <x>1416</x>
+      <y>1068</y>
+      <w>164</w>
+      <h>116</h>
     </coordinates>
     <panel_attributes>*PlayerCharacter*
 --
@@ -387,10 +387,10 @@ of maps.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2160</x>
-      <y>1840</y>
-      <w>120</w>
-      <h>190</h>
+      <x>1452</x>
+      <y>1000</y>
+      <w>48</w>
+      <h>76</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -401,10 +401,10 @@ currentPlayer</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2070</x>
-      <y>2320</y>
-      <w>410</w>
-      <h>200</h>
+      <x>1416</x>
+      <y>1192</y>
+      <w>164</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>*Room*
 --
@@ -424,10 +424,10 @@ currentPlayer</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1780</x>
-      <y>2240</y>
-      <w>310</w>
-      <h>210</h>
+      <x>1300</x>
+      <y>1160</y>
+      <w>124</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -438,10 +438,10 @@ contains &gt;</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1620</x>
-      <y>2340</y>
-      <w>160</w>
-      <h>70</h>
+      <x>1236</x>
+      <y>1200</y>
+      <w>64</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>*Note*
 This association is
@@ -452,10 +452,10 @@ the rooms attribute.</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2510</x>
-      <y>1440</y>
-      <w>340</w>
-      <h>380</h>
+      <x>1592</x>
+      <y>840</y>
+      <w>136</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>*Player*
 /&lt;&lt;abstract&gt;&gt;/
@@ -486,10 +486,10 @@ the rooms attribute.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2270</x>
-      <y>1810</y>
-      <w>420</w>
-      <h>220</h>
+      <x>1496</x>
+      <y>988</y>
+      <w>168</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
 </panel_attributes>
@@ -498,10 +498,10 @@ the rooms attribute.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2660</x>
-      <y>1810</y>
-      <w>370</w>
-      <h>210</h>
+      <x>1652</x>
+      <y>988</y>
+      <w>148</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>
 lt=&lt;&lt;-
@@ -511,10 +511,10 @@ lt=&lt;&lt;-
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1050</x>
-      <y>1720</y>
-      <w>780</w>
-      <h>150</h>
+      <x>1008</x>
+      <y>952</y>
+      <w>312</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>TextAdventures.Output
 --
@@ -524,10 +524,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1930</x>
-      <y>790</y>
-      <w>540</w>
-      <h>780</h>
+      <x>1360</x>
+      <y>580</y>
+      <w>216</w>
+      <h>312</h>
     </coordinates>
     <panel_attributes>TextAdventures.Output
 --
@@ -537,10 +537,10 @@ bg=orange</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2870</x>
-      <y>2000</y>
-      <w>280</w>
-      <h>140</h>
+      <x>1736</x>
+      <y>1064</y>
+      <w>112</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>*Enemy*
 /&lt;&lt;abstract&gt;&gt;/
@@ -556,10 +556,10 @@ type : int
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>2670</x>
-      <y>1880</y>
-      <w>201</w>
-      <h>61</h>
+      <x>1656</x>
+      <y>1016</y>
+      <w>81</w>
+      <h>25</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -581,10 +581,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2700</x>
-      <y>2280</y>
-      <w>280</w>
-      <h>220</h>
+      <x>1668</x>
+      <y>1176</y>
+      <w>112</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>*Monster*
 --
@@ -608,10 +608,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3020</x>
-      <y>2280</y>
-      <w>210</w>
-      <h>110</h>
+      <x>1796</x>
+      <y>1176</y>
+      <w>84</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*...*
 --
@@ -624,10 +624,10 @@ New enemies incoming...</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2610</x>
-      <y>2010</y>
-      <w>210</w>
-      <h>90</h>
+      <x>1632</x>
+      <y>1068</y>
+      <w>84</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*Note*
 The difference between this
@@ -640,10 +640,10 @@ of the attack method
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3090</x>
-      <y>1550</y>
-      <w>140</w>
-      <h>130</h>
+      <x>1824</x>
+      <y>884</y>
+      <w>56</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>*Item*
 /&lt;&lt;abstract&gt;&gt;/
@@ -658,10 +658,10 @@ of the attack method
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2840</x>
-      <y>1600</y>
-      <w>270</w>
-      <h>50</h>
+      <x>1724</x>
+      <y>904</y>
+      <w>108</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -672,10 +672,10 @@ has &gt;</panel_attributes>
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>3010</x>
-      <y>2170</y>
-      <w>201</w>
-      <h>81</h>
+      <x>1792</x>
+      <y>1132</y>
+      <w>81</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -697,10 +697,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2910</x>
-      <y>1760</y>
-      <w>240</w>
-      <h>140</h>
+      <x>1752</x>
+      <y>968</y>
+      <w>96</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>*WeaponItem*
 --
@@ -716,10 +716,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3500</x>
-      <y>1760</y>
-      <w>290</w>
-      <h>100</h>
+      <x>1988</x>
+      <y>968</y>
+      <w>116</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>*RecoveryItem*
 --
@@ -732,10 +732,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3150</x>
-      <y>1670</y>
-      <w>510</w>
-      <h>110</h>
+      <x>1848</x>
+      <y>932</y>
+      <w>204</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;490.0;50.0;490.0;90.0</additional_attributes>
@@ -743,10 +743,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3010</x>
-      <y>1670</y>
-      <w>170</w>
-      <h>110</h>
+      <x>1792</x>
+      <y>932</y>
+      <w>68</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>150.0;10.0;150.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
@@ -754,10 +754,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>2860</x>
-      <y>1510</y>
-      <w>220</w>
-      <h>70</h>
+      <x>1732</x>
+      <y>868</y>
+      <w>88</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>*Note*
 This association is represent
@@ -767,10 +767,10 @@ ed by the inventory attribute.</panel_attributes>
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>3180</x>
-      <y>1690</y>
-      <w>201</w>
-      <h>81</h>
+      <x>1860</x>
+      <y>940</y>
+      <w>81</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -792,10 +792,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2400</x>
-      <y>2620</y>
-      <w>280</w>
-      <h>110</h>
+      <x>1548</x>
+      <y>1312</y>
+      <w>112</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*Message*
 --
@@ -810,10 +810,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1890</x>
-      <y>2610</y>
-      <w>340</w>
-      <h>160</h>
+      <x>1344</x>
+      <y>1308</y>
+      <w>136</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>*Action*
 /&lt;&lt;abstract&gt;&gt;/
@@ -830,10 +830,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2030</x>
-      <y>2510</y>
-      <w>250</w>
-      <h>130</h>
+      <x>1400</x>
+      <y>1268</y>
+      <w>100</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -844,10 +844,10 @@ m2=1..n
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>1470</x>
-      <y>2520</y>
-      <w>220</w>
-      <h>70</h>
+      <x>1176</x>
+      <y>1272</y>
+      <w>88</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>*Note*
 This association is represent
@@ -857,10 +857,10 @@ ed by the actions attribute.</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2320</x>
-      <y>2510</y>
-      <w>240</w>
-      <h>130</h>
+      <x>1516</x>
+      <y>1268</y>
+      <w>96</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>220.0;110.0;220.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
@@ -868,10 +868,10 @@ ed by the actions attribute.</panel_attributes>
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>2040</x>
-      <y>2780</y>
-      <w>200</w>
-      <h>80</h>
+      <x>1404</x>
+      <y>1376</y>
+      <w>81</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -893,10 +893,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1300</x>
-      <y>2850</y>
-      <w>520</w>
-      <h>130</h>
+      <x>1108</x>
+      <y>1404</y>
+      <w>208</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>*MovementAction*
 --
@@ -911,10 +911,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2840</x>
-      <y>2840</y>
-      <w>380</w>
-      <h>150</h>
+      <x>1724</x>
+      <y>1400</y>
+      <w>152</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>*BattleAction*
 /&lt;&lt;abstract&gt;&gt;/
@@ -929,10 +929,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2030</x>
-      <y>2760</y>
-      <w>30</w>
-      <h>100</h>
+      <x>1400</x>
+      <y>1368</y>
+      <w>12</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -940,10 +940,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1620</x>
-      <y>2760</y>
-      <w>440</w>
-      <h>110</h>
+      <x>1236</x>
+      <y>1368</y>
+      <w>176</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>420.0;10.0;420.0;50.0;10.0;50.0;10.0;90.0</additional_attributes>
@@ -951,10 +951,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1870</x>
-      <y>2840</y>
-      <w>380</w>
-      <h>150</h>
+      <x>1336</x>
+      <y>1400</y>
+      <w>152</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>*StartBattleAction*
 
@@ -971,10 +971,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2240</x>
-      <y>2910</y>
-      <w>80</w>
-      <h>30</h>
+      <x>1484</x>
+      <y>1428</y>
+      <w>32</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
@@ -982,10 +982,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2030</x>
-      <y>2760</y>
-      <w>1010</w>
-      <h>100</h>
+      <x>1400</x>
+      <y>1368</y>
+      <w>404</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;990.0;50.0;990.0;80.0</additional_attributes>
@@ -993,10 +993,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2670</x>
-      <y>2900</y>
-      <w>190</w>
-      <h>50</h>
+      <x>1656</x>
+      <y>1424</y>
+      <w>76</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
@@ -1007,10 +1007,10 @@ has &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2300</x>
-      <y>2840</y>
-      <w>380</w>
-      <h>150</h>
+      <x>1508</x>
+      <y>1400</y>
+      <w>152</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>*BattleManager*
 
@@ -1026,10 +1026,10 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3040</x>
-      <y>2980</y>
-      <w>30</w>
-      <h>130</h>
+      <x>1804</x>
+      <y>1456</y>
+      <w>12</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -1037,10 +1037,10 @@ has &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2470</x>
-      <y>3090</y>
-      <w>380</w>
-      <h>110</h>
+      <x>1576</x>
+      <y>1500</y>
+      <w>152</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*AttackAction*
 --
@@ -1054,10 +1054,10 @@ has &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2880</x>
-      <y>3090</y>
-      <w>380</w>
-      <h>110</h>
+      <x>1740</x>
+      <y>1500</y>
+      <w>152</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*HealAction*
 --
@@ -1071,10 +1071,10 @@ has &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3290</x>
-      <y>3090</y>
-      <w>380</w>
-      <h>110</h>
+      <x>1904</x>
+      <y>1500</y>
+      <w>152</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*RunAwayAction*
 --
@@ -1088,10 +1088,10 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2650</x>
-      <y>3020</y>
-      <w>850</w>
-      <h>90</h>
+      <x>1648</x>
+      <y>1472</y>
+      <w>340</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;70.0;10.0;20.0;830.0;20.0;830.0;70.0</additional_attributes>
@@ -1099,10 +1099,10 @@ has &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3180</x>
-      <y>1760</y>
-      <w>290</w>
-      <h>140</h>
+      <x>1860</x>
+      <y>968</y>
+      <w>116</w>
+      <h>56</h>
     </coordinates>
     <panel_attributes>*ArmorItem*
 --
@@ -1117,10 +1117,10 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3320</x>
-      <y>1710</y>
-      <w>30</w>
-      <h>70</h>
+      <x>1916</x>
+      <y>948</y>
+      <w>12</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -1128,10 +1128,10 @@ has &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1590</x>
-      <y>2080</y>
-      <w>410</w>
-      <h>170</h>
+      <x>1224</x>
+      <y>1096</y>
+      <w>164</w>
+      <h>68</h>
     </coordinates>
     <panel_attributes>*Map*
 --
@@ -1150,10 +1150,10 @@ has &gt;</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1280</x>
-      <y>1310</y>
-      <w>550</w>
-      <h>380</h>
+      <x>1100</x>
+      <y>788</y>
+      <w>220</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>*ActionParameter*
 
@@ -1184,10 +1184,10 @@ has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1820</x>
-      <y>1570</y>
-      <w>340</w>
-      <h>210</h>
+      <x>1316</x>
+      <y>892</y>
+      <w>136</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
 m1=1
@@ -1198,10 +1198,10 @@ ActionPatameter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2160</x>
-      <y>2980</y>
-      <w>200</w>
-      <h>280</h>
+      <x>1452</x>
+      <y>1456</y>
+      <w>80</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>180.0;10.0;180.0;110.0;10.0;110.0;10.0;260.0</additional_attributes>
@@ -1209,10 +1209,10 @@ ActionPatameter</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2000</x>
-      <y>3240</y>
-      <w>380</w>
-      <h>130</h>
+      <x>1388</x>
+      <y>1560</y>
+      <w>152</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>*EnemyBehaviour*
 /&lt;&lt;abstract&gt;&gt;/
@@ -1227,10 +1227,10 @@ ActionPatameter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2170</x>
-      <y>3360</y>
-      <w>30</w>
-      <h>190</h>
+      <x>1456</x>
+      <y>1608</y>
+      <w>12</w>
+      <h>76</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
@@ -1238,10 +1238,10 @@ ActionPatameter</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1980</x>
-      <y>3530</y>
-      <w>460</w>
-      <h>110</h>
+      <x>1380</x>
+      <y>1676</y>
+      <w>184</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*AgressiveEnemyBehaviour*
 
@@ -1255,10 +1255,10 @@ ActionPatameter</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2450</x>
-      <y>3530</y>
-      <w>440</w>
-      <h>110</h>
+      <x>1568</x>
+      <y>1676</y>
+      <w>176</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*RandomEnemyBehaviour*
 
@@ -1272,10 +1272,10 @@ ActionPatameter</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1540</x>
-      <y>3530</y>
-      <w>420</w>
-      <h>110</h>
+      <x>1204</x>
+      <y>1676</y>
+      <w>168</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*HealerEnemyBehaviour*
 
@@ -1289,10 +1289,10 @@ ActionPatameter</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1750</x>
-      <y>3390</y>
-      <w>930</w>
-      <h>160</h>
+      <x>1288</x>
+      <y>1620</y>
+      <w>372</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;140.0;10.0;20.0;910.0;20.0;910.0;140.0</additional_attributes>
@@ -1300,10 +1300,10 @@ ActionPatameter</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>450</x>
-      <y>3260</y>
-      <w>500</w>
-      <h>110</h>
+      <x>768</x>
+      <y>1568</y>
+      <w>200</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*Creator*
 /&lt;&lt;abstract&gt;&gt;/
@@ -1318,10 +1318,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>690</x>
-      <y>3360</y>
-      <w>30</w>
-      <h>190</h>
+      <x>864</x>
+      <y>1608</y>
+      <w>12</w>
+      <h>76</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
@@ -1329,10 +1329,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>470</x>
-      <y>3530</y>
-      <w>450</w>
-      <h>110</h>
+      <x>776</x>
+      <y>1676</y>
+      <w>180</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*AgressiveCreator*
 
@@ -1345,10 +1345,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>3530</y>
-      <w>450</w>
-      <h>110</h>
+      <x>588</x>
+      <y>1676</y>
+      <w>180</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*RandomCreator*
 
@@ -1361,10 +1361,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>950</x>
-      <y>3530</y>
-      <w>450</w>
-      <h>110</h>
+      <x>968</x>
+      <y>1676</y>
+      <w>180</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*HealerCreator*
 
@@ -1377,10 +1377,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>200</x>
-      <y>3390</y>
-      <w>1000</w>
-      <h>160</h>
+      <x>668</x>
+      <y>1620</y>
+      <w>400</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;140.0;10.0;20.0;980.0;20.0;980.0;140.0</additional_attributes>
@@ -1388,10 +1388,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>3630</y>
-      <w>1550</w>
-      <h>110</h>
+      <x>860</x>
+      <y>1716</y>
+      <w>620</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;90.0;1530.0;90.0;1530.0;10.0</additional_attributes>
@@ -1399,10 +1399,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1160</x>
-      <y>3630</y>
-      <w>630</w>
-      <h>70</h>
+      <x>1052</x>
+      <y>1716</y>
+      <w>252</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0;610.0;50.0;610.0;10.0</additional_attributes>
@@ -1410,10 +1410,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>180</x>
-      <y>3630</y>
-      <w>2490</w>
-      <h>160</h>
+      <x>660</x>
+      <y>1716</y>
+      <w>996</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=.&gt;</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0;2470.0;140.0;2470.0;10.0</additional_attributes>
@@ -1421,10 +1421,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1520</x>
-      <y>3120</y>
-      <w>500</w>
-      <h>90</h>
+      <x>1196</x>
+      <y>1512</y>
+      <w>200</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*RandomBehaviourCreator*
 --
@@ -1436,10 +1436,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>3110</y>
-      <w>1110</w>
-      <h>200</h>
+      <x>860</x>
+      <y>1508</y>
+      <w>444</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;.</panel_attributes>
     <additional_attributes>10.0;150.0;10.0;10.0;700.0;10.0;700.0;180.0;1090.0;180.0;1090.0;100.0</additional_attributes>
@@ -1447,10 +1447,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1750</x>
-      <y>2980</y>
-      <w>240</w>
-      <h>160</h>
+      <x>1288</x>
+      <y>1456</y>
+      <w>96</w>
+      <h>64</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>220.0;10.0;220.0;100.0;10.0;100.0;10.0;140.0</additional_attributes>
@@ -1458,10 +1458,10 @@ EnemyBehaviour</panel_attributes>
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>2350</x>
-      <y>3380</y>
-      <w>200</w>
-      <h>80</h>
+      <x>1528</x>
+      <y>1616</y>
+      <w>81</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -1483,10 +1483,10 @@ for(String textline : textlines) {
   <element>
     <type>CustomElementImpl</type>
     <coordinates>
-      <x>780</x>
-      <y>3380</y>
-      <w>200</w>
-      <h>80</h>
+      <x>900</x>
+      <y>1616</y>
+      <w>81</w>
+      <h>33</h>
     </coordinates>
     <panel_attributes>// Modify the text below and
 // observe the element preview.
@@ -1508,10 +1508,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3670</x>
-      <y>2000</y>
-      <w>530</w>
-      <h>90</h>
+      <x>2056</x>
+      <y>1064</y>
+      <w>212</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*RecoveryItemDecorator*
 --
@@ -1524,10 +1524,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3620</x>
-      <y>1850</y>
-      <w>30</w>
-      <h>130</h>
+      <x>2036</x>
+      <y>1004</y>
+      <w>12</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -1535,10 +1535,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3440</x>
-      <y>1940</y>
-      <w>400</w>
-      <h>80</h>
+      <x>1964</x>
+      <y>1040</y>
+      <w>160</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;60.0;10.0;20.0;380.0;20.0;380.0;60.0</additional_attributes>
@@ -1546,10 +1546,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3290</x>
-      <y>2000</y>
-      <w>300</w>
-      <h>90</h>
+      <x>1904</x>
+      <y>1064</y>
+      <w>120</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*SimpleRecoveryItem*
 --
@@ -1562,10 +1562,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3910</x>
-      <y>2080</y>
-      <w>30</w>
-      <h>70</h>
+      <x>2152</x>
+      <y>1096</y>
+      <w>12</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -1573,10 +1573,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3780</x>
-      <y>1800</y>
-      <w>200</w>
-      <h>220</h>
+      <x>2100</x>
+      <y>984</y>
+      <w>80</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;180.0;10.0;180.0;200.0</additional_attributes>
@@ -1584,10 +1584,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3610</x>
-      <y>2110</y>
-      <w>600</w>
-      <h>70</h>
+      <x>2032</x>
+      <y>1108</y>
+      <w>240</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;50.0;10.0;20.0;580.0;20.0;580.0;50.0</additional_attributes>
@@ -1595,10 +1595,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3390</x>
-      <y>2160</y>
-      <w>510</w>
-      <h>90</h>
+      <x>1944</x>
+      <y>1128</y>
+      <w>204</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*HyperRecoveryItem*
 --
@@ -1611,10 +1611,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3940</x>
-      <y>2160</y>
-      <w>510</w>
-      <h>90</h>
+      <x>2164</x>
+      <y>1128</y>
+      <w>204</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*SuperRecoveryItem*
 --
@@ -1627,10 +1627,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2470</x>
-      <y>210</y>
-      <w>30</w>
-      <h>110</h>
+      <x>1576</x>
+      <y>348</y>
+      <w>12</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
@@ -1638,10 +1638,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1950</x>
-      <y>0</y>
-      <w>510</w>
-      <h>170</h>
+      <x>1368</x>
+      <y>264</y>
+      <w>204</w>
+      <h>68</h>
     </coordinates>
     <panel_attributes>*ColorBlindConsoleOutput*
 --
@@ -1658,10 +1658,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2540</x>
-      <y>0</y>
-      <w>520</w>
-      <h>120</h>
+      <x>1604</x>
+      <y>264</y>
+      <w>208</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>*NormalConsoleOutput*
 --
@@ -1675,10 +1675,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2160</x>
-      <y>110</y>
-      <w>660</w>
-      <h>130</h>
+      <x>1452</x>
+      <y>308</y>
+      <w>264</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;60.0;10.0;110.0;640.0;110.0;640.0;10.0</additional_attributes>
@@ -1686,10 +1686,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1680</x>
-      <y>2550</y>
-      <w>360</w>
-      <h>30</h>
+      <x>1260</x>
+      <y>1284</y>
+      <w>144</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>lt=..()</panel_attributes>
     <additional_attributes>10.0;10.0;340.0;10.0</additional_attributes>
@@ -1697,10 +1697,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3010</x>
-      <y>2790</y>
-      <w>1270</w>
-      <h>110</h>
+      <x>1792</x>
+      <y>1380</y>
+      <w>508</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;20.0;1250.0;20.0;1250.0;90.0</additional_attributes>
@@ -1708,10 +1708,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4070</x>
-      <y>2880</y>
-      <w>380</w>
-      <h>110</h>
+      <x>2216</x>
+      <y>1416</y>
+      <w>152</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>*InventoryAction*
 /&lt;&lt;abstract&gt;&gt;/
@@ -1724,10 +1724,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>3700</x>
-      <y>3090</y>
-      <w>380</w>
-      <h>90</h>
+      <x>2068</x>
+      <y>1500</y>
+      <w>152</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*HyperifyPotionAction*
 --
@@ -1739,10 +1739,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4110</x>
-      <y>3090</y>
-      <w>380</w>
-      <h>90</h>
+      <x>2232</x>
+      <y>1500</y>
+      <w>152</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*SuperifyPotionAction*
 --
@@ -1754,10 +1754,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4520</x>
-      <y>3090</y>
-      <w>380</w>
-      <h>90</h>
+      <x>2396</x>
+      <y>1500</y>
+      <w>152</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*DropItemAction*
 --
@@ -1769,10 +1769,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3880</x>
-      <y>3020</y>
-      <w>850</w>
-      <h>90</h>
+      <x>2140</x>
+      <y>1472</y>
+      <w>340</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;70.0;10.0;20.0;830.0;20.0;830.0;70.0</additional_attributes>
@@ -1780,10 +1780,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4270</x>
-      <y>2980</y>
-      <w>30</w>
-      <h>130</h>
+      <x>2296</x>
+      <y>1456</y>
+      <w>12</w>
+      <h>52</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -1791,10 +1791,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>3000</x>
-      <y>2130</y>
-      <w>140</w>
-      <h>170</h>
+      <x>1788</x>
+      <y>1116</y>
+      <w>56</w>
+      <h>68</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;120.0;100.0;120.0;150.0</additional_attributes>
@@ -1802,10 +1802,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2820</x>
-      <y>2220</y>
-      <w>210</w>
-      <h>80</h>
+      <x>1716</x>
+      <y>1152</y>
+      <w>84</w>
+      <h>32</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>10.0;60.0;10.0;10.0;190.0;10.0</additional_attributes>
@@ -1813,10 +1813,10 @@ for(String textline : textlines) {
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>4250</x>
-      <y>2800</y>
-      <w>540</w>
-      <h>100</h>
+      <x>2288</x>
+      <y>1384</y>
+      <w>216</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes/>
     <additional_attributes>520.0;80.0;520.0;10.0;10.0;10.0</additional_attributes>
@@ -1824,10 +1824,10 @@ for(String textline : textlines) {
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>4590</x>
-      <y>2880</y>
-      <w>380</w>
-      <h>90</h>
+      <x>2424</x>
+      <y>1416</y>
+      <w>152</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>*ShowInventoryAction*
 --
