@@ -117,7 +117,7 @@
         </actions>
     </room>
 
-    <room col="2" row="0" treasureRoom="false">
+    <room col="2" row="2" treasureRoom="false">
         <message caption="Dungeon" message="Continua tu trasiego por la mazmorra, sigues andando por interminables pasillos, restos de mudanzas y ropa del invierno de 2002"></message>
         <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
             <inventory>
