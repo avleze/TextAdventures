@@ -1,6 +1,5 @@
 package es.uca.TextAdventures.Action;
 
-import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Player.Player;
 
 /**
@@ -12,8 +11,8 @@ public class DropItemAction extends InventoryAction {
         super(description, player);
     }
 
-    public void run(ActionParameter actionParameter, Item itemToDrop) {
+    public void run(ActionParameter actionParameter) {
         actionParameter.getOutput().showMessage("Item eliminado");
-        actionParameter.getPlayerCharacter().getInventory().remove(itemToDrop);
+        actionParameter.getPlayerCharacter().getInventory().remove(actionParameter.getItemSelected());
     }
 }

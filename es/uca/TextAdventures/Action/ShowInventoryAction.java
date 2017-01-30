@@ -22,6 +22,7 @@ public class ShowInventoryAction extends Action {
 
         if (selectedItem != 0) {
             Item itemSelected = (Item) actionParameter.getPlayerCharacter().getInventory().toArray()[selectedItem - 1];
+            actionParameter.setItemSelected(itemSelected);
             actionParameter.getOutput().showMessage("Item's options: ");
             if (itemSelected instanceof RecoveryItem)
                 actionParameter.getOutput().showInventoryActions(actionParameter.getInventoryActions());
@@ -32,7 +33,7 @@ public class ShowInventoryAction extends Action {
             }
             int selectedAction = actionParameter.getInput().getInput();
             InventoryAction inventoryAction = (InventoryAction) actionParameter.getInventoryActions().toArray()[selectedAction - 1];
-            inventoryAction.run(actionParameter, itemSelected);
+            inventoryAction.run(actionParameter);
         }
     }
 }

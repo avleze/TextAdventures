@@ -28,7 +28,7 @@ public class BattleManager {
     public void run(OutputManager out, InputManager in, Set<Action> playerActions, Set<InventoryAction> inventoryActions, PlayerCharacter player, Enemy enemy) {
 
         int input;
-        ActionParameter actionParameter = new ActionParameter(out, in, playerActions, inventoryActions, player, enemy);
+        ActionParameter actionParameter = new ActionParameter(out, in, playerActions, inventoryActions, player, enemy, null);
 
         out.showMessage("\u001B[36m Battle is starting, prepare yourself! \u001B[0m");
         player.enableBattle();

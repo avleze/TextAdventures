@@ -16,10 +16,10 @@ public class HyperifyPotionAction extends InventoryAction {
         super(description, player);
     }
 
-    public void run(ActionParameter actionParameter, Item potionToHyperify) {
+    public void run(ActionParameter actionParameter) {
 
-        if (actionParameter.getPlayerCharacter().getInventory().size() > 2 && (potionToHyperify instanceof SimpleRecoveryItem
-                || potionToHyperify instanceof SuperRecoveryItem)) {
+        if (actionParameter.getPlayerCharacter().getInventory().size() > 2 && (actionParameter.getItemSelected() instanceof SimpleRecoveryItem
+                || actionParameter.getItemSelected() instanceof SuperRecoveryItem)) {
             actionParameter.getOutput().showMessage("In order to hyperify a potion, you need to sacrifice two items ;) ");
             int itemsCount = 0;
             do {
@@ -27,7 +27,7 @@ public class HyperifyPotionAction extends InventoryAction {
                 int itemSelected = actionParameter.getInput().getInput();
                 if (itemSelected != 0) {
                     Item itemToSacrifice = (Item) actionParameter.getPlayerCharacter().getInventory().toArray()[itemSelected - 1];
-                    if (itemToSacrifice != potionToHyperify)
+                    if (itemToSacrifice != actionParameter.getItemSelected())
                         actionParameter.getPlayerCharacter().getInventory().remove(itemToSacrifice);
                     else
                         actionParameter.getOutput().showMessage("You can't sacrifice the same item that you want to superify. Don't be clever!. Now you lost your turn :)");
@@ -37,8 +37,8 @@ public class HyperifyPotionAction extends InventoryAction {
 
             actionParameter.getOutput().showMessage("Ok!, lets hyperify that potion...");
 
-            HyperRecoveryItem hyperPotion = new HyperRecoveryItem((RecoveryItem) potionToHyperify);
-            actionParameter.getPlayerCharacter().getInventory().remove(potionToHyperify);
+            HyperRecoveryItem hyperPotion = new HyperRecoveryItem((RecoveryItem) actionParameter.getItemSelected());
+            actionParameter.getPlayerCharacter().getInventory().remove(actionParameter.getItemSelected());
             actionParameter.getPlayerCharacter().getInventory().add(hyperPotion);
 
         } else

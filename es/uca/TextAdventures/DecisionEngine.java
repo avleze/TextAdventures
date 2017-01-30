@@ -54,7 +54,7 @@ public class DecisionEngine {
             inventoryActions.add(new SuperifyPotionAction("Superify potion", playerCharacter));
             inventoryActions.add(new HyperifyPotionAction("Hyperify potion", playerCharacter));
 
-            actionParameters = new ActionParameter(output, input, playerActions, inventoryActions, playerCharacter, room.getEnemy());
+            actionParameters = new ActionParameter(output, input, playerActions, inventoryActions, playerCharacter, room.getEnemy(), null);
 
             output.setCurrentRoom(room);
             output.show();
