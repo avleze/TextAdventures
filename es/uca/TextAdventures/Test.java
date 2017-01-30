@@ -32,7 +32,7 @@ public class  Test {
         inventory.add(simplePotion);
         inventory.add(anotherSimplePotion);
 
-        PlayerCharacter player = new PlayerCharacter("Heroe Anonimo", 1, 100, inventory, 10, 0, 0);
+        PlayerCharacter player = new PlayerCharacter("Heroe Anónimo", 1, 100, inventory, 10, 0, 0);
 
         DecisionEngine decisionEngine = new DecisionEngine(player);
 
