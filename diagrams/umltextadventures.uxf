@@ -46,7 +46,8 @@
 + showCharacterInformation() : void 
 + showEnemyInformation(Enemy enemy) : void
 + showInventory() : void
-+ showInventoryActions(in inventoryActions : Set&lt;InventoryAction&gt;)</panel_attributes>
++ showInventoryActions(in inventoryActions : Set&lt;InventoryAction&gt;)
++ showOptions() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -81,9 +82,9 @@ m2=1</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>1940</x>
-      <y>840</y>
+      <y>830</y>
       <w>520</w>
-      <h>250</h>
+      <h>260</h>
     </coordinates>
     <panel_attributes>*OutputHandler*
 /&lt;&lt;interface&gt;&gt;/
@@ -99,19 +100,20 @@ m2=1</panel_attributes>
 /+ showCharacterInformation()/
 /+ showEnemyInformation(Enemy enemy)/
 /+ showInventory() : void/
-/+ showInventoryActions(in inventoryActions : Set&lt;InventoryAction&gt;)/</panel_attributes>
+/+ showInventoryActions(in inventoryActions : Set&lt;InventoryAction&gt;)/
+/+ showOptions() : void/</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>2180</x>
-      <y>580</y>
+      <y>610</y>
       <w>230</w>
-      <h>280</h>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;260.0;10.0;110.0;210.0;110.0;210.0;10.0</additional_attributes>
+    <additional_attributes>10.0;220.0;10.0;80.0;210.0;80.0;210.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -119,7 +121,7 @@ m2=1</panel_attributes>
       <x>2210</x>
       <y>300</y>
       <w>570</w>
-      <h>290</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>*ConsoleOutput*
 /&lt;&lt;abstract&gt;&gt;/
@@ -138,7 +140,8 @@ m2=1</panel_attributes>
 /+ showRoomInformation(in room : Room)/
 + showEnemyInformation(in enemy : Enemy)
 + showInventory() : void
-/+ showInventoryActions(in inventoryActions : Set&lt;InventoryAction&gt;)/</panel_attributes>
+/+ showInventoryActions(in inventoryActions : Set&lt;InventoryAction&gt;)/
++ showOptions() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -147,10 +150,10 @@ m2=1</panel_attributes>
       <x>1990</x>
       <y>640</y>
       <w>220</w>
-      <h>220</h>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>200.0;200.0;200.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>200.0;190.0;200.0;50.0;10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -1638,7 +1641,7 @@ for(String textline : textlines) {
       <x>1950</x>
       <y>0</y>
       <w>510</w>
-      <h>120</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>*ColorBlindConsoleOutput*
 --
@@ -1646,7 +1649,10 @@ for(String textline : textlines) {
 + showActions(in actions : Set&lt;Action&gt;) : void
 + showCharacterInformation(in playerCharacter : PlayerCharacter)
 + showRoomInformation(in room : Room)
-+ showInventoryActions(in inventoryActions : Set&lt;InventoryAction&gt;)</panel_attributes>
++ showInventoryActions(in inventoryActions : Set&lt;InventoryAction&gt;)
++ showWinnerScreen(in playerCharacter : PlayerCharacter)
++ showMenu() : void
++ showBattleEndedMessage() : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -1675,7 +1681,7 @@ for(String textline : textlines) {
       <h>130</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;10.0;110.0;640.0;110.0;640.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;110.0;640.0;110.0;640.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
