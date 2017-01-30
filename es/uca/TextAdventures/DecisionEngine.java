@@ -35,7 +35,7 @@ public class DecisionEngine {
         boolean gameOver = false;
         Set<Action> playerActions;
         ActionParameter actionParameters;
-        Map map = mapLoader.loadFromFile("map.xml");
+        Map map = mapLoader.loadFromFile("definitivemap.xml");
 
         while (!gameOver) {
 

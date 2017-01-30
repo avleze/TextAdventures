@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map width="2" height="2">
     <room col="0" row="0" treasureRoom="false">
-      <message caption="main hall" message="What you wanna do?:"></message>
+      <message caption="main hall" message="What ;br; \\n you wanna \n do?:"></message>
       <enemy name="Monster" id="0" healthPoints="50" baseDamage="5" type="0">
           <inventory>
               <SimpleRecoveryItem id="1" pointsToHealth="25"></SimpleRecoveryItem>

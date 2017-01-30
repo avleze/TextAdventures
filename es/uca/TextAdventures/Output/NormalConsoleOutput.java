@@ -35,6 +35,6 @@ public class NormalConsoleOutput extends ConsoleOutput {
 
         System.out.println("You have arrived at the " + room.getMessage().getCaption() + " room");
         System.out.println(separatorBar);
-        System.out.println(room.getMessage().getMessage());
+        System.out.println(room.getMessage().getMessage().replaceAll(";br;","\n"));
     }
 }

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map width="3" height="3">
+
+    <room col="0" row="0" treasureRoom="false">
+        <message caption="Salón de tu casa" message="Te encuentras en tu sofá;br;De repente un anuncio de pepephone aparece en la TV.;br;¡Lucha contra esta publicidad tan agresiva!;br; "></message>
+        <enemy name="Anuncio Pepephone" id="0" healthPoints="15" baseDamage="2" type="0">
+            <inventory>
+                <SimpleRecoveryItem id="1" pointsToHealth="5"></SimpleRecoveryItem>
+                <ArmorItem id="3" defensePoints="10"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <StartBattleAction description="¡Lucha contra el anuncio!"></StartBattleAction>
+            <MovementAction description="Cambia de canal" type="RIGHT"></MovementAction>
+            <MovementAction description="Levantate del sofá" type="DOWN"></MovementAction>
+        </actions>
+    </room>
+
+    <room col="0" row="1" treasureRoom="false">
+        <message caption="Cocina de tu casa" message="Cambias de canal, pero aparece un documental de Felix Rodriguez por pantalla. No es la hora de la siesta así que apagas la tele y te levantas.;br;Te dirijes a la cocina en busca de un preciado bol de crispis.;br;Mientras te preparas el nesquik, la baticao que tenías encerrada en la despensa desde hace 4 veranos se te acerca por la espalda y ataca!;br;"></message>
+        <enemy name="Baticao del verano de 2004" id="1" healthPoints="20" baseDamage="10" type="1">
+            <inventory>
+                <WeaponItem id="2" type="2" damage="6"></WeaponItem>
+                <ArmorItem id="5" defensePoints="30"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <StartBattleAction description="Peleas contra la baticao, recordando la epoca oscura en la que comprabas Colacao"></StartBattleAction>
+            <MovementAction description="Guardas la baticao otra vez en la despensa y la encierras bajo llave" type="RIGHT"></MovementAction>
+            <MovementAction description="Dejas el bol de crispis en la cocina y pasas de la baticao" type="DOWN"></MovementAction>
+        </actions>
+    </room>
+
+    <room col="0" row="2" treasureRoom="false">
+        <message caption="Sótano de tu casa" message="Decides tomarte un ibuprofeno, pelear contra un anuncio y una baticao te ha dejado cao(xd).;br;Te tomas el ibuprofeno sabor menta, pero para cuando has terminado de tomartelo te acuerdas de que eres alérgico al ibuprofeno;br;Te entra así como colocón, de repente Rainbow Dash irrumpe en la habitación, puede ser producto de tu imaginación...;br;¿Que haces?;br;"></message>
+        <enemy name="Rainbow Dash" id="1" healthPoints="20" baseDamage="10" type="1">
+            <inventory>
+                <WeaponItem id="2" type="2" damage="6"></WeaponItem>
+                <ArmorItem id="5" defensePoints="5"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <StartBattleAction description="Le dices que no te gusta My Little Pony y le partes su corazonzito de Pony Arcoiris"></StartBattleAction>
+            <MovementAction description="Te das un par de guantazos para que se te pase el colocón" type="DOWN"></MovementAction>
+        </actions>
+    </room>
+
+    <room col="1" row="0" treasureRoom="false">
+        <message caption="Sótano de tu casa" message="Te levantas del sofá y te entra así como fresquito, así que decides bajar al sotano a por tu  MYSKGRÄS (un edredon del ikea).;br;Al entrar te das cuenta, que tu apacible sotano, el que usaron el año pasado de decorado en Insidious 45 ¡Se ha transformado en una dungeon de esas!;br;Ves así como unos ojicos escondidos detras de la puerta de un armario, lo abres y ...;br;Te ataca un Zubat! (Al parecer no tuviste suficiente en el Mt.Moon en su día);br;"></message>
+        <enemy name="Zubat - El murcielago pesao" id="2" healthPoints="15" baseDamage="2" type="2">
+            <inventory>
+                <WeaponItem id="4" type="4" damage="3"></WeaponItem>
+                <ArmorItem id="6" defensePoints="80"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <StartBattleAction description="Aqui no se usa cuerda huida, sacas a tu pakachu y te preparas para luchar!"></StartBattleAction>
+            <MovementAction description="Usas cuerda huída y huyes despavorido por un pasillo de la dungeon" type="DOWN"></MovementAction>
+        </actions>
+    </room>
+
+    <room col="1" row="1" treasureRoom="false">
+        <message caption="Sotano de tu casa" message="Dejas la baticao en la cocina y te entra como fresco , así que decides bajar al sotano a por tu  MYSKGRÄS (un edredon del ikea).;br;Al entrar te das cuenta, que tu apacible sotano, el que usaron el año pasado de decorado en Insidious 45 ¡Se ha transformado en una dungeon de esas!;br;Ves como se acerca una gelatina de limón que tenías guardada en el arcón congelador... (Soy un Slime! - Te grita la gela..Slime);br;¿Que haces?;br;"></message>
+        <enemy name="Gelati.... Slime" id="3" healthPoints="15" baseDamage="2" type="2">
+            <inventory>
+                <HyperRecoveryItem id="2" pointsToHealth="5"></HyperRecoveryItem>
+                <WeaponItem id="5" type="4" damage="5"></WeaponItem>
+                <ArmorItem id="7" defensePoints="5"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <StartBattleAction description="Sacas una cuchara y te dispones a comerte la gelatina"></StartBattleAction>
+            <MovementAction description="Huyes de la gelatina como un cobarde por uno de los pasillos de la dungeon" type="DOWN"></MovementAction>
+        </actions>
+    </room>
+
+    <room col="1" row="2" treasureRoom="false">
+        <message caption="Sotano de tu casa" message="Despues de esta mala experiencia con el ibuprofeno te entra como fresco , así que decides bajar al sotano a por tu  MYSKGRÄS (un edredon del ikea).;br;Al entrar te das cuenta, que tu apacible sotano, el que usaron el año pasado de decorado en Insidious 45 ¡Se ha transformado en una dungeon de esas!;br;Andando por tu sotano vas y te encuentras un esqueleto andante!;br;Piensas para tus adentros que solo faltaría que te encontraras con un Zubat y un slime;br;¿Que haces?;br;"></message>
+        <enemy name="Spooky Scary Skeleton" id="3" healthPoints="15" baseDamage="2" type="2">
+            <inventory>
+                <HyperRecoveryItem id="2" pointsToHealth="5"></HyperRecoveryItem>
+                <WeaponItem id="5" type="4" damage="5"></WeaponItem>
+                <ArmorItem id="7" defensePoints="5"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <StartBattleAction description="Te haces un puchero con el esqueleto"></StartBattleAction>
+            <MovementAction description="Huyes del esqueleto como un cobarde por uno de los pasillos de la dungeon" type="DOWN"></MovementAction>
+        </actions>
+    </room>
+
+    <room col="2" row="0" treasureRoom="false">
+        <message caption="Dungeon" message="Continua tu trasiego por la mazmorra, sigues andando por interminables pasillos, restos de mudanzas y ropa del invierno de 2002;br;"></message>
+        <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
+            <inventory>
+                <HyperRecoveryItem id="2" pointsToHealth="50"></HyperRecoveryItem>
+                <WeaponItem id="5" type="4" damage="5"></WeaponItem>
+                <ArmorItem id="7" defensePoints="100"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <MovementAction description="No ves el edredón por ningun lado, sigues buscando" type="RIGHT"></MovementAction>
+        </actions>
+    </room>
+
+    <room col="2" row="1" treasureRoom="true">
+        <message caption="Dungeon" message="Continua tu trasiego por la mazmorra, pero... un momento...;br;Eso puede ser...? Si! Es tu MYSKGRÄS;br;Justo cuando ya lo tocabas, algo gigantesco cae al suelo detrás tuya;br;Es casi como tu zapato de grande, es ... LORD CUCARACHO;br;No puedes escapar, pelea como un hombre!"></message>
+        <enemy name="LORD CUCARACHO" id="3" healthPoints="40" baseDamage="7" type="4">
+            <inventory>
+                <HyperRecoveryItem id="2" pointsToHealth="20"></HyperRecoveryItem>
+                <WeaponItem id="5" type="4" damage="5"></WeaponItem>
+                <ArmorItem id="7" defensePoints="10"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <StartBattleAction description="Unes todo el coraje que te es posible y te preparas a luchar contra LORD CUCARACHO"></StartBattleAction>
+        </actions>
+    </room>
+
+    <room col="2" row="0" treasureRoom="false">
+        <message caption="Dungeon" message="Continua tu trasiego por la mazmorra, sigues andando por interminables pasillos, restos de mudanzas y ropa del invierno de 2002;br;"></message>
+        <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
+            <inventory>
+                <HyperRecoveryItem id="2" pointsToHealth="50"></HyperRecoveryItem>
+                <WeaponItem id="5" type="4" damage="5"></WeaponItem>
+                <ArmorItem id="7" defensePoints="100"></ArmorItem>
+            </inventory>
+        </enemy>
+        <actions>
+            <MovementAction description="No ves el edredón por ningun lado, sigues buscando" type="LEFT"></MovementAction>
+        </actions>
+    </room>
+
+</map>

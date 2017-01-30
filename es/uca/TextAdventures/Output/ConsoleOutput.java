@@ -14,6 +14,17 @@ import java.util.Set;
  */
 public abstract class ConsoleOutput implements OutputHandler {
 
+    protected static final String ANSI_RESET = "\u001B[0m";
+    protected static final String ANSI_BLACK = "\u001B[30m";
+    protected static final String ANSI_RED = "\u001B[31m";
+    protected static final String ANSI_GREEN = "\u001B[32m";
+    protected static final String ANSI_YELLOW = "\u001B[33m";
+    protected static final String ANSI_BLUE = "\u001B[34m";
+    protected static final String ANSI_PURPLE = "\u001B[35m";
+    protected static final String ANSI_CYAN = "\u001B[36m";
+    protected static final String ANSI_WHITE = "\u001B[37m";
+
+
     public ConsoleOutput() {
 
     }
@@ -36,7 +47,8 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showEnemyInformation(Enemy enemy) {
-        String EnemyInf = String.format("Current enemy: \u001B[31m %s \u001B[0m \t Health: \u001B[33m %f \u001B[0m \t", enemy.getName(), enemy.getHealthPoints());
+        String EnemyInf = String.format("Current player:" + ANSI_RED + " %s " + ANSI_RESET + "\t Health:" + ANSI_YELLOW + " %f " + ANSI_RESET + "\t", enemy.getName(),
+                enemy.getHealthPoints());
         String separatorBar = "--------------------------------------------------------------------------------";
 
         System.out.println(separatorBar);
@@ -58,7 +70,7 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showWinnerScreen(PlayerCharacter playerCharacter) {
-        String text = String.format("\u001B[33m You win this time %s ... \u001B[0m", playerCharacter.getName());
+        String text = String.format(ANSI_YELLOW + "You win this time %s ... " + ANSI_RESET, playerCharacter.getName());
         System.out.println(text);
     }
 
@@ -74,5 +86,9 @@ public abstract class ConsoleOutput implements OutputHandler {
         this.showMessage("\t1. Load game");
         this.showMessage("\t2. New game (unimplemented yet)");
         this.showMessage("\t3. Credits (unimplemented yet)");
+    }
+
+    public void showBattleEndedMessage(){
+        this.showMessage(ANSI_YELLOW + "Battle has ended" + ANSI_RESET);
     }
 }
