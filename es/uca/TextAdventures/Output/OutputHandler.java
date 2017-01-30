@@ -37,6 +37,8 @@ public interface OutputHandler {
 
     void showOptions();
 
+    void showCredits();
+
     void showInventory(Set<Item> inventory);
 
 }

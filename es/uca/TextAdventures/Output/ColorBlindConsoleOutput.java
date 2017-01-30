@@ -60,10 +60,38 @@ public class ColorBlindConsoleOutput extends ConsoleOutput {
     @Override
     public void showMenu() {
         this.showMessage("Text Adventures" + ANSI_WHITE + " - " + ANSI_RESET + ANSI_YELLOW + "Color-Blind mode" + ANSI_RESET);
-        this.showMessage("\t1. Load game");
-        this.showMessage("\t2. New game (unimplemented yet)");
-        this.showMessage("\t3. Options");
-        this.showMessage("\t4. Credits");
+        this.showMessage("\t1. New game");
+        this.showMessage("\t2. Options");
+        this.showMessage("\t3. Credits");
+    }
+
+    @Override
+    public void showCredits() {
+        try {
+            this.showMessage(ANSI_CYAN + "\t\tCREDITS" + ANSI_RESET);
+            this.showMessage("\t\t-----------------");
+            Thread.sleep(1200);
+            this.showMessage(ANSI_PURPLE + "\t\t\tDevelopers:" + ANSI_RESET);
+            Thread.sleep(1200);
+            this.showMessage(ANSI_YELLOW + "\t\t\t\tJuan Antonio Rodicio Lopez");
+            Thread.sleep(1200);
+            this.showMessage("\t\t\t\tManuel Rodriguez-Sanchez Guerra");
+            Thread.sleep(1200);
+            this.showMessage("\t\t\t\tLuis Gonzaga Rozo Bueno");
+            Thread.sleep(1200);
+            this.showMessage("\t\t\t\tAntonio Velez Estevez" + ANSI_RESET);
+            Thread.sleep(2000);
+            this.showMessage("\n");
+            this.showMessage(ANSI_GREEN + "\t\t\tCreated for Diseño de Sistemas Software, subject of" +
+                    " Software Engineering in the University of Cadiz.");
+            this.showMessage("\n");
+            Thread.sleep(2000);
+            this.showMessage("\t\t\tThanks for playing :D!" + ANSI_RESET);
+            this.showMessage("\n");
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

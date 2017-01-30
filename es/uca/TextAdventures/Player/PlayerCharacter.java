@@ -5,6 +5,7 @@ import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Item.RecoveryItemDecorator.RecoveryItem;
 import es.uca.TextAdventures.Item.WeaponItem;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -88,6 +89,8 @@ public class PlayerCharacter extends Player {
     public void setYPosition(int yPosition) {
         this.yPosition = yPosition;
     }
+
+    public void setName(String name) { this.name = name; }
 
     public void moveLeft() {
         this.xPosition -= 1;

@@ -10,7 +10,12 @@ import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 
+import java.io.FileInputStream;
+import java.io.InvalidClassException;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 import java.util.LinkedHashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -93,20 +98,24 @@ public class DecisionEngine {
             do {
                 output.showMenu();
                 menuOption = input.getInput();
-            } while (menuOption < 1 || menuOption > 4);
+            } while (menuOption < 1 || menuOption > 3);
 
             switch (menuOption) {
                 case 1:
+                    String playerName;
+                    output.showMessage("Choose a name for your player: ");
+                    Scanner scanner = new Scanner(System.in);
+                    playerName = scanner.next();
+                    this.playerCharacter.setName(playerName);
                     try {
                         startGame();
-                    } catch (Exception e) {
+                    } catch (WeaponItem.TypeNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (Enemy.TypeNotFoundException e) {
                         e.printStackTrace();
                     }
                     break;
                 case 2:
-                    // Needs to be implemented
-                    break;
-                case 3:
                     output.showOptions();
                     do {
                         optionOption = input.getInput();
@@ -116,8 +125,8 @@ public class DecisionEngine {
                     else
                         output = new OutputManager(new NormalConsoleOutput(), null, playerCharacter);
                     break;
-                case 4:
-                    // Credits
+                case 3:
+                    output.showCredits();
                     break;
             }
         } while (menuOption != 1);

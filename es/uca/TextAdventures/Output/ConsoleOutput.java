@@ -1,5 +1,6 @@
 package es.uca.TextAdventures.Output;
 
+import com.sun.xml.internal.bind.annotation.OverrideAnnotationOf;
 import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Action.InventoryAction;
 import es.uca.TextAdventures.Item.Item;
@@ -96,10 +97,9 @@ public abstract class ConsoleOutput implements OutputHandler {
     @Override
     public void showMenu() {
         this.showMessage("Text Adventures");
-        this.showMessage("\t1. Load game");
-        this.showMessage("\t2. New game (unimplemented yet)");
-        this.showMessage("\t3. Options");
-        this.showMessage("\t4. Credits");
+        this.showMessage("\t1. New game");
+        this.showMessage("\t2. Options");
+        this.showMessage("\t3. Credits");
     }
 
     @Override
@@ -107,6 +107,35 @@ public abstract class ConsoleOutput implements OutputHandler {
         this.showMessage("Options");
         this.showMessage("\t1. Change to color-blind mode");
         this.showMessage("\t2. Change to normal-color mode");
+    }
+
+    @Override
+    public void showCredits() {
+        try {
+            this.showMessage(ANSI_GREEN + "\t\tCREDITS");
+            this.showMessage("\t\t-----------------");
+            Thread.sleep(1200);
+            this.showMessage("\t\t\tDevelopers:");
+            Thread.sleep(1200);
+            this.showMessage("\t\t\t\tJuan Antonio Rodicio Lopez");
+            Thread.sleep(1200);
+            this.showMessage("\t\t\t\tManuel Rodriguez-Sanchez Guerra");
+            Thread.sleep(1200);
+            this.showMessage("\t\t\t\tLuis Gonzaga Rozo Bueno");
+            Thread.sleep(1200);
+            this.showMessage("\t\t\t\tAntonio Velez Estevez");
+            Thread.sleep(2000);
+            this.showMessage("\n");
+            this.showMessage(ANSI_CYAN + "\t\t\tCreated for Diseño de Sistemas Software, subject of" +
+                    " Software Engineering in the University of Cadiz.");
+            this.showMessage("\n");
+            Thread.sleep(2000);
+            this.showMessage("\t\t\tThanks for playing :D!" + ANSI_RESET);
+            this.showMessage("\n");
+            Thread.sleep(2000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void showBattleEndedMessage(){

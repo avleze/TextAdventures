@@ -75,6 +75,8 @@ public class OutputManager {
 
     public void showOptions() { currentOutputHandler.showOptions(); }
 
+    public void showCredits() { currentOutputHandler.showCredits(); }
+
     public void showInventory() {
         currentOutputHandler.showInventory(playerCharacter.getInventory());
     }
