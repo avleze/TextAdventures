@@ -39,6 +39,7 @@ public class ColorBlindConsoleOutput extends ConsoleOutput {
 
         System.out.println("You have arrived at the " + room.getMessage().getCaption() + " room");
         System.out.println(separatorBar);
+        room.getMessage().getMessage().replaceAll(";br;","/n");
         System.out.println(room.getMessage().getMessage());
     }
 
