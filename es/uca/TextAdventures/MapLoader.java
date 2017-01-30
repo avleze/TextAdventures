@@ -203,7 +203,7 @@ public class MapLoader {
         }
 
         Room ret = new Room(message, actions, enemy, treasureRoom);
-        rooms[row][col] = ret;
+        rooms[col][row] = ret;
         return ret;
 
     }
