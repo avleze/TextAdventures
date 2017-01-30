@@ -20,10 +20,11 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-/**
+/*
  * Test class for Action classes
  * @author Luis Rozo
- */
+*/
+
 public class TestAction {
     private Set<Item> inventory;
     private WeaponItem sword;
@@ -84,7 +85,7 @@ public class TestAction {
 
     @Test
     public void testHeal() {
-        Heal heal = new Heal("Test case",playerCharacter);
+        HealAction heal = new HealAction("Test case",playerCharacter);
         heal.run(actionParameters);
 
         //The player has 100 health points and we simulate an use of a 10-recovery-health-points potion.
@@ -93,7 +94,7 @@ public class TestAction {
 
     @Test
     public void testRunAway() {
-        RunAway runAway = new RunAway("Test case",playerCharacter);
+        RunAwayAction runAway = new RunAwayAction("Test case",playerCharacter);
         runAway.run(actionParameters);
 
         //The player is not on battle yet.
