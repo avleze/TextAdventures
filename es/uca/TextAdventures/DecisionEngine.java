@@ -4,6 +4,7 @@ import es.uca.TextAdventures.Action.*;
 import es.uca.TextAdventures.Input.ConsoleInput;
 import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Item.WeaponItem;
+import es.uca.TextAdventures.Output.ColorBlindConsoleOutput;
 import es.uca.TextAdventures.Output.NormalConsoleOutput;
 import es.uca.TextAdventures.Output.OutputManager;
 import es.uca.TextAdventures.Player.Enemy;
@@ -84,30 +85,42 @@ public class DecisionEngine {
     }
 
     public void run() {
-        int menuOption;
+        int menuOption,optionOption;
 
         output = new OutputManager(new NormalConsoleOutput(), null, playerCharacter);
 
         do {
-            output.showMenu();
-            menuOption = input.getInput();
-        } while (menuOption < 1 || menuOption > 3);
+            do {
+                output.showMenu();
+                menuOption = input.getInput();
+            } while (menuOption < 1 || menuOption > 4);
 
-        switch (menuOption) {
-            case 1:
-                try {
-                    startGame();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                break;
-            case 2:
-                // Needs to be implemented
-                break;
-            case 3:
-                // Credits
-                break;
-        }
+            switch (menuOption) {
+                case 1:
+                    try {
+                        startGame();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 2:
+                    // Needs to be implemented
+                    break;
+                case 3:
+                    output.showOptions();
+                    do {
+                        optionOption = input.getInput();
+                    } while (optionOption < 1 || optionOption > 2);
+                    if (optionOption == 1)
+                        output = new OutputManager(new ColorBlindConsoleOutput(), null, playerCharacter);
+                    else
+                        output = new OutputManager(new NormalConsoleOutput(), null, playerCharacter);
+                    break;
+                case 4:
+                    // Credits
+                    break;
+            }
+        } while (menuOption != 1);
 
     }
 }

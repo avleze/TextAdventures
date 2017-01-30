@@ -73,6 +73,8 @@ public class OutputManager {
         currentOutputHandler.showMenu();
     }
 
+    public void showOptions() { currentOutputHandler.showOptions(); }
+
     public void showInventory() {
         currentOutputHandler.showInventory(playerCharacter.getInventory());
     }

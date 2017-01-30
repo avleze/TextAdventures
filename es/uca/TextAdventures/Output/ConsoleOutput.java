@@ -98,7 +98,15 @@ public abstract class ConsoleOutput implements OutputHandler {
         this.showMessage("Text Adventures");
         this.showMessage("\t1. Load game");
         this.showMessage("\t2. New game (unimplemented yet)");
-        this.showMessage("\t3. Credits (unimplemented yet)");
+        this.showMessage("\t3. Options");
+        this.showMessage("\t4. Credits");
+    }
+
+    @Override
+    public void showOptions() {
+        this.showMessage("Options");
+        this.showMessage("\t1. Change to color-blind mode");
+        this.showMessage("\t2. Change to normal-color mode");
     }
 
     public void showBattleEndedMessage(){

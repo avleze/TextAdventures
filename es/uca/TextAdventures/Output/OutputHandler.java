@@ -35,6 +35,8 @@ public interface OutputHandler {
 
     void showMenu();
 
+    void showOptions();
+
     void showInventory(Set<Item> inventory);
 
 }

@@ -71,7 +71,7 @@ public class TestAction {
         inventoryActions.add(new SuperifyPotionAction("Superify potion", playerCharacter));
         inventoryActions.add(new HyperifyPotionAction("Hyperify potion", playerCharacter));
 
-        this.actionParameters = new ActionParameter(output, input, playerActions, inventoryActions, playerCharacter, room.getEnemy());
+        //this.actionParameters = new ActionParameter(output, input, playerActions, inventoryActions, playerCharacter, room.getEnemy());
     }
 
     @Test

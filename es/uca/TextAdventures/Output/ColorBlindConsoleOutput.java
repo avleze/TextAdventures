@@ -48,8 +48,7 @@ public class ColorBlindConsoleOutput extends ConsoleOutput {
 
         System.out.println("You have arrived at the " + room.getMessage().getCaption() + " room");
         System.out.println(separatorBar);
-        room.getMessage().getMessage().replaceAll(";br;","/n");
-        System.out.println(room.getMessage().getMessage());
+        System.out.println(room.getMessage().getMessage().replaceAll(";br;","\n"));
     }
 
     @Override
@@ -58,6 +57,14 @@ public class ColorBlindConsoleOutput extends ConsoleOutput {
         System.out.println(text);
     }
 
+    @Override
+    public void showMenu() {
+        this.showMessage("Text Adventures" + ANSI_WHITE + " - " + ANSI_RESET + ANSI_YELLOW + "Color-Blind mode" + ANSI_RESET);
+        this.showMessage("\t1. Load game");
+        this.showMessage("\t2. New game (unimplemented yet)");
+        this.showMessage("\t3. Options");
+        this.showMessage("\t4. Credits");
+    }
 
     @Override
     public void showBattleEndedMessage() {
