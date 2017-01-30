@@ -32,6 +32,9 @@ public abstract class ConsoleOutput implements OutputHandler {
     public abstract void showRoomInformation(Room room);
 
     @Override
+    public abstract void showActions(Set<Action> actions);
+
+    @Override
     public void showEnemyInformation(Enemy enemy) {
         String EnemyInf = String.format("Current enemy: \u001B[31m %s \u001B[0m \t Health: \u001B[33m %f \u001B[0m \t", enemy.getName(), enemy.getHealthPoints());
         String separatorBar = "--------------------------------------------------------------------------------";
@@ -64,8 +67,6 @@ public abstract class ConsoleOutput implements OutputHandler {
         System.out.println(message);
     }
 
-    @Override
-    public abstract void showActions(Set<Action> actions);
 
     @Override
     public void showMenu() {
