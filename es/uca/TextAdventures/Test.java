@@ -15,7 +15,7 @@ import java.util.Set;
 /**
  * @author juan
  */
-public class Test {
+public class  Test {
 
     public static void main(String args[]) throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
 
