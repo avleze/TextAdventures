@@ -2,7 +2,7 @@
 <map width="3" height="3">
 
     <room col="0" row="0" treasureRoom="false">
-        <message caption="Salón de tu casa" message="Te encuentras en tu sofá;br;De repente un anuncio de pepephone aparece en la TV.;br;¡Lucha contra esta publicidad tan agresiva!;br; "></message>
+        <message caption="Salón de tu casa" message="Te encuentras en tu sofá;br;De repente un anuncio de pepephone aparece en la TV.;br;¡Lucha contra esta publicidad tan agresiva!;br;"></message>
         <enemy name="Anuncio Pepephone" id="0" healthPoints="15" baseDamage="2" type="0">
             <inventory>
                 <SimpleRecoveryItem id="1" pointsToHealth="5"></SimpleRecoveryItem>
@@ -104,7 +104,7 @@
     </room>
 
     <room col="2" row="1" treasureRoom="true">
-        <message caption="Dungeon" message="Continua tu trasiego por la mazmorra, pero... un momento...;br;Eso puede ser...? Si! Es tu MYSKGRÄS;br;Justo cuando ya lo tocabas, algo gigantesco cae al suelo detrás tuya;br;Es casi como tu zapato de grande, es ... LORD CUCARACHO;br;No puedes escapar, pelea como un hombre!"></message>
+        <message caption="Dungeon" message="Continua tu trasiego por la mazmorra, pero... un momento...;br;Eso puede ser...? Si! Es tu MYSKGRÄS;br;Justo cuando ya lo tocabas, algo gigantesco cae al suelo detrás tuya;br;Es casi como tu zapato de grande, es ... LORD CUCARACHO;br;No puedes escapar, pelea como un hombre! ;br;"></message>
         <enemy name="LORD CUCARACHO" id="3" healthPoints="40" baseDamage="7" type="4">
             <inventory>
                 <HyperRecoveryItem id="2" pointsToHealth="20"></HyperRecoveryItem>
@@ -117,7 +117,7 @@
         </actions>
     </room>
 
-    <room col="2" row="0" treasureRoom="false">
+    <room col="2" row="2" treasureRoom="false">
         <message caption="Dungeon" message="Continua tu trasiego por la mazmorra, sigues andando por interminables pasillos, restos de mudanzas y ropa del invierno de 2002;br;"></message>
         <enemy name="Monster" id="3" healthPoints="100" baseDamage="10" type="4">
             <inventory>
