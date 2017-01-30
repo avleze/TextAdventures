@@ -34,6 +34,7 @@ public class DecisionEngine {
     private void startGame() throws WeaponItem.TypeNotFoundException, Enemy.TypeNotFoundException {
         boolean gameOver = false;
         Set<Action> playerActions;
+        Set<InventoryAction> inventoryActions;
         ActionParameter actionParameters;
         Map map = mapLoader.loadFromFile("definitivemap.xml");
 
@@ -46,8 +47,14 @@ public class DecisionEngine {
             playerActions.add(new Heal("Heal.", playerCharacter));
             playerActions.add(new RunAway("Run away.", playerCharacter));
             playerActions.add(new Attack("Attack.", playerCharacter, room.getEnemy()));
+            playerActions.add(new ShowInventory("Show inventory.", playerCharacter));
 
-            actionParameters = new ActionParameter(output, input, playerActions, playerCharacter, room.getEnemy());
+            inventoryActions = new LinkedHashSet<>();
+            inventoryActions.add(new DropItem("Drop item", playerCharacter));
+            inventoryActions.add(new SuperifyPotion("Superify potion", playerCharacter));
+            inventoryActions.add(new HyperifyPotion("Hyperify potion", playerCharacter));
+
+            actionParameters = new ActionParameter(output, input, playerActions, inventoryActions, playerCharacter, room.getEnemy());
 
             output.setCurrentRoom(room);
             output.show();

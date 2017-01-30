@@ -1,6 +1,7 @@
 package es.uca.TextAdventures.Output;
 
 import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Action.InventoryAction;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
 
@@ -25,6 +26,14 @@ public class NormalConsoleOutput extends ConsoleOutput {
     public void showActions(Set<Action> actions) {
         int counter = 1;
         for (Action i : actions)
+            System.out.println(String.format("\t%d. %s", counter++, i.getDescription()));
+        System.out.println("Choose an option:");
+    }
+
+    @Override
+    public void showInventoryActions(Set<InventoryAction> inventoryActions) {
+        int counter = 1;
+        for (InventoryAction i : inventoryActions)
             System.out.println(String.format("\t%d. %s", counter++, i.getDescription()));
         System.out.println("Choose an option:");
     }

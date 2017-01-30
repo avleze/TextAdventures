@@ -1,6 +1,5 @@
 package es.uca.TextAdventures;
 
-import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Item.RecoveryItemDecorator.RecoveryItem;
 import es.uca.TextAdventures.Item.RecoveryItemDecorator.SimpleRecoveryItem;
@@ -24,10 +23,14 @@ public class  Test {
         Set<Item> inventory = new HashSet<>();
         WeaponItem sword = new WeaponItem(5, 0, 0);
         RecoveryItem superPotion = new SuperRecoveryItem(new SimpleRecoveryItem(10, 1));
+        RecoveryItem simplePotion = new SimpleRecoveryItem(5, 2);
+        RecoveryItem anotherSimplePotion = new SimpleRecoveryItem(8, 3);
         MockDB mockDB = new MockDB();
 
         inventory.add(sword);
         inventory.add(superPotion);
+        inventory.add(simplePotion);
+        inventory.add(anotherSimplePotion);
 
         PlayerCharacter player = new PlayerCharacter("Heroe Anonimo", 1, 100, inventory, 10, 0, 0);
 

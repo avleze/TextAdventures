@@ -1,6 +1,8 @@
 package es.uca.TextAdventures.Output;
 
 import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Action.InventoryAction;
+import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
@@ -63,7 +65,16 @@ public class OutputManager {
         currentOutputHandler.showActions(actions);
     }
 
+    public void showInventoryActions(Set<InventoryAction> inventoryActions) {
+        currentOutputHandler.showInventoryActions(inventoryActions);
+    }
+
     public void showMenu() {
         currentOutputHandler.showMenu();
     }
+
+    public void showInventory() {
+        currentOutputHandler.showInventory(playerCharacter.getInventory());
+    }
+
 }

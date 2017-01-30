@@ -1,9 +1,11 @@
 package es.uca.TextAdventures.Output;
 
 import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Action.InventoryAction;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
+import es.uca.TextAdventures.Item.Item;
 
 import java.util.Set;
 
@@ -46,6 +48,9 @@ public abstract class ConsoleOutput implements OutputHandler {
     public abstract void showActions(Set<Action> actions);
 
     @Override
+    public abstract void showInventoryActions(Set<InventoryAction> inventoryActions);
+
+    @Override
     public void showEnemyInformation(Enemy enemy) {
         String EnemyInf = String.format("Current player:" + ANSI_RED + " %s " + ANSI_RESET + "\t Health:" + ANSI_YELLOW + " %f " + ANSI_RESET + "\t", enemy.getName(),
                 enemy.getHealthPoints());
@@ -79,6 +84,14 @@ public abstract class ConsoleOutput implements OutputHandler {
         System.out.println(message);
     }
 
+
+    @Override
+    public void showInventory(Set<Item> inventory) {
+        int counter = 1;
+        for (Item i : inventory)
+            System.out.println(String.format("\t%d. %s", counter++, i.getClass().getName()));
+        System.out.println("Choose an item or enter 0 to cancel:");
+    }
 
     @Override
     public void showMenu() {

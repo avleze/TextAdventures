@@ -34,6 +34,7 @@ public class StartBattleAction extends Action {
         battleManager.run(actionParameters.getOutput(),
                 actionParameters.getInput(),
                 actionParameters.getPlayerActions(),
+                actionParameters.getInventoryActions(),
                 actionParameters.getPlayerCharacter(),
                 actionParameters.getEnemy());
     }

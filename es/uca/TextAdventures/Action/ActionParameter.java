@@ -14,14 +14,16 @@ public class ActionParameter {
     private OutputManager output;
     private InputManager input;
     private Set<Action> playerActions;
+    private Set<InventoryAction> inventoryActions;
     private PlayerCharacter playerCharacter;
     private Enemy enemy;
 
 
-    public ActionParameter(OutputManager output, InputManager input, Set<Action> playerActions, PlayerCharacter playerCharacter, Enemy enemy) {
+    public ActionParameter(OutputManager output, InputManager input, Set<Action> playerActions, Set<InventoryAction> inventoryActions, PlayerCharacter playerCharacter, Enemy enemy) {
         this.output = output;
         this.input = input;
         this.playerActions = playerActions;
+        this.inventoryActions = inventoryActions;
         this.playerCharacter = playerCharacter;
         this.enemy = enemy;
     }
@@ -36,6 +38,10 @@ public class ActionParameter {
 
     public Set<Action> getPlayerActions() {
         return playerActions;
+    }
+
+    public Set<InventoryAction> getInventoryActions() {
+        return inventoryActions;
     }
 
     public PlayerCharacter getPlayerCharacter() {

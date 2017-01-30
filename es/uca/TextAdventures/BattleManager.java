@@ -1,6 +1,9 @@
 package es.uca.TextAdventures;
 
 import es.uca.TextAdventures.Action.Action;
+import es.uca.TextAdventures.Action.ActionParameter;
+import es.uca.TextAdventures.Action.InventoryAction;
+import es.uca.TextAdventures.Action.ShowInventory;
 import es.uca.TextAdventures.EnemyBehaviour.EnemyBehaviour;
 import es.uca.TextAdventures.Input.InputManager;
 import es.uca.TextAdventures.Output.OutputManager;
@@ -22,9 +25,10 @@ public class BattleManager {
         this.enemyBehaviour = enemyBehaviour;
     }
 
-    public void run(OutputManager out, InputManager in, Set<Action> playerActions, PlayerCharacter player, Enemy enemy) {
+    public void run(OutputManager out, InputManager in, Set<Action> playerActions, Set<InventoryAction> inventoryActions, PlayerCharacter player, Enemy enemy) {
 
         int input;
+        ActionParameter actionParameter = new ActionParameter(out, in, playerActions, inventoryActions, player, enemy);
 
         out.showMessage("\u001B[36m Battle is starting, prepare yourself! \u001B[0m");
         player.enableBattle();
@@ -40,7 +44,10 @@ public class BattleManager {
                 input = in.getInput();
             } while (input > playerActions.size() || input <= 0);
 
-            ((Action) playerActions.toArray()[input - 1]).run(null);
+            if (playerActions.toArray()[input - 1] instanceof ShowInventory)
+                ((ShowInventory) playerActions.toArray()[input - 1]).run(actionParameter);
+            else
+                ((Action) playerActions.toArray()[input - 1]).run(null);
 
             out.showMessage("You attack the enemy! It's so effective");
         }

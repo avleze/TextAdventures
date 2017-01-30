@@ -56,6 +56,10 @@ public abstract class Player {
         return inventory;
     }
 
+    public void setInventory(Set<Item> inventory) {
+        this.inventory = inventory;
+    }
+
     public String getName() {
         return name;
     }
