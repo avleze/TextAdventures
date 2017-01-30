@@ -2,10 +2,10 @@ package es.uca.TextAdventures.Output;
 
 import es.uca.TextAdventures.Action.Action;
 import es.uca.TextAdventures.Action.InventoryAction;
+import es.uca.TextAdventures.Item.Item;
 import es.uca.TextAdventures.Player.Enemy;
 import es.uca.TextAdventures.Player.PlayerCharacter;
 import es.uca.TextAdventures.Room;
-import es.uca.TextAdventures.Item.Item;
 
 import java.util.Set;
 
@@ -52,7 +52,7 @@ public abstract class ConsoleOutput implements OutputHandler {
 
     @Override
     public void showEnemyInformation(Enemy enemy) {
-        String EnemyInf = String.format("Current player:" + ANSI_RED + " %s " + ANSI_RESET + "\t Health:" + ANSI_YELLOW + " %f " + ANSI_RESET + "\t", enemy.getName(),
+        String EnemyInf = String.format("Current enemy:" + ANSI_RED + " %s " + ANSI_RESET + "\t Health:" + ANSI_YELLOW + " %f " + ANSI_RESET + "\t", enemy.getName(),
                 enemy.getHealthPoints());
         String separatorBar = "--------------------------------------------------------------------------------";
 
