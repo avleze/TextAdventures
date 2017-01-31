@@ -105,7 +105,7 @@ public class DecisionEngine {
                     String playerName;
                     output.showMessage("Choose a name for your player: ");
                     Scanner scanner = new Scanner(System.in);
-                    playerName = scanner.next();
+                    playerName = scanner.nextLine();
                     this.playerCharacter.setName(playerName);
                     try {
                         startGame();
